@@ -46,6 +46,24 @@ namespace LostSouls.Inputs
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""c5385bc0-929e-4990-94cc-9f418d264ba7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Sprint"",
+                    ""type"": ""Button"",
+                    ""id"": ""eece5d5c-ecc3-429a-ad9b-62bc02fa3196"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -136,6 +154,50 @@ namespace LostSouls.Inputs
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f7d3dcf9-279d-47e6-be43-9e19951d842f"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse & Keyboard"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ed013f48-3ad5-4502-a22a-c4f953fee566"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""affc6db1-6946-43ab-8e39-a6047cf36e3c"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""36d06705-9602-48e4-b911-bc144776bcbf"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse & Keyboard"",
+                    ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -174,6 +236,8 @@ namespace LostSouls.Inputs
             m_PlayerMovement = asset.FindActionMap("PlayerMovement", throwIfNotFound: true);
             m_PlayerMovement_Look = m_PlayerMovement.FindAction("Look", throwIfNotFound: true);
             m_PlayerMovement_Move = m_PlayerMovement.FindAction("Move", throwIfNotFound: true);
+            m_PlayerMovement_Jump = m_PlayerMovement.FindAction("Jump", throwIfNotFound: true);
+            m_PlayerMovement_Sprint = m_PlayerMovement.FindAction("Sprint", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -237,12 +301,16 @@ namespace LostSouls.Inputs
         private List<IPlayerMovementActions> m_PlayerMovementActionsCallbackInterfaces = new List<IPlayerMovementActions>();
         private readonly InputAction m_PlayerMovement_Look;
         private readonly InputAction m_PlayerMovement_Move;
+        private readonly InputAction m_PlayerMovement_Jump;
+        private readonly InputAction m_PlayerMovement_Sprint;
         public struct PlayerMovementActions
         {
             private @Inputs m_Wrapper;
             public PlayerMovementActions(@Inputs wrapper) { m_Wrapper = wrapper; }
             public InputAction @Look => m_Wrapper.m_PlayerMovement_Look;
             public InputAction @Move => m_Wrapper.m_PlayerMovement_Move;
+            public InputAction @Jump => m_Wrapper.m_PlayerMovement_Jump;
+            public InputAction @Sprint => m_Wrapper.m_PlayerMovement_Sprint;
             public InputActionMap Get() { return m_Wrapper.m_PlayerMovement; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -258,6 +326,12 @@ namespace LostSouls.Inputs
                 @Move.started += instance.OnMove;
                 @Move.performed += instance.OnMove;
                 @Move.canceled += instance.OnMove;
+                @Jump.started += instance.OnJump;
+                @Jump.performed += instance.OnJump;
+                @Jump.canceled += instance.OnJump;
+                @Sprint.started += instance.OnSprint;
+                @Sprint.performed += instance.OnSprint;
+                @Sprint.canceled += instance.OnSprint;
             }
 
             private void UnregisterCallbacks(IPlayerMovementActions instance)
@@ -268,6 +342,12 @@ namespace LostSouls.Inputs
                 @Move.started -= instance.OnMove;
                 @Move.performed -= instance.OnMove;
                 @Move.canceled -= instance.OnMove;
+                @Jump.started -= instance.OnJump;
+                @Jump.performed -= instance.OnJump;
+                @Jump.canceled -= instance.OnJump;
+                @Sprint.started -= instance.OnSprint;
+                @Sprint.performed -= instance.OnSprint;
+                @Sprint.canceled -= instance.OnSprint;
             }
 
             public void RemoveCallbacks(IPlayerMovementActions instance)
@@ -307,6 +387,8 @@ namespace LostSouls.Inputs
         {
             void OnLook(InputAction.CallbackContext context);
             void OnMove(InputAction.CallbackContext context);
+            void OnJump(InputAction.CallbackContext context);
+            void OnSprint(InputAction.CallbackContext context);
         }
     }
 }
