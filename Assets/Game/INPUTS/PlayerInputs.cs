@@ -35,9 +35,12 @@ namespace LostSouls.Inputs
 
         public bool Jump()
         {
-            return input.PlayerMovement.Jump.triggered;
+            return input.PlayerMovement.Jump.WasPressedThisFrame();
         }
 
-        
+        public bool Sprint()
+        {
+            return input.PlayerMovement.Sprint.IsPressed();
+        }
     }
 }
