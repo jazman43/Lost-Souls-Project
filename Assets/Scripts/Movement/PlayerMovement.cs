@@ -30,7 +30,10 @@ namespace LostSouls.Movement
         private float griavity = -9.81f;
         private bool canDoubleJump;
 
-
+        [Header("Climbing Wall")]
+        [SerializeField] private bool onWall;
+        [SerializeField] private float onwallRadius = 0.5f;
+        [SerializeField] private LayerMask onWallLayers;
 
         [Header("Animation")]
         [SerializeField] private string walkAnimation;
@@ -47,9 +50,16 @@ namespace LostSouls.Movement
         private void Update()
         {
             Movement();
-            Griavity();
+
+
+            if (!onWall)
+            {
+                Griavity();
+            }
+            
             Jump();
             GroundedCheck();
+            ClimbingWallCheck();
         }
 
         
@@ -144,11 +154,45 @@ namespace LostSouls.Movement
         private void GroundedCheck()
         {
             // set sphere position, with offset
-            Vector3 spherePosition = new Vector3(transform.position.x, transform.position.y - groundedOffset,
+            Vector3 spherePosition = new Vector3(
+                transform.position.x,
+                transform.position.y - groundedOffset,
                 transform.position.z);
-            grounded = Physics.CheckSphere(spherePosition, groundedRadius, groundLayers,
+
+            grounded = Physics.CheckSphere(
+                spherePosition,
+                groundedRadius,
+                groundLayers,
                 QueryTriggerInteraction.Ignore);
             
+        }
+
+        private void ClimbingWallCheck()
+        {
+
+            Vector3 spherePosition = new Vector3(
+                transform.position.x,
+                transform.position.y + 1,
+                transform.position.z + 0.5f);
+
+            onWall = Physics.CheckSphere(
+                spherePosition,
+                onwallRadius,
+                onWallLayers);
+
+            Debug.Log(onWall + "yay");
+        }
+
+        private void OnDrawGizmos()
+        {
+            Vector3 spherePosition = new Vector3(
+                transform.position.x ,
+                transform.position.y + 1,
+                transform.position.z + 0.5f);
+
+            Gizmos.color = Color.red;
+
+            Gizmos.DrawSphere(spherePosition, onwallRadius);
         }
     }
 }
