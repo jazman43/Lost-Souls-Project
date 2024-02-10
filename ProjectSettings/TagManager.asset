@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - RunningWall
+  - Climbing wall
   layers:
   - Default
   - TransparentFX
@@ -11,10 +13,16 @@ TagManager:
   - 
   - Water
   - UI
+  - Ground
   - 
+
+  - ClimbingWall
+  - RunningWall
+
   - 
   - Target
   - Obstruction
+
   - 
   - 
   - 
