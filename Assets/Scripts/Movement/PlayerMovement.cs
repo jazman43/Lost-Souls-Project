@@ -35,6 +35,15 @@ namespace LostSouls.Movement
         [SerializeField] private float onwallRadius = 0.5f;
         [SerializeField] private LayerMask onWallLayers;
 
+
+        [Header("Running wall")]
+        [SerializeField] private bool runningWallLeft;
+        [SerializeField] private bool runningWallRight;
+        [SerializeField] private LayerMask onRunningWallLayers;
+        [SerializeField] private float rayDistance = 2f;
+
+
+
         [Header("Animation")]
         [SerializeField] private string walkAnimation;
 
@@ -60,6 +69,7 @@ namespace LostSouls.Movement
             Jump();
             GroundedCheck();
             ClimbingWallCheck();
+            WallRunningCheck();
         }
 
         
@@ -183,16 +193,37 @@ namespace LostSouls.Movement
             Debug.Log(onWall + "yay");
         }
 
-        private void OnDrawGizmos()
+        private void WallRunningCheck()
         {
-            Vector3 spherePosition = new Vector3(
-                transform.position.x ,
-                transform.position.y + 1,
-                transform.position.z + 0.5f);
+            Vector3 StartPosition = new Vector3(
+                transform.position.x,
+                transform.position.y + .6f,
+                transform.position.z);
 
-            Gizmos.color = Color.red;
+            Vector3 worldDirecrionLeft = transform.TransformDirection(Vector3.left);
 
-            Gizmos.DrawSphere(spherePosition, onwallRadius);
+            Vector3 worldDirecrionRight = transform.TransformDirection(Vector3.right);
+
+            Ray rayLeft = new Ray(StartPosition, worldDirecrionLeft);
+            Ray rayRight = new Ray(StartPosition, worldDirecrionRight);
+            RaycastHit hit;
+
+
+            if(Physics.Raycast(rayLeft, out hit, rayDistance))
+            {
+                Debug.Log("Hit something: on left " + hit.collider.tag);
+            }
+
+
+            if (Physics.Raycast(rayRight, out hit, rayDistance))
+            {
+                Debug.Log("Hit something: on right " + hit.collider.tag);
+            }
+
+            Debug.DrawRay(rayLeft.origin, rayLeft.direction * rayDistance, Color.red);
+            Debug.DrawRay(rayRight.origin, rayRight.direction * rayDistance, Color.red);
+            
+            
         }
     }
 }
