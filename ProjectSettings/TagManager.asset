@@ -15,8 +15,14 @@ TagManager:
   - UI
   - Ground
   - 
+
   - ClimbingWall
   - RunningWall
+
+  - 
+  - Target
+  - Obstruction
+
   - 
   - 
   - 
