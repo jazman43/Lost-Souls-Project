@@ -190,12 +190,13 @@ MonoBehaviour:
   onwallRadius: 0.5
   onWallLayers:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
   runningWallLeft: 0
   runningWallRight: 0
   onRunningWallLayers:
     serializedVersion: 2
     m_Bits: 512
+  rayDistance: 2
   walkAnimation: 
 --- !u!1 &6643998992738211075
 GameObject:
