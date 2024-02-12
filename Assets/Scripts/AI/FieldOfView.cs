@@ -5,7 +5,6 @@ using UnityEngine.AI;
 
 namespace LostSouls.AI
 {
-
     public class FieldOfView : MonoBehaviour
     {
         public float radius;
@@ -44,6 +43,7 @@ namespace LostSouls.AI
         }
         private void FieldOfViewCheck()
         {
+            Animator animator = GetComponent<Animator>();
             Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radius, targetMask);
 
             if (rangeChecks.Length != 0)
@@ -58,20 +58,24 @@ namespace LostSouls.AI
                     if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
                     {
                         canSeePlayer = true;
+                        animator.SetBool("canSeePlayer", true);
                     }
                     else
                     {
                         canSeePlayer = false;
+                        animator.SetBool("canSeePlayer", false);
                     }
                 }
                 else
                 {
                     canSeePlayer = false;
+                    animator.SetBool("canSeePlayer", false);
                 }
             }
             else if (canSeePlayer)
             {
                 canSeePlayer = false;
+                animator.SetBool("canSeePlayer", false);
             }
 
         }
