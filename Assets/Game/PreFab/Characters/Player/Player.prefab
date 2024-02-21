@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2583304492577487757}
   - component: {fileID: 8812985779168607143}
   - component: {fileID: 1671826535506417688}
+  - component: {fileID: 1159207274003993867}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -175,28 +176,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 064f5dd8ddb84d54eb81510db5997a7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: Infinity
-  walkSpeed: 3.5
-  sprintSpeed: 7
+  moveSpeed: 0
+  walkSpeed: 6
+  sprintSpeed: 13
+  airSpeedMultiplier: 20
   turnSmoothTime: 0.1
-  jumpForce: 2
+  jumpForce: 4
   groundedOffset: -0.14
-  groundedRadius: 0.28
+  groundedRadius: 0.5
   groundLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1024
   grounded: 0
+  jumpCharges: 1
+  maxWallJumpTimer: 2
   onWall: 0
   onwallRadius: 0.5
   onWallLayers:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
   runningWallLeft: 0
   runningWallRight: 0
-  onRunningWallLayers:
+  canRunOnWall: 0
+  onRunningWallTag: RunningWall
+  wallRunningMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 2048
+  wallrunGravity: -1
+  rayDistance: 2
+  wallRunSpeedIncrease: 2
+  wallRunSpeedDecrease: 1.5
+  wallRunRotationSpeed: 9999
+  wallNormal: {x: 0, y: 0, z: 0}
+  forwardDirection: {x: 0, y: 0, z: 0}
+  lastWallNormal: {x: 0, y: 0, z: 0}
   walkAnimation: 
+--- !u!114 &1159207274003993867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3906940535796924311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc5fd04e62c55434b98a04ed12a6daa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6643998992738211075
 GameObject:
   m_ObjectHideFlags: 0
