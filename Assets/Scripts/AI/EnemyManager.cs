@@ -1,4 +1,4 @@
-using System.Collections;
+//using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -11,9 +11,15 @@ namespace LostSouls.AI
         public Transform EnemyPlace;
 
         public float TimeCount;
-
-        private GameObject CurrentEnemy; //reference of Enemy
+        public static GameObject CurrentEnemy;
+       
         private NavMeshAgent EnemyNavMeshAgent;
+
+        private void Start()
+        {
+            CurrentEnemy = Instantiate(Enemy, EnemyPlace.position, Quaternion.identity);
+            EnemyNavMeshAgent = CurrentEnemy.GetComponent<NavMeshAgent>();
+        }
 
         private void Update()
         {
@@ -35,25 +41,5 @@ namespace LostSouls.AI
             }
         }
 
-
-        void OnCollisionEnter(Collision collision)
-        {
-            Debug.Log("OnCollisionEnter called."); // この行を追加
-
-            if (collision.collider.CompareTag("Player") && CurrentEnemy != null) // check for collision with player
-            {
-                EnemyHealth enemyHealth = CurrentEnemy.GetComponent<EnemyHealth>(); // get the EnemyHealth component from the current enemy
-
-                if (enemyHealth != null)
-                {
-                    enemyHealth.TakeDamage(1); // apply damage to the enemy
-                    Debug.Log("Player Collided with enemy. damaged enemy.", enemyHealth);
-
-                } else {
-                    Debug.LogError("Player Collided with enemy. damaged enemy.", CurrentEnemy);
-                }
-
-            }
-        }
     }
 }

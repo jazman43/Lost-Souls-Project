@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 namespace LostSouls.AI
 {
+
     public class FieldOfView : MonoBehaviour
     {
         public float radius;
@@ -80,5 +81,26 @@ namespace LostSouls.AI
 
         }
 
+        private void OnTriggerEnter(Collider other)
+        {
+            Debug.Log("OnCollisionEnter called.");
+
+            if (other.tag == "Player") // check for collision with player
+            {
+                EnemyHealth enemyHealth = EnemyManager.CurrentEnemy.GetComponent<EnemyHealth>(); // get the EnemyHealth component from the current enemy
+
+                if (enemyHealth != null)
+                {
+                    enemyHealth.TakeDamage(1); // apply damage to the enemy
+                    Debug.Log("Player Collided with enemy. damaged enemy.", enemyHealth);
+
+                }
+                else
+                {
+                    Debug.LogError("Player Collided with enemy. damaged enemy.", EnemyManager.CurrentEnemy);
+                }
+
+            }
+        }
     }
 }
