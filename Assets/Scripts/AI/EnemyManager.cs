@@ -17,8 +17,12 @@ namespace LostSouls.AI
 
         private void Start()
         {
-            CurrentEnemy = Instantiate(Enemy, EnemyPlace.position, Quaternion.identity);
-            EnemyNavMeshAgent = CurrentEnemy.GetComponent<NavMeshAgent>();
+            CurrentEnemy = Instantiate(Enemy, EnemyPlace.position, Quaternion.identity); //first enemy when the game started
+
+            if (CurrentEnemy != null) // check the CurrentEnemy is not null.
+            {
+                EnemyNavMeshAgent = CurrentEnemy.GetComponent<NavMeshAgent>(); 
+            }
         }
 
         private void Update()

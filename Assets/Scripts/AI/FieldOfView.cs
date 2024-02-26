@@ -83,9 +83,7 @@ namespace LostSouls.AI
 
         private void OnTriggerEnter(Collider other)
         {
-            Debug.Log("OnCollisionEnter called.");
-
-            if (other.tag == "Player") // check for collision with player
+            if (other.gameObject.tag == "Player") // check for collision with player
             {
                 EnemyHealth enemyHealth = EnemyManager.CurrentEnemy.GetComponent<EnemyHealth>(); // get the EnemyHealth component from the current enemy
 

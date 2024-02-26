@@ -16,7 +16,8 @@ namespace LostSouls.AI {
             if(enemyHealth <= 0)
             {
                 Debug.Log(gameObject.name + " has been destroyed.");
-                Destroy(gameObject);　
+
+                Destroy(gameObject,0.2f);　// destroy after 2 sec
             }
         }
     }
