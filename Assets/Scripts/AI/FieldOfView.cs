@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -83,6 +83,27 @@ namespace LostSouls.AI
 
         }
 
+        void OnCollisionEnter(Collision collision)
+        {
+            Debug.Log("OnCollisionEnter called."); // この行を追加
+
+            if (collision.collider.CompareTag("Player") ) // check for collision with player
+            {
+                // EnemyHealth enemyHealth = CurrentEnemy.GetComponent<EnemyHealth>(); // get the EnemyHealth component from the current enemy
+                Debug.Log(collision.gameObject);
+                //if (enemyHealth != null)
+                //{
+                    //enemyHealth.TakeDamage(1); // apply damage to the enemy
+                    //Debug.Log("Player Collided with enemy. damaged enemy.", enemyHealth);
+
+               // }
+               // else
+                //{
+                    //Debug.LogError("Player Collided with enemy. damaged enemy.", CurrentEnemy);
+               // }
+
+            }
+        }
     }
 
 }
