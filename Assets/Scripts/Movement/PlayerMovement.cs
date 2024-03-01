@@ -4,6 +4,8 @@ using UnityEngine;
 using Cinemachine;
 using LostSouls.Inputs;
 using System;
+using UnityEngine.Animations;
+
 
 namespace LostSouls.Movement
 {
@@ -20,7 +22,7 @@ namespace LostSouls.Movement
         private PlayerInputs inputs;
         private Rigidbody Rigidbody;        
         [SerializeField]private float groundDrag;
-
+        [SerializeField] private float wallrunSpeed;
         [SerializeField] private float slideSpeed;
 
         private float desiredMoveSpeed;
@@ -40,7 +42,7 @@ namespace LostSouls.Movement
         [SerializeField] private float crouchSpeed;
         [SerializeField] private float crouchYScale;
         private float startYScale;
-
+        private float playerHeight;
 
         [Header("Slope Handling")]
         [SerializeField] private float maxSlopeAngle;
@@ -61,6 +63,7 @@ namespace LostSouls.Movement
         private WallRun wallrun;
 
         public bool climbing;
+        public bool wallRunning;
 
         public State state;
         public enum State
@@ -70,16 +73,20 @@ namespace LostSouls.Movement
             crouching,
             sliding,
             air,
-            climbing
+            climbing,
+            wallRunning
         }
 
         [Header("Animation")]
-        [SerializeField] private string walkAnimation;
-        private float playerHeight;
+        [SerializeField] private string moveAnimation;
+        [SerializeField] private string jumpAnimation;
+        [SerializeField] private string inAirAnimation;
+        private Animator animator;
+        
 
         private void Awake()
         {
-            
+            animator = GetComponentInChildren<Animator>();
             inputs = GetComponent<PlayerInputs>();
             wallrun = GetComponent<WallRun>();
             Rigidbody = GetComponent<Rigidbody>();
@@ -115,6 +122,8 @@ namespace LostSouls.Movement
         private void StateHandler()
         {
             /*
+             * locked off as it frezzes game when on slopes
+             * 
             if (sliding)
             {
                 state = State.sliding;
@@ -133,31 +142,38 @@ namespace LostSouls.Movement
                 desiredMoveSpeed = crouchSpeed;
             }
             */
-            if (climbing)
+            if (wallRunning)
+            {
+                state = State.wallRunning;
+                desiredMoveSpeed = wallrunSpeed;
+                Debug.Log("in wall running state");
+            }
+            else if (climbing)
             {
                 state = State.climbing;
 
                 desiredMoveSpeed = climbSpeed;
             }
-
-
             else if (grounded && inputs.Sprint())
             {
                 state = State.sprinting;
                 desiredMoveSpeed = sprintSpeed;
-            }
-
-            
+            }            
             else if (grounded)
             {
                 state = State.walking;
                 desiredMoveSpeed = walkSpeed;
-            }
-
-            
+                animator.SetBool(inAirAnimation, false);
+            }            
             else
             {
                 state = State.air;
+            }
+
+            if (!grounded)
+            {
+                animator.SetBool(inAirAnimation, true);
+                
             }
 
             
@@ -172,6 +188,8 @@ namespace LostSouls.Movement
             }
 
             lastDesiredMoveSpeed = desiredMoveSpeed;
+
+            Debug.Log(moveSpeed);
         }
 
         private void Rotation()
@@ -220,6 +238,7 @@ namespace LostSouls.Movement
                 Rigidbody.AddForce(moveDirection.normalized * moveSpeed * 10f * airSpeedMultiplier, ForceMode.Force);
             }
 
+            animator.SetFloat(moveAnimation, moveDirection.magnitude);           
            
             Rigidbody.useGravity = !OnSlope();
         }
@@ -267,8 +286,10 @@ namespace LostSouls.Movement
          
         void Jump()
         {
-            if(inputs.Jump() && readyToJump && grounded)
+            if (inputs.Jump() && readyToJump && grounded)            
             {
+                animator.SetTrigger(jumpAnimation);
+
                 readyToJump = false;
 
                 exitingSlope = true;

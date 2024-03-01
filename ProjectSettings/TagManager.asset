@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Climbing wall
   - RunningWall
+  - safeZone
   layers:
   - Default
   - TransparentFX

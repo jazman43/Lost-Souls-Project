@@ -9,195 +9,121 @@ namespace LostSouls.Movement
 {
     public class WallRun : MonoBehaviour
     {
-        [Header("Running wall")]
-        [SerializeField] private float wallMaxDistance = 1;
-        [SerializeField] private float wallSpeedMultiplier = 1.2f;
-        [SerializeField] private float minimumHeight = 1.2f;
-        [SerializeField] private float maxAngleRoll = 20;
-        [Range(0.0f, 1.0f)]
-        [SerializeField] private float normalizedAngleThreshold = 0.1f;
+        [Header("Wallrunning")]
+        [SerializeField] private LayerMask wall;
+        [SerializeField] private LayerMask ground;
+        [SerializeField] private float wallRunForce;
+        [SerializeField] private float wallClimbSpeed;
+        [SerializeField] private float maxWallRunTime;
+        private float wallRunTimer;
 
-        [SerializeField] private float jumpDuration = 1;
-        [SerializeField] private float wallBouncing = 3;
-        [SerializeField] private float cameraTransitionDuration = 1;
+        [Header("Input")]
+        private bool upwardsRunning;
+        private bool downwardsRunning;
+        private float horizontalInput;
+        private float verticalInput;
 
-        [SerializeField] private float wallGravityDownForce = 20f;
+        [Header("Detection")]
+        [SerializeField] private float wallCheckDistance;
+        [SerializeField] private float minJumpHeight;
+        private RaycastHit leftWallhit;
+        private RaycastHit rightWallhit;
+        private bool wallLeft;
+        private bool wallRight;
 
-        [SerializeField] private bool useSprint;
-        
-
-        Vector3[] directions;
-        RaycastHit[] hits;
-
-        bool isWallRunning = false;
-        Vector3 lastWallPosition;
-        Vector3 lastWallNormal;
-        float elapsedTimeSinceJump = 0;
-        float elapsedTimeSinceWallAttach = 0;
-        float elapsedTimeSinceWallDetatch = 0;
-        bool jumping;
-        
-
+        [Header("References")]
         private PlayerInputs inputs;
-        
-
+        private PlayerMovement playerMovement;
+        private Rigidbody rigidbody;
 
         private void Awake()
-        {            
+        {
+            rigidbody = GetComponent<Rigidbody>();
+            playerMovement = GetComponent<PlayerMovement>();
             inputs = GetComponent<PlayerInputs>();
         }
 
-        private bool isPlayerGrounded()
+        private void Update()
         {
-            return GetComponent<PlayerMovement>().IsPlayerGrounded();
+            CheckForWall();
+            StateMachine();
         }
 
-        public bool IsWallRunning()
+        private void FixedUpdate()
         {
-            return isWallRunning;
+            if (playerMovement.wallRunning)
+                WallRunningMovement();
         }
 
-        bool canWallRun()
+        private void CheckForWall()
         {
-            float verticalAxis = inputs.Movement().magnitude;
-            bool isSprinting = inputs.Sprint();
+            wallRight = Physics.Raycast(transform.position, transform.right, out rightWallhit, wallCheckDistance, wall);
+            wallLeft = Physics.Raycast(transform.position, -transform.right, out leftWallhit, wallCheckDistance, wall);
 
-            return !isPlayerGrounded() && verticalAxis > 0 && VerticalCheck() && isSprinting;
+            Debug.DrawRay(transform.position, transform.right * wallCheckDistance, Color.red);
+            Debug.DrawRay(transform.position, -transform.right * wallCheckDistance, Color.red);
         }
 
-        bool VerticalCheck()
+        private bool AboveGround()
         {
-            return !Physics.Raycast(transform.position, Vector3.down, minimumHeight);
+            return !Physics.Raycast(transform.position, Vector3.down, minJumpHeight, ground);
         }
 
-        private void Start()
+        private void StateMachine()
         {
-            directions = new Vector3[]
+
+            upwardsRunning = inputs.Movement().y > 0.1;
+            downwardsRunning = inputs.Movement().y < -0.1;
+
+            // State 1 - Wallrunning
+            if ((wallLeft || wallRight) && verticalInput > 0 && AboveGround())
             {
-                Vector3.right,
-                Vector3.right + Vector3.forward,
-                Vector3.forward,
-                Vector3.left + Vector3.forward,
-                Vector3.left
-            };
-
-
-        }
-
-
-        private void LateUpdate()
-        {
-            isWallRunning = false;
-
-            if (inputs.Jump())
-            {
-                jumping = true;
+                if (!playerMovement.wallRunning)
+                    StartWallRun();
             }
 
-
-            if (CanAttach())
-            {
-                hits = new RaycastHit[directions.Length];
-
-                for(int i = 0;i < directions.Length; i++)
-                {
-                    Vector3 dir = transform.TransformDirection(directions[i]);
-
-                    Physics.Raycast(transform.position, dir, out hits[i], wallMaxDistance);
-
-                    if(hits[i].collider != null)
-                    {
-                        Debug.DrawRay(transform.position, dir * hits[i].distance, Color.green);
-                    }
-                    else
-                    {
-                        Debug.DrawRay(transform.position, dir * wallMaxDistance, Color.red);
-                    }
-                }
-
-                if (canWallRun())
-                {
-                    hits = hits.ToList().Where(h => h.collider != null).OrderBy(h => h.distance).ToArray();
-
-                    if(hits.Length > 0)
-                    {
-                        OnWall(hits[0]);
-                        lastWallPosition = hits[0].point;
-                        lastWallNormal = hits[0].normal;
-                    }
-                }
-            }
-
-            if (isWallRunning)
-            {
-                elapsedTimeSinceWallDetatch = 0;
-                elapsedTimeSinceWallAttach += Time.deltaTime;
-
-                GetComponent<PlayerMovement>().velocity += Vector3.down * wallGravityDownForce * Time.deltaTime;
-            }
+            // State 3 - None
             else
             {
-                elapsedTimeSinceWallAttach = 0;
-               
-                elapsedTimeSinceWallDetatch += Time.deltaTime;
+                if (playerMovement.wallRunning)
+                    StopWallRun();
             }
-
         }
 
-        bool CanAttach()
+        private void StartWallRun()
         {
-            if (jumping)
-            {
-                elapsedTimeSinceJump += Time.deltaTime;
-                if (elapsedTimeSinceJump > jumpDuration)
-                {
-                    elapsedTimeSinceJump = 0;
-                    jumping = false;
-                }
-                return false;
-            }
-            return true;
+            playerMovement.wallRunning = true;
         }
 
-
-        void OnWall(RaycastHit hit)
+        private void WallRunningMovement()
         {
-            float d = Vector3.Dot(hit.normal, Vector3.up);
-            if (d >= -normalizedAngleThreshold && d <= normalizedAngleThreshold)
-            {
-                
-                float vertical = inputs.Movement().x;
-                Vector3 alongWall = transform.TransformDirection(Vector3.forward);
+            rigidbody.useGravity = false;
+            rigidbody.velocity = new Vector3(rigidbody.velocity.x, 0f, rigidbody.velocity.z);
 
-                Debug.DrawRay(transform.position, alongWall.normalized * 10, Color.green);
-                Debug.DrawRay(transform.position, lastWallNormal * 10, Color.magenta);
+            Vector3 wallNormal = wallRight ? rightWallhit.normal : leftWallhit.normal;
 
-                GetComponent<PlayerMovement>().velocity = alongWall * vertical * wallSpeedMultiplier;
-                isWallRunning = true;
-            }
+            Vector3 wallForward = Vector3.Cross(wallNormal, transform.up);
+
+            if ((transform.forward - wallForward).magnitude > (transform.forward - -wallForward).magnitude)
+                wallForward = -wallForward;
+
+            // forward force
+            rigidbody.AddForce(wallForward * wallRunForce, ForceMode.Force);
+
+            // upwards/downwards force
+            if (upwardsRunning)
+                rigidbody.velocity = new Vector3(rigidbody.velocity.x, wallClimbSpeed, rigidbody.velocity.z);
+            if (downwardsRunning)
+                rigidbody.velocity = new Vector3(rigidbody.velocity.x, -wallClimbSpeed, rigidbody.velocity.z);
+
+            // push to wall force
+            if (!(wallLeft && horizontalInput > 0) && !(wallRight && horizontalInput < 0))
+                rigidbody.AddForce(-wallNormal * 100, ForceMode.Force);
         }
 
-
-        float CalculateSide()
+        private void StopWallRun()
         {
-            if (isWallRunning)
-            {
-                Vector3 heading = lastWallPosition - transform.position;
-                Vector3 perp = Vector3.Cross(transform.forward, heading);
-                float dir = Vector3.Dot(perp, transform.up);
-                return dir;
-            }
-            return 0;
+            playerMovement.wallRunning = false;
         }
-
-        public Vector3 GetWallJumpDirection()
-        {
-            if (isWallRunning)
-            {
-                return lastWallNormal * wallBouncing + Vector3.up;
-            }
-            return Vector3.zero;
-        }
-        
     }
 }
