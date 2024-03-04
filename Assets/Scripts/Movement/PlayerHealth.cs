@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using LostSouls.Saving;
 
 
 
 namespace LostSouls.Movement
 {
-    public class PlayerHealth : MonoBehaviour
+    public class PlayerHealth : MonoBehaviour , ISaveable
     {
         [SerializeField] private float playerHealth = 100f;
         [SerializeField] private float playerDissolve;
@@ -96,6 +97,28 @@ namespace LostSouls.Movement
                 Debug.Log("out of safe zone");
                 isSafe = false;
             }
+        }
+
+        public float GetPlayerHealth()
+        {
+            return playerHealth;
+        }
+
+        public void SetPlayerHealth(float health)
+        {
+            playerHealth = health;
+        }
+
+        public object CapturState()
+        {
+            return playerHealth;
+        }
+
+        public void RestoreState(object state)
+        {
+            playerHealth = (float)state;
+
+
         }
     }
 }

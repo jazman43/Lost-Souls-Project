@@ -17,6 +17,8 @@ GameObject:
   - component: {fileID: 9160680294618545020}
   - component: {fileID: 536664159978404633}
   - component: {fileID: 146377883349404391}
+  - component: {fileID: 570529630679187778}
+  - component: {fileID: 6681686300067466781}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -264,6 +266,38 @@ MonoBehaviour:
   minWallNormalAngleChange: 0
   exitingWall: 0
   exitWallTime: 0
+--- !u!114 &570529630679187778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3906940535796924311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8198bea2f5a86f47bf0d7146411eaff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: 100
+  playerDissolve: 0
+  playerDissolveValue: _Dissolve
+  maxPlayerDissolve: 0.78
+  PlayerDissolveSpeed: 0.01
+  safeZoneTag: safeZone
+  material: {fileID: 2100000, guid: 730c2a3e262e23246928a3184dfe0b3d, type: 2}
+--- !u!114 &6681686300067466781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3906940535796924311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bd027f0e6e82ca4ca840b5a0c3ace7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uniqueIdentifier: 
 --- !u!1 &8491456230749109204
 GameObject:
   m_ObjectHideFlags: 0

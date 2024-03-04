@@ -5,11 +5,12 @@ using Cinemachine;
 using LostSouls.Inputs;
 using System;
 using UnityEngine.Animations;
+using LostSouls.Saving;
 
 
 namespace LostSouls.Movement
 {
-    public class PlayerMovement : MonoBehaviour
+    public class PlayerMovement : MonoBehaviour , ISaveable
     {
         [Header("move")]
         [SerializeField] private float moveSpeed = Mathf.Infinity;
@@ -97,7 +98,7 @@ namespace LostSouls.Movement
             readyToJump = true;
             startYScale = transform.localScale.y;
 
-            Cursor.lockState = CursorLockMode.Locked;
+           // Cursor.lockState = CursorLockMode.Locked;
         }
 
         private void Update()
@@ -375,6 +376,16 @@ namespace LostSouls.Movement
             moveSpeed = desiredMoveSpeed;
         }
 
+        public object CapturState()
+        {
+            return new SerializableVector3(transform.position);
+        }
 
+        public void RestoreState(object state)
+        {
+            SerializableVector3 position = (SerializableVector3)state;
+
+            transform.position = position.ToVector();
+        }
     }
 }
