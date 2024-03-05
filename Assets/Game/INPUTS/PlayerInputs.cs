@@ -42,5 +42,25 @@ namespace LostSouls.Inputs
         {
             return input.PlayerMovement.Sprint.IsPressed();
         }
+
+        public Vector2 Look()
+        {
+            return input.PlayerMovement.Look.ReadValue<Vector2>();
+        }
+
+        public Vector2 Mouse()
+        {
+            return input.PlayerMovement.mousePos.ReadValue<Vector2>();
+        }
+
+        public bool Crouch()
+        {
+            return input.PlayerMovement.Crouch.IsPressed();
+        }
+
+        public bool Slide()
+        {
+            return input.PlayerMovement.Slide.IsPressed();
+        }
     }
 }
