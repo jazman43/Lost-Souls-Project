@@ -4,8 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - RunningWall
   - Climbing wall
+  - RunningWall
+  - safeZone
   layers:
   - Default
   - TransparentFX
@@ -13,12 +14,21 @@ TagManager:
   - 
   - Water
   - UI
+
   - Ground
   - Target
   - Obstruction
   - ClimbingWall
   - RunningWall
   - 
+
+  - 
+  - 
+ 
+  -
+  - Ground
+  - Wall
+
   - 
   - 
   - 

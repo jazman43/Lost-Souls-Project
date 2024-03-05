@@ -1,6 +1,16 @@
 
+
 using UnityEditor;
 using UnityEngine;
+
+namespace LostSouls.AI
+{
+
+
+using UnityEditor;
+using UnityEngine;
+
+
 
 namespace LostSouls.AI
 {
@@ -38,3 +48,9 @@ namespace LostSouls.AI
     }
 
 }
+
+
+
+}
+
+
