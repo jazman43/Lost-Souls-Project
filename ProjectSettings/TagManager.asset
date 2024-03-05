@@ -14,12 +14,21 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+
+  - Ground
   - Target
   - Obstruction
+  - ClimbingWall
+  - RunningWall
+  - 
+
+  - 
+  - 
+ 
+  -
   - Ground
   - Wall
+
   - 
   - 
   - 

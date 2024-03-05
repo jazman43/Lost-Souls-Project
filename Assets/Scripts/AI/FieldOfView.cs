@@ -6,6 +6,7 @@ using UnityEngine.AI;
 
 namespace LostSouls.AI
 {
+
     public class FieldOfView : MonoBehaviour
     {
         public float radius;
@@ -19,24 +20,17 @@ namespace LostSouls.AI
 
         public bool canSeePlayer;
 
-        private void Awake()
-        {
-            
-        }
-
         private void Start()
         {
             playerRef = GameObject.FindGameObjectWithTag("Player");
             StartCoroutine(FOVRoutine());
         }
-
         private void Update()
         {
             if (canSeePlayer)
             {
                 GetComponent<NavMeshAgent>().SetDestination(playerRef.transform.position);
             }
-            
         }
 
         private IEnumerator FOVRoutine()
@@ -51,6 +45,7 @@ namespace LostSouls.AI
         }
         private void FieldOfViewCheck()
         {
+            Animator animator = GetComponent<Animator>();
             Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radius, targetMask);
 
             if (rangeChecks.Length != 0)
@@ -65,45 +60,49 @@ namespace LostSouls.AI
                     if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
                     {
                         canSeePlayer = true;
+                        animator.SetBool("canSeePlayer", true);
                     }
                     else
                     {
                         canSeePlayer = false;
+                        animator.SetBool("canSeePlayer", false);
                     }
                 }
                 else
                 {
                     canSeePlayer = false;
+                    animator.SetBool("canSeePlayer", false);
                 }
             }
             else if (canSeePlayer)
             {
                 canSeePlayer = false;
+                animator.SetBool("canSeePlayer", false);
             }
 
         }
 
-        void OnCollisionEnter(Collision collision)
+        private void OnTriggerEnter(Collider other)
         {
-            Debug.Log("OnCollisionEnter called."); // この行を追加
-
-            if (collision.collider.CompareTag("Player") ) // check for collision with player
+            if (other.gameObject.tag == "Player") // check for collision with player
             {
-                // EnemyHealth enemyHealth = CurrentEnemy.GetComponent<EnemyHealth>(); // get the EnemyHealth component from the current enemy
-                Debug.Log(collision.gameObject);
-                //if (enemyHealth != null)
-                //{
-                    //enemyHealth.TakeDamage(1); // apply damage to the enemy
-                    //Debug.Log("Player Collided with enemy. damaged enemy.", enemyHealth);
+                EnemyHealth enemyHealth = EnemyManager.CurrentEnemy.GetComponent<EnemyHealth>(); // get the EnemyHealth component from the current enemy
 
-               // }
-               // else
-                //{
-                    //Debug.LogError("Player Collided with enemy. damaged enemy.", CurrentEnemy);
-               // }
+                if (enemyHealth != null)
+                {
+                    enemyHealth.TakeDamage(1); // apply damage to the enemy
+                    Debug.Log("Player Collided with enemy. damaged enemy.", enemyHealth);
+
+                }
+                else
+                {
+                    Debug.LogError("Player Collided with enemy. damaged enemy.", EnemyManager.CurrentEnemy);
+                }
 
             }
         }
     }
-
 }
+
+
+

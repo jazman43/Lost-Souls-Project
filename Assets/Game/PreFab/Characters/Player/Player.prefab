@@ -164,6 +164,40 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   grounded: 0
+
+  onWall: 0
+  onwallRadius: 0.5
+  onWallLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  runningWallLeft: 0
+  runningWallRight: 0
+  onRunningWallLayers:
+    serializedVersion: 2
+    m_Bits: 512
+  rayDistance: 2
+  walkAnimation: 
+--- !u!1 &6643998992738211075
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7000095344774692804}
+  - component: {fileID: 4517090024661821802}
+  - component: {fileID: 2967424458378421548}
+  m_Layer: 0
+  m_Name: PlayerModel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7000095344774692804
+Transform:
+
   jumpCoolDown: 0.25
   climbing: 0
   wallRunning: 0
@@ -173,6 +207,7 @@ MonoBehaviour:
   inAirAnimation: InAir
 --- !u!114 &1159207274003993867
 MonoBehaviour:
+
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}

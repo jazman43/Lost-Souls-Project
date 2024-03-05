@@ -1,3 +1,12 @@
+
+
+using UnityEditor;
+using UnityEngine;
+
+namespace LostSouls.AI
+{
+
+
 using UnityEditor;
 using UnityEngine;
 
@@ -5,6 +14,7 @@ using UnityEngine;
 
 namespace LostSouls.AI
 {
+
     [CustomEditor(typeof(FieldOfView))]
 
     public class FieldOfViewEditor : Editor
@@ -37,6 +47,10 @@ namespace LostSouls.AI
         }
     }
 
+}
+
+
 
 }
+
 
