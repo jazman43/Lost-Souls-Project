@@ -427,6 +427,13 @@
       },
       "url": "https://packages.unity.com"
     },
+    "jp.co.cyberagent.nova": {
+      "version": "https://github.com/CyberAgentGameEntertainment/NovaShader.git?path=/Assets/Nova",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "4276a4ab57ac2b49ee9c4b8bb070e7e9a36e91f1"
+    },
     "jp.keijiro.klak.lineargradient": {
       "version": "1.0.2",
       "depth": 1,
