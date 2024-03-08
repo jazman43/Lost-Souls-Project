@@ -10,7 +10,7 @@ namespace LostSouls.Movement
     {
         [Header("Refe")]
         [SerializeField] private Transform playerObj;
-        private Rigidbody rigidbody;
+        private Rigidbody rbody;
         private PlayerMovement movement;
         private PlayerInputs inputs;
 
@@ -27,7 +27,7 @@ namespace LostSouls.Movement
 
         private void Awake()
         {
-            rigidbody = GetComponent<Rigidbody>();
+            rbody = GetComponent<Rigidbody>();
             movement = GetComponent<PlayerMovement>();
             inputs = GetComponent<PlayerInputs>();
             
@@ -74,7 +74,7 @@ namespace LostSouls.Movement
             playerObj.localScale = new Vector3(playerObj.localScale.x, slideYScale, playerObj.localScale.z);
             while (!movement.IsPlayerGrounded())
             {
-                rigidbody.AddForce(Vector3.down * 5f, ForceMode.Impulse);
+                rbody.AddForce(Vector3.down * 5f, ForceMode.Impulse);
             }
 
             slideTimer = maxSlideTime;
@@ -87,9 +87,9 @@ namespace LostSouls.Movement
             Vector3 moveDirection = transform.forward * velocity.z + transform.right * velocity.x;
 
             
-            if (!movement.OnSlope() || rigidbody.velocity.y > -0.1f)
+            if (!movement.OnSlope() || rbody.velocity.y > -0.1f)
             {
-                rigidbody.AddForce(moveDirection.normalized * slideForce, ForceMode.Force);
+                rbody.AddForce(moveDirection.normalized * slideForce, ForceMode.Force);
 
                 slideTimer -= Time.deltaTime;
             }
@@ -97,7 +97,7 @@ namespace LostSouls.Movement
             
             else
             {
-                rigidbody.AddForce(movement.GetSlopeMoveDirection(moveDirection) * slideForce, ForceMode.Force);
+                rbody.AddForce(movement.GetSlopeMoveDirection(moveDirection) * slideForce, ForceMode.Force);
             }
 
             if (slideTimer <= 0)

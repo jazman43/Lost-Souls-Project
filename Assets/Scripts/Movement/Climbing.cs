@@ -10,7 +10,7 @@ namespace LostSouls.Movement
     public class Climbing : MonoBehaviour
     {
         [Header("Reference")]
-        [SerializeField] private Rigidbody rigidbody;
+        [SerializeField] private Rigidbody rbody;
         [SerializeField] private PlayerMovement playerMovement;
         [SerializeField] private LayerMask wall;
         [SerializeField] private PlayerInputs inputs;
@@ -113,7 +113,7 @@ namespace LostSouls.Movement
 
         private void ClimbingMovement()
         {
-            rigidbody.velocity = new Vector3(rigidbody.velocity.x, climbSpeed, rigidbody.velocity.z);
+            GetComponent<Rigidbody>().velocity = new Vector3(GetComponent<Rigidbody>().velocity.x, climbSpeed, GetComponent<Rigidbody>().velocity.z);
 
             /// idea - sound effect
         }
@@ -134,8 +134,8 @@ namespace LostSouls.Movement
 
             Vector3 forceToApply = transform.up * climbJumpUpForce + frontWallHit.normal * climbJumpBackForce;
 
-            rigidbody.velocity = new Vector3(rigidbody.velocity.x, 0f, rigidbody.velocity.z);
-            rigidbody.AddForce(forceToApply, ForceMode.Impulse);
+            GetComponent<Rigidbody>().velocity = new Vector3(GetComponent<Rigidbody>().velocity.x, 0f, GetComponent<Rigidbody>().velocity.z);
+            GetComponent<Rigidbody>().AddForce(forceToApply, ForceMode.Impulse);
 
             climbJumpsLeft--;
         }

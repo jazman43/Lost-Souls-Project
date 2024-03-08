@@ -5,7 +5,7 @@ using Cinemachine;
 
 
 
-namespace LostSouls.UI.Menu
+namespace LostSouls.Camera
 {
     public class MoveMenuCam : MonoBehaviour
     {

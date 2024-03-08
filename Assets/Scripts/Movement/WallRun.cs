@@ -34,11 +34,11 @@ namespace LostSouls.Movement
         [Header("References")]
         private PlayerInputs inputs;
         private PlayerMovement playerMovement;
-        private Rigidbody rigidbody;
+        private Rigidbody rbody;
 
         private void Awake()
         {
-            rigidbody = GetComponent<Rigidbody>();
+            rbody = GetComponent<Rigidbody>();
             playerMovement = GetComponent<PlayerMovement>();
             inputs = GetComponent<PlayerInputs>();
         }
@@ -97,8 +97,8 @@ namespace LostSouls.Movement
 
         private void WallRunningMovement()
         {
-            rigidbody.useGravity = false;
-            rigidbody.velocity = new Vector3(rigidbody.velocity.x, 0f, rigidbody.velocity.z);
+            rbody.useGravity = false;
+            rbody.velocity = new Vector3(rbody.velocity.x, 0f, rbody.velocity.z);
 
             Vector3 wallNormal = wallRight ? rightWallhit.normal : leftWallhit.normal;
 
@@ -108,17 +108,17 @@ namespace LostSouls.Movement
                 wallForward = -wallForward;
 
             // forward force
-            rigidbody.AddForce(wallForward * wallRunForce, ForceMode.Force);
+            rbody.AddForce(wallForward * wallRunForce, ForceMode.Force);
 
             // upwards/downwards force
             if (upwardsRunning)
-                rigidbody.velocity = new Vector3(rigidbody.velocity.x, wallClimbSpeed, rigidbody.velocity.z);
+                rbody.velocity = new Vector3(rbody.velocity.x, wallClimbSpeed, rbody.velocity.z);
             if (downwardsRunning)
-                rigidbody.velocity = new Vector3(rigidbody.velocity.x, -wallClimbSpeed, rigidbody.velocity.z);
+                rbody.velocity = new Vector3(rbody.velocity.x, -wallClimbSpeed, rbody.velocity.z);
 
             // push to wall force
             if (!(wallLeft && horizontalInput > 0) && !(wallRight && horizontalInput < 0))
-                rigidbody.AddForce(-wallNormal * 100, ForceMode.Force);
+                rbody.AddForce(-wallNormal * 100, ForceMode.Force);
         }
 
         private void StopWallRun()

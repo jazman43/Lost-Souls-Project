@@ -195,7 +195,7 @@ namespace LostSouls.Movement
 
         private void Rotation()
         {
-            Ray cameraRay = Camera.main.ScreenPointToRay(inputs.Mouse());
+            Ray cameraRay = UnityEngine.Camera.main.ScreenPointToRay(inputs.Mouse());
             Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
             float rayLength;
 
@@ -220,7 +220,7 @@ namespace LostSouls.Movement
 
             moveDirection = transform.forward * velocity.z + transform.right * velocity.x;
 
-           
+            Debug.Log(moveDirection);
 
             if (OnSlope() && !exitingSlope)
             {

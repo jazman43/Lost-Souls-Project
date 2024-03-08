@@ -12,7 +12,7 @@ namespace LostSouls.Saving
 {
     public class SavingSystem : MonoBehaviour
     {
-        public IEnumerator LoadLastSave(string saveFile)
+        public IEnumerator LoadLastScene(string saveFile)
         {
             Dictionary<string, object> state = LoadFile(saveFile);
 

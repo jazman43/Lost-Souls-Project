@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Menu/MainMenu.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/Test World-2-Player-Movement/Movement-Test world.unity
+    guid: bd40280d5016e3d45b25c6cd9a3cb792
+  - enabled: 1
+    path: Assets/Scenes/Main World/Main World.unity
+    guid: 0bf70878b5b4e404f97fa2f501ad9de8
   m_configObjects: {}
