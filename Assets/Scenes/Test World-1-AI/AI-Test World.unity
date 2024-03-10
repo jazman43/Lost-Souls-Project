@@ -945,7 +945,13 @@ MonoBehaviour:
   bgmAudioSource: {fileID: 1908493097}
   sfxAudioSource: {fileID: 1908493097}
   bgmSoundDatas:
+  - bgm: 0
+    audioClip: {fileID: 8300000, guid: c670571c5e46e45119b965cb452031f8, type: 3}
+    volume: 0.21
   - bgm: 1
+    audioClip: {fileID: 8300000, guid: fac3c96077c4b42b7bcf87fed6f726d0, type: 3}
+    volume: 0.21
+  - bgm: 2
     audioClip: {fileID: 8300000, guid: c670571c5e46e45119b965cb452031f8, type: 3}
     volume: 0.21
   sfxSoundDatas:
@@ -1068,7 +1074,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

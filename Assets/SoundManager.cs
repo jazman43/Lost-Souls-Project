@@ -38,7 +38,7 @@ public class SoundManager : MonoBehaviour
     }
 
 
-    public void PlaySE(SFXSoundData.SFX sfx)
+    public void PlaySFX(SFXSoundData.SFX sfx)
     {
         SFXSoundData data = sfxSoundDatas.Find(data => data.sfx == sfx);
         sfxAudioSource.volume = data.volume * sfxMasterVolume * masterVolume;
@@ -54,7 +54,7 @@ public class BGMSoundData
     {
         Title,
         Dungeon,
-        Audio_Label,
+        MainMenu,
     }
 
     public BGM bgm;
@@ -70,7 +70,7 @@ public class SFXSoundData
     {
         Attack,
         Damage,
-        Audio_Label,
+        Walk,
 
     }
 
