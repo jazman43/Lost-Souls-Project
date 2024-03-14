@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using LostSouls.SoundManager;
 
 namespace LostSouls.AI {
 
@@ -10,7 +11,7 @@ namespace LostSouls.AI {
 
         public void TakeDamage(int damageAmount)
         {
-            SoundManager.Instance.PlaySFX(SFXSoundData.SFX.Damage);
+            SFXManager.Instance.PlaySFX(SFXSoundData.SFX.Damage);
             enemyHealth -= damageAmount;
             Debug.Log(gameObject.name + " took damage. Current health: " + enemyHealth);
 

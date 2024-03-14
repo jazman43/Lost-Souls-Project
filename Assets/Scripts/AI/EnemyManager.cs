@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using LostSouls.SoundManager;
 
 namespace LostSouls.AI
 {
@@ -33,7 +34,7 @@ namespace LostSouls.AI
             }
             if (TimeCount > 3)
             {
-                SoundManager.Instance.PlaySFX(SFXSoundData.SFX.Appear);
+                SFXManager.Instance.PlaySFX(SFXSoundData.SFX.Appear);
                 CurrentEnemy = Instantiate(Enemy, EnemyPlace.position, Quaternion.identity); //intantiate a new enemy and reset timer
                 TimeCount = 0;
 
