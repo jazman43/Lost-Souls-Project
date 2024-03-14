@@ -55,6 +55,9 @@ public class BGMSoundData
         Title,
         Dungeon,
         MainMenu,
+        GameOver,
+        Restart,
+        game_loop,
     }
 
     public BGM bgm;
@@ -70,6 +73,7 @@ public class SFXSoundData
     {
         Attack,
         Damage,
+        Appear,
         Walk,
 
     }

@@ -946,21 +946,33 @@ MonoBehaviour:
   sfxAudioSource: {fileID: 1908493097}
   bgmSoundDatas:
   - bgm: 0
-    audioClip: {fileID: 8300000, guid: c670571c5e46e45119b965cb452031f8, type: 3}
-    volume: 0.21
-  - bgm: 1
-    audioClip: {fileID: 8300000, guid: fac3c96077c4b42b7bcf87fed6f726d0, type: 3}
+    audioClip: {fileID: 8300000, guid: 91c7cd6d284004d61ab6ba8e339ed388, type: 3}
     volume: 0.21
   - bgm: 2
     audioClip: {fileID: 8300000, guid: c670571c5e46e45119b965cb452031f8, type: 3}
     volume: 0.21
+  - bgm: 3
+    audioClip: {fileID: 8300000, guid: e2cd8403fc9c44429a0cfae49b369591, type: 3}
+    volume: 0.21
+  - bgm: 1
+    audioClip: {fileID: 8300000, guid: fac3c96077c4b42b7bcf87fed6f726d0, type: 3}
+    volume: 0.21
+  - bgm: 4
+    audioClip: {fileID: 8300000, guid: fe678006dc1d44d0d899c5bd91131359, type: 3}
+    volume: 0.21
+  - bgm: 5
+    audioClip: {fileID: 8300000, guid: 7412152830a3a40b395c46269794bc78, type: 3}
+    volume: 0.21
   sfxSoundDatas:
-  - sfx: 0
-    audioClip: {fileID: 8300000, guid: cb63994a281eb43278c42df9d38175aa, type: 3}
-    volume: 0.17
   - sfx: 1
     audioClip: {fileID: 8300000, guid: 7cfe64115b9d146b49bf8a642a337483, type: 3}
-    volume: 0.17
+    volume: 0.98
+  - sfx: 2
+    audioClip: {fileID: 8300000, guid: b1d9210bc54224315bae6b68ebd7c976, type: 3}
+    volume: 0.5
+  - sfx: 1
+    audioClip: {fileID: 8300000, guid: 7cfe64115b9d146b49bf8a642a337483, type: 3}
+    volume: 0.127
   masterVolume: 1
   bgmMasterVolume: 1
   sfxMasterVolume: 1

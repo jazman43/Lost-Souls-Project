@@ -33,6 +33,7 @@ namespace LostSouls.AI
             }
             if (TimeCount > 3)
             {
+                SoundManager.Instance.PlaySFX(SFXSoundData.SFX.Appear);
                 CurrentEnemy = Instantiate(Enemy, EnemyPlace.position, Quaternion.identity); //intantiate a new enemy and reset timer
                 TimeCount = 0;
 
