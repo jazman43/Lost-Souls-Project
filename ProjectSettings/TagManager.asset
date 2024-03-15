@@ -4,9 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Climbing wall
   - RunningWall
-  - safeZone
+  - Climbing wall
   layers:
   - Default
   - TransparentFX
@@ -18,9 +17,7 @@ TagManager:
   - Wall
   - 
   - 
-  - 
-  - 
-  - 
+
   - 
   - 
   - 

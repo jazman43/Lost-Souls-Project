@@ -8,6 +8,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+
   - component: {fileID: 7000095344774692804}
   - component: {fileID: 6516873518844023391}
   - component: {fileID: 4540884912819311787}
@@ -18,6 +19,7 @@ GameObject:
   - component: {fileID: 6887631934067981829}
   - component: {fileID: 1734739985195745837}
   - component: {fileID: 2477071388556813074}
+
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -38,12 +40,14 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+
   - {fileID: 6324137034954930133}
   - {fileID: 2947398530024982640}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &6516873518844023391
 Rigidbody:
+
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -84,6 +88,7 @@ MonoBehaviour:
   moveSpeed: Infinity
   walkSpeed: 3.5
   sprintSpeed: 7
+
   climbSpeed: 7
   orientation: {fileID: 2947398530024982640}
   groundDrag: 0
@@ -97,12 +102,14 @@ MonoBehaviour:
   crouchYScale: 0
   maxSlopeAngle: 0
   jumpForce: 1
+
   groundedOffset: -0.14
   groundedRadius: 0.28
   groundLayers:
     serializedVersion: 2
     m_Bits: 64
   grounded: 0
+
   jumpCoolDown: 0
   climbing: 0
   wallRunning: 0
@@ -112,11 +119,13 @@ MonoBehaviour:
   inAirAnimation: 
 --- !u!114 &6631372461760115755
 MonoBehaviour:
+
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6643998992738211075}
+
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dccb6d35c4241c34ba5ae0f3613d8089, type: 3}
@@ -128,11 +137,13 @@ MonoBehaviour:
   slideYScale: 0
 --- !u!114 &624322631952229458
 MonoBehaviour:
+
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6643998992738211075}
+
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc5fd04e62c55434b98a04ed12a6daa5, type: 3}
@@ -151,12 +162,14 @@ MonoBehaviour:
   minJumpHeight: 0
 --- !u!114 &6354220865017100471
 MonoBehaviour:
+
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6643998992738211075}
   m_Enabled: 1
+
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8198bea2f5a86f47bf0d7146411eaff, type: 3}
   m_Name: 
@@ -170,10 +183,12 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 730c2a3e262e23246928a3184dfe0b3d, type: 2}
 --- !u!114 &3682771223710215087
 MonoBehaviour:
+
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+
   m_GameObject: {fileID: 6643998992738211075}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -199,10 +214,12 @@ MonoBehaviour:
   exitWallTime: 0
 --- !u!114 &6887631934067981829
 MonoBehaviour:
+
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+
   m_GameObject: {fileID: 6643998992738211075}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -212,10 +229,12 @@ MonoBehaviour:
   uniqueIdentifier: 
 --- !u!114 &1734739985195745837
 MonoBehaviour:
+
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+
   m_GameObject: {fileID: 6643998992738211075}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -254,6 +273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7904796174200709954
+
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -284,6 +304,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7000095344774692804}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+
 --- !u!1001 &5785261149316190270
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -410,3 +431,4 @@ CapsuleCollider:
   m_Height: 1.48
   m_Direction: 1
   m_Center: {x: 0, y: 0.72, z: 0}
+

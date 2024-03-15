@@ -64,33 +64,6 @@ namespace LostSouls.Inputs
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""mousePos"",
-                    ""type"": ""Value"",
-                    ""id"": ""14c5cceb-f703-498c-b14b-9a65fba00536"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Crouch"",
-                    ""type"": ""Button"",
-                    ""id"": ""fd2da40e-7ec2-4c9f-83d8-fde02f7a4b1d"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Slide"",
-                    ""type"": ""Button"",
-                    ""id"": ""7b47814b-0bd9-435f-a103-a321876161e7"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -225,61 +198,6 @@ namespace LostSouls.Inputs
                     ""action"": ""Sprint"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""f0866e7e-b2e7-4d51-bd4e-cfdeb2ae82c7"",
-                    ""path"": ""<Mouse>/position"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Mouse & Keyboard"",
-                    ""action"": ""mousePos"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""d2721eb1-583d-486c-9941-872b5bbc3665"",
-                    ""path"": ""<Keyboard>/c"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Mouse & Keyboard"",
-                    ""action"": ""Crouch"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""ced38cb9-aa89-43d5-be1a-3b26ba970599"",
-                    ""path"": ""<Gamepad>/leftStickPress"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Controller"",
-                    ""action"": ""Crouch"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""9f281b58-63b8-4590-b017-f1c6937a45cf"",
-                    ""path"": ""<Keyboard>/ctrl"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Mouse & Keyboard"",
-                    ""action"": ""Slide"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""f9e78780-85d9-44ac-8f78-c70dd470ae8d"",
-                    ""path"": ""<Gamepad>/rightStickPress"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Controller"",
-                    ""action"": ""Slide"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -320,9 +238,6 @@ namespace LostSouls.Inputs
             m_PlayerMovement_Move = m_PlayerMovement.FindAction("Move", throwIfNotFound: true);
             m_PlayerMovement_Jump = m_PlayerMovement.FindAction("Jump", throwIfNotFound: true);
             m_PlayerMovement_Sprint = m_PlayerMovement.FindAction("Sprint", throwIfNotFound: true);
-            m_PlayerMovement_mousePos = m_PlayerMovement.FindAction("mousePos", throwIfNotFound: true);
-            m_PlayerMovement_Crouch = m_PlayerMovement.FindAction("Crouch", throwIfNotFound: true);
-            m_PlayerMovement_Slide = m_PlayerMovement.FindAction("Slide", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -388,9 +303,6 @@ namespace LostSouls.Inputs
         private readonly InputAction m_PlayerMovement_Move;
         private readonly InputAction m_PlayerMovement_Jump;
         private readonly InputAction m_PlayerMovement_Sprint;
-        private readonly InputAction m_PlayerMovement_mousePos;
-        private readonly InputAction m_PlayerMovement_Crouch;
-        private readonly InputAction m_PlayerMovement_Slide;
         public struct PlayerMovementActions
         {
             private @Inputs m_Wrapper;
@@ -399,9 +311,6 @@ namespace LostSouls.Inputs
             public InputAction @Move => m_Wrapper.m_PlayerMovement_Move;
             public InputAction @Jump => m_Wrapper.m_PlayerMovement_Jump;
             public InputAction @Sprint => m_Wrapper.m_PlayerMovement_Sprint;
-            public InputAction @mousePos => m_Wrapper.m_PlayerMovement_mousePos;
-            public InputAction @Crouch => m_Wrapper.m_PlayerMovement_Crouch;
-            public InputAction @Slide => m_Wrapper.m_PlayerMovement_Slide;
             public InputActionMap Get() { return m_Wrapper.m_PlayerMovement; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -423,15 +332,6 @@ namespace LostSouls.Inputs
                 @Sprint.started += instance.OnSprint;
                 @Sprint.performed += instance.OnSprint;
                 @Sprint.canceled += instance.OnSprint;
-                @mousePos.started += instance.OnMousePos;
-                @mousePos.performed += instance.OnMousePos;
-                @mousePos.canceled += instance.OnMousePos;
-                @Crouch.started += instance.OnCrouch;
-                @Crouch.performed += instance.OnCrouch;
-                @Crouch.canceled += instance.OnCrouch;
-                @Slide.started += instance.OnSlide;
-                @Slide.performed += instance.OnSlide;
-                @Slide.canceled += instance.OnSlide;
             }
 
             private void UnregisterCallbacks(IPlayerMovementActions instance)
@@ -448,15 +348,6 @@ namespace LostSouls.Inputs
                 @Sprint.started -= instance.OnSprint;
                 @Sprint.performed -= instance.OnSprint;
                 @Sprint.canceled -= instance.OnSprint;
-                @mousePos.started -= instance.OnMousePos;
-                @mousePos.performed -= instance.OnMousePos;
-                @mousePos.canceled -= instance.OnMousePos;
-                @Crouch.started -= instance.OnCrouch;
-                @Crouch.performed -= instance.OnCrouch;
-                @Crouch.canceled -= instance.OnCrouch;
-                @Slide.started -= instance.OnSlide;
-                @Slide.performed -= instance.OnSlide;
-                @Slide.canceled -= instance.OnSlide;
             }
 
             public void RemoveCallbacks(IPlayerMovementActions instance)
@@ -498,9 +389,6 @@ namespace LostSouls.Inputs
             void OnMove(InputAction.CallbackContext context);
             void OnJump(InputAction.CallbackContext context);
             void OnSprint(InputAction.CallbackContext context);
-            void OnMousePos(InputAction.CallbackContext context);
-            void OnCrouch(InputAction.CallbackContext context);
-            void OnSlide(InputAction.CallbackContext context);
         }
     }
 }

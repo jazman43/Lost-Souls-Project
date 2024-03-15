@@ -18,6 +18,8 @@
     "com.unity.ugui": "1.0.0",
     "com.unity.visualeffectgraph": "14.0.9",
     "com.unity.visualscripting": "1.9.1",
+    "jp.co.cyberagent.air-sticker": "https://github.com/CyberAgentGameEntertainment/AirSticker.git?path=/Assets/AirSticker",
+    "jp.co.cyberagent.nova": "https://github.com/CyberAgentGameEntertainment/NovaShader.git?path=/Assets/Nova",
     "jp.keijiro.metamesh": "1.2.0",
     "jp.keijiro.metatex": "1.0.4",
     "com.unity.modules.ai": "1.0.0",

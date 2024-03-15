@@ -1,55 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Cinemachine;
 using LostSouls.Inputs;
-using System;
-using UnityEngine.Animations;
-using LostSouls.Saving;
 
 
 namespace LostSouls.Movement
 {
-    public class PlayerMovement : MonoBehaviour , ISaveable
+    public class PlayerMovement : MonoBehaviour
     {
         [Header("move")]
         [SerializeField] private float moveSpeed = Mathf.Infinity;
         [SerializeField] private float walkSpeed = 3.5f;
         [SerializeField] private float sprintSpeed = 7f;
-        [SerializeField] private float climbSpeed = 7f;
-        public Vector3 velocity { get; set; }
-        [SerializeField] Transform orientation;
-        private Vector3 moveDirection;
+        private Vector3 velocity;
         private PlayerInputs inputs;
-        private Rigidbody Rigidbody;        
-        [SerializeField]private float groundDrag;
-        [SerializeField] private float wallrunSpeed;
-        [SerializeField] private float slideSpeed;
+        private CharacterController controller;
 
-        private float desiredMoveSpeed;
-        private float lastDesiredMoveSpeed;
-
-        public bool sliding;
-
-        [SerializeField] private float speedIncreaseMultiplier;
-        [SerializeField] private float slopeIncreaseMultiplier;
-
-        [Header("air movement")]
-        [SerializeField] private float airSpeedMultiplier;
-
-        [Header("camera")]
-
-        [Header("Crouching")]
-        [SerializeField] private float crouchSpeed;
-        [SerializeField] private float crouchYScale;
-        private float startYScale;
-        private float playerHeight;
-
-        [Header("Slope Handling")]
-        [SerializeField] private float maxSlopeAngle;
-        private RaycastHit slopeHit;
-        private bool exitingSlope;
-
+        [Header("camera")]        
+        [SerializeField] private float turnSmoothTime = 0.1f;
+        private float turnSmoothVel; 
 
         [Header("jump")]
         [SerializeField] private float jumpForce = 1f;
@@ -57,211 +26,141 @@ namespace LostSouls.Movement
         [SerializeField] private float groundedRadius = 0.28f;
         [SerializeField] private LayerMask groundLayers;
         [SerializeField] private bool grounded;
-        [SerializeField] private float jumpCoolDown;
-        bool readyToJump;
-        
+        private Vector3 yPosition;
+        private float griavity = -9.81f;
+        private bool canDoubleJump;
 
-        private WallRun wallrun;
+        [Header("Climbing Wall")]
+        [SerializeField] private bool onWall;
+        [SerializeField] private float onwallRadius = 0.5f;
+        [SerializeField] private LayerMask onWallLayers;
 
-        public bool climbing;
-        public bool wallRunning;
 
-        public State state;
-        public enum State
-        {
-            walking,
-            sprinting,
-            crouching,
-            sliding,
-            air,
-            climbing,
-            wallRunning
-        }
+        [Header("Running wall")]
+        [SerializeField] private bool runningWallLeft;
+        [SerializeField] private bool runningWallRight;
+        [SerializeField] private LayerMask onRunningWallLayers;
+        [SerializeField] private float rayDistance = 2f;
+
+
 
         [Header("Animation")]
-        [SerializeField] private string moveAnimation;
-        [SerializeField] private string jumpAnimation;
-        [SerializeField] private string inAirAnimation;
-        private Animator animator;
-        
+        [SerializeField] private string walkAnimation;
+
+
+
 
         private void Awake()
         {
-            animator = GetComponentInChildren<Animator>();
+            controller = GetComponent<CharacterController>();
             inputs = GetComponent<PlayerInputs>();
-            wallrun = GetComponent<WallRun>();
-            Rigidbody = GetComponent<Rigidbody>();
-        }
-
-        private void Start()
-        {
-            readyToJump = true;
-            startYScale = transform.localScale.y;
-
-           // Cursor.lockState = CursorLockMode.Locked;
         }
 
         private void Update()
         {
-            
-            GroundedCheck();
-            Jump();
-            SpeedControl();
-            //Crouch();
-            StateHandler();
-
-
-            if (grounded)
-            {
-                Rigidbody.drag = groundDrag;
-            }
-            {
-                Rigidbody.drag = 0;
-            }
-        }
-
-        private void StateHandler()
-        {
-            /*
-             * locked off as it frezzes game when on slopes
-             * 
-            if (sliding)
-            {
-                state = State.sliding;
-
-                if (OnSlope() && Rigidbody.velocity.y < 0.1f)
-                    desiredMoveSpeed = slideSpeed;
-
-                else
-                    desiredMoveSpeed = sprintSpeed;
-            }
-            */
-            /*
-            if (inputs.Crouch())
-            {
-                state = State.crouching;
-                desiredMoveSpeed = crouchSpeed;
-            }
-            */
-            if (wallRunning)
-            {
-                state = State.wallRunning;
-                desiredMoveSpeed = wallrunSpeed;
-                Debug.Log("in wall running state");
-            }
-            else if (climbing)
-            {
-                state = State.climbing;
-
-                desiredMoveSpeed = climbSpeed;
-            }
-            else if (grounded && inputs.Sprint())
-            {
-                state = State.sprinting;
-                desiredMoveSpeed = sprintSpeed;
-            }            
-            else if (grounded)
-            {
-                state = State.walking;
-                desiredMoveSpeed = walkSpeed;
-                animator.SetBool(inAirAnimation, false);
-            }            
-            else
-            {
-                state = State.air;
-            }
-
-            if (!grounded)
-            {
-                animator.SetBool(inAirAnimation, true);
-                
-            }
-
-            
-            if (Mathf.Abs(desiredMoveSpeed - lastDesiredMoveSpeed) > 4f && moveSpeed != 0)
-            {
-                StopAllCoroutines();
-                StartCoroutine(SmoothlyLerpMoveSpeed());
-            }
-            else
-            {
-                moveSpeed = desiredMoveSpeed;
-            }
-
-            lastDesiredMoveSpeed = desiredMoveSpeed;
-
-            Debug.Log(moveSpeed);
-        }
-
-        private void Rotation()
-        {
-            Ray cameraRay = Camera.main.ScreenPointToRay(inputs.Mouse());
-            Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
-            float rayLength;
-
-            if (groundPlane.Raycast(cameraRay, out rayLength))
-            {
-                Vector3 pointToLook = cameraRay.GetPoint(rayLength);
-                transform.LookAt(new Vector3(pointToLook.x, transform.position.y, pointToLook.z));
-            }
-        }
-
-        private void FixedUpdate()
-        {
             Movement();
-            Rotation();
+
+
+            if (!onWall)
+            {
+                Griavity();
+            }
             
-        }
-
-        public void Movement()
-        {
-            //input for movement from a vector2 to a vector3
-            velocity = new Vector3(inputs.Movement().x, 0.0f, inputs.Movement().y);
-
-            moveDirection = transform.forward * velocity.z + transform.right * velocity.x;
-
-           
-
-            if (OnSlope() && !exitingSlope)
-            {
-                Rigidbody.AddForce(GetSlopeMoveDirection(moveDirection) * moveSpeed * 20f, ForceMode.Force);
-
-                if (Rigidbody.velocity.y > 0)
-                    Rigidbody.AddForce(Vector3.down * 80f, ForceMode.Force);
-            }
-
-            if (grounded)
-            {
-                Debug.Log("Move " + moveSpeed);
-                Rigidbody.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
-            }else if (!grounded)
-            {
-                Rigidbody.AddForce(moveDirection.normalized * moveSpeed * 10f * airSpeedMultiplier, ForceMode.Force);
-            }
-
-            animator.SetFloat(moveAnimation, moveDirection.magnitude);           
-           
-            Rigidbody.useGravity = !OnSlope();
-        }
-
-        private void SpeedControl()
-        {
-            if (OnSlope() && !exitingSlope)
-            {
-                if (Rigidbody.velocity.magnitude > moveSpeed)
-                    Rigidbody.velocity = Rigidbody.velocity.normalized * moveSpeed;
-            }
-
-            Vector3 flatVel = new Vector3(Rigidbody.velocity.x, 0f, Rigidbody.velocity.z);
-
-            if(flatVel.magnitude > moveSpeed)
-            {
-                Vector3 limitVel = flatVel.normalized* moveSpeed;
-                Rigidbody.velocity = new Vector3(limitVel.x, Rigidbody.velocity.y, limitVel.z);
-            }
+            Jump();
+            GroundedCheck();
+            ClimbingWallCheck();
+            WallRunningCheck();
         }
 
         
+        public void Movement()
+        {
+            //input for movement from a vector2 to a vector3
+            Vector3 moveControl = new Vector3(inputs.Movement().x, 0.0f, inputs.Movement().y);
+
+            //set speed based of user input
+            if (inputs.Sprint())
+            {
+                moveSpeed = sprintSpeed;
+            }
+            else
+            {
+                moveSpeed = walkSpeed;
+            }
+
+            //check if movement is happening
+            if(moveControl.magnitude <= 0.1f)
+            {
+                moveSpeed = 0;
+            }
+            else
+            {
+                //set a angle to target where camera is looking
+                float targetAngle = Mathf.Atan2(
+                    moveControl.x,
+                    moveControl.z) * Mathf.Rad2Deg + Camera.main.transform.eulerAngles.y;
+
+                //smooth the characters movement to direction
+                float angle = Mathf.SmoothDampAngle(
+                    transform.eulerAngles.y,
+                    targetAngle,
+                    ref turnSmoothVel,
+                    turnSmoothTime);
+
+                //preform the character mover in direction based on the angle smoothing
+                transform.rotation = Quaternion.Euler(0.0f, angle, 0.0f);
+
+                //set new angle as forward vector
+                Vector3 moveDirection = Quaternion.Euler(0.0f, targetAngle, 0.0f) * Vector3.forward;
+
+                //move character in direction and at the proper move speed at a fixed rate
+                controller.Move(moveDirection.normalized * moveSpeed * Time.deltaTime);
+            }
+            //animation here
+            
+
+        }
+
+        //add griavity 
+        private void Griavity()
+        {
+            //check if grounded and the Y position is not less then 0 if is set it to 0
+            if(controller.isGrounded && yPosition.y < 0)
+            {
+                yPosition.y = 0.0f;
+            }
+            //update y position
+            yPosition.y += griavity * Time.deltaTime;
+            controller.Move(yPosition * Time.deltaTime);
+        }
+
+        private void Jump()
+        {
+            //get input
+            if (grounded )
+            {
+                Debug.Log("grounded");
+                //add force to y position 
+                if (inputs.Jump())
+                {
+                    yPosition.y += Mathf.Sqrt(jumpForce * -2.0f * griavity);
+                }
+                
+                if (true)
+                {
+                    canDoubleJump = true;
+                }
+            }
+            else if (inputs.Jump() && canDoubleJump)
+            {
+                Debug.Log("jumps");
+                //check if grounded
+
+                canDoubleJump = false;
+            }
+        }
+
+
         private void GroundedCheck()
         {
             // set sphere position, with offset
@@ -269,123 +168,62 @@ namespace LostSouls.Movement
                 transform.position.x,
                 transform.position.y - groundedOffset,
                 transform.position.z);
-            
+
             grounded = Physics.CheckSphere(
                 spherePosition,
                 groundedRadius,
                 groundLayers,
                 QueryTriggerInteraction.Ignore);
-
             
         }
 
-        public bool IsPlayerGrounded()
+        private void ClimbingWallCheck()
         {
-            return grounded;
+
+            Vector3 spherePosition = new Vector3(
+                transform.position.x,
+                transform.position.y + 1,
+                transform.position.z + 0.5f);
+
+            onWall = Physics.CheckSphere(
+                spherePosition,
+                onwallRadius,
+                onWallLayers);
+
+            Debug.Log(onWall + "yay");
         }
 
-         
-        void Jump()
+        private void WallRunningCheck()
         {
-            if (inputs.Jump() && readyToJump && grounded)            
+            Vector3 StartPosition = new Vector3(
+                transform.position.x,
+                transform.position.y + .6f,
+                transform.position.z);
+
+            Vector3 worldDirecrionLeft = transform.TransformDirection(Vector3.left);
+
+            Vector3 worldDirecrionRight = transform.TransformDirection(Vector3.right);
+
+            Ray rayLeft = new Ray(StartPosition, worldDirecrionLeft);
+            Ray rayRight = new Ray(StartPosition, worldDirecrionRight);
+            RaycastHit hit;
+
+
+            if(Physics.Raycast(rayLeft, out hit, rayDistance))
             {
-                animator.SetTrigger(jumpAnimation);
-
-                readyToJump = false;
-
-                exitingSlope = true;
-
-                Rigidbody.velocity = new Vector3(Rigidbody.velocity.x, 0f, Rigidbody.velocity.z);
-
-                Rigidbody.AddForce(transform.up * jumpForce, ForceMode.Impulse);
-
-                Invoke(nameof(ResetJump), jumpCoolDown);
-            }
-        }
-
-        void ResetJump()
-        {
-            readyToJump = true;
-
-            exitingSlope = false;
-        }
-
-        public bool OnSlope()
-        {
-            if (Physics.Raycast(transform.position, Vector3.down, out slopeHit, playerHeight * 0.5f + 0.3f))
-            {
-                float angle = Vector3.Angle(Vector3.up, slopeHit.normal);
-                return angle < maxSlopeAngle && angle != 0;
+                Debug.Log("Hit something: on left " + hit.collider.tag);
             }
 
-            return false;
-        }
 
-        public Vector3 GetSlopeMoveDirection(Vector3 moveDir)
-        {
-            return Vector3.ProjectOnPlane(moveDir, slopeHit.normal).normalized;
-        }
-
-
-        void Crouch()
-        {
-            if (inputs.Crouch())
+            if (Physics.Raycast(rayRight, out hit, rayDistance))
             {
-                transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
-
-                while (!grounded)
-                {
-                    Rigidbody.AddForce(Vector3.down * 5f, ForceMode.Impulse);
-                }
-                
-                                
+                Debug.Log("Hit something: on right " + hit.collider.tag);
             }
 
+            Debug.DrawRay(rayLeft.origin, rayLeft.direction * rayDistance, Color.red);
+            Debug.DrawRay(rayRight.origin, rayRight.direction * rayDistance, Color.red);
             
-            if (!inputs.Crouch())
-            {
-                transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);                
-            }
-        }
-
-       
-        private IEnumerator SmoothlyLerpMoveSpeed()
-        {
             
-            float time = 0;
-            float difference = Mathf.Abs(desiredMoveSpeed - moveSpeed);
-            float startValue = moveSpeed;
-
-            while (time < difference)
-            {
-                moveSpeed = Mathf.Lerp(startValue, desiredMoveSpeed, time / difference);
-
-                if (OnSlope())
-                {
-                    float slopeAngle = Vector3.Angle(Vector3.up, slopeHit.normal);
-                    float slopeAngleIncrease = 1 + (slopeAngle / 90f);
-
-                    time += Time.deltaTime * speedIncreaseMultiplier * slopeIncreaseMultiplier * slopeAngleIncrease;
-                }
-                else
-                    time += Time.deltaTime * speedIncreaseMultiplier;
-
-                yield return null;
-            }
-
-            moveSpeed = desiredMoveSpeed;
-        }
-
-        public object CapturState()
-        {
-            return new SerializableVector3(transform.position);
-        }
-
-        public void RestoreState(object state)
-        {
-            SerializableVector3 position = (SerializableVector3)state;
-
-            transform.position = position.ToVector();
         }
     }
 }
