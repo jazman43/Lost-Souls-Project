@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using LostSouls.Saving;
-
+using LostSouls.SceneManagement;
 
 
 
@@ -13,10 +13,11 @@ namespace LostSouls.UI.Menus
     {
 
         const string defaultSaveFile = "Save";
-
+        [SerializeField] float fadeInTime = 0.2f;
+        [SerializeField] float fadeOutTime = 0.2f;
         [SerializeField] int firstLevelBuildIndex = 1;
         [SerializeField] int menuLevelBuildIndex = 0;
-        [SerializeField] TMPro.TMP_InputField newGameName;
+        
 
 
 
@@ -29,10 +30,10 @@ namespace LostSouls.UI.Menus
             StartCoroutine(LoadLastScene());
         }
 
-        public void NewGame()
+        public void NewGame(string saveFile)
         {
-            if (string.IsNullOrEmpty(newGameName.text)) return;
-            SetCurrentSave(newGameName.text);
+            if (string.IsNullOrEmpty(saveFile)) return;
+            SetCurrentSave(saveFile);
             StartCoroutine(LoadFirstScene());
         }
 
@@ -63,28 +64,30 @@ namespace LostSouls.UI.Menus
 
         private IEnumerator LoadLastScene()
         {
-
+            Fader fader = FindObjectOfType<Fader>();
             Debug.Log("loading last Scene");
-
+            yield return fader.FadeOut(fadeOutTime);
             yield return GetComponent<SavingSystem>().LoadLastScene(GetCurrentSave());
-
+            yield return fader.FadeIn(fadeInTime);
         }
 
         private IEnumerator LoadFirstScene()
         {
-
+            Fader fader = FindObjectOfType<Fader>();
             Cursor.lockState = CursorLockMode.Locked;
-
+            yield return fader.FadeOut(fadeOutTime);
             yield return SceneManager.LoadSceneAsync(firstLevelBuildIndex);
-
+            yield return fader.FadeIn(fadeInTime);
         }
 
         private IEnumerator LoadMenuScene()
         {
+            Fader fader = FindObjectOfType<Fader>();
 
+            yield return fader.FadeOut(fadeOutTime);
             yield return SceneManager.LoadSceneAsync(menuLevelBuildIndex);
             Cursor.lockState = CursorLockMode.Confined;
-
+            yield return fader.FadeIn(fadeInTime);
         }
 
 
@@ -110,13 +113,7 @@ namespace LostSouls.UI.Menus
         }
 
 
-        public void QuitGame()
-        {
-#if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-#endif
-            Application.Quit();
-        }
+        
     }
 }
 

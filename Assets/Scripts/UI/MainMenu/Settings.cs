@@ -15,8 +15,8 @@ namespace LostSouls.UI.Menus
         [SerializeField] private string masterVolume = "masterVolume";
         [SerializeField] private AudioMixer audioMixer;
         [SerializeField] private TMP_Dropdown resolutionDropdown;
-        
 
+        Vector2 res;
         Resolution[] resolutions;
 
         private void Start()
@@ -54,6 +54,7 @@ namespace LostSouls.UI.Menus
         {
             Resolution resolution = resolutions[resolutionIndex];
             Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+            res = new Vector2(resolution.width, resolution.height);
         }
 
         public void SetQuality(int graphicsIndex)
@@ -64,6 +65,11 @@ namespace LostSouls.UI.Menus
         public void SetFullscreen(bool isFullscreen)
         {
             Screen.fullScreen = isFullscreen;
+        }
+
+        public Vector2 GetResolution()
+        {
+            return res;
         }
 
         //sound
