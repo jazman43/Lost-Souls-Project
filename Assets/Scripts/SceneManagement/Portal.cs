@@ -21,14 +21,18 @@ namespace LostSouls.SceneManagement
         [SerializeField] private int sceneIndex = -1;
         [SerializeField] private Transform spawnPoint;
         [SerializeField] private DestinationIdentifier destination;
+        [SerializeField] private string playerTag = "Player";
+
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.tag == "Player")
+            if (other.tag == playerTag)
             {
                 StartCoroutine(Transition());
+                Debug.Log("PLayer Hit");
             }
             Debug.Log("Traving..");
+            Debug.Log(other.tag);
         }
 
 

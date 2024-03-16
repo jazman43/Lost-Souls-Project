@@ -91,6 +91,33 @@ namespace LostSouls.Inputs
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Doge"",
+                    ""type"": ""Button"",
+                    ""id"": ""16f92a77-b34b-4b56-8dde-c5be6e47996e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Target"",
+                    ""type"": ""Button"",
+                    ""id"": ""2a0da167-6153-4c2d-884b-2924f1fc92d9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Attack"",
+                    ""type"": ""Button"",
+                    ""id"": ""8ed2f1a7-ae4f-4836-8e9f-be84904896a6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -280,6 +307,100 @@ namespace LostSouls.Inputs
                     ""action"": ""Slide"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3bfde298-271e-4e28-81c7-18996c3cbf22"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse & Keyboard"",
+                    ""action"": ""Doge"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""631eba66-ec55-4c10-8c52-e351ace4ec2a"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Doge"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e7a8946e-21f4-45be-805d-ecae6d6178f9"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse & Keyboard"",
+                    ""action"": ""Target"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b2dc1cbd-6688-4604-ac4a-5e70f18a46ae"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Target"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f5fb44f7-02b6-4d0f-8e68-6263f5a11c4b"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse & Keyboard"",
+                    ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4998e8d6-364c-47af-b17e-12aafae7a1d1"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""MenuUI"",
+            ""id"": ""3fe7c695-f20b-4647-8ed4-1adba39e5956"",
+            ""actions"": [
+                {
+                    ""name"": ""New action"",
+                    ""type"": ""Button"",
+                    ""id"": ""9e926c86-2d35-4cf7-8da2-dbf4ad4d30bc"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""2dc6ae1e-5c2f-4977-87ad-d15f33cf7999"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""New action"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -323,6 +444,12 @@ namespace LostSouls.Inputs
             m_PlayerMovement_mousePos = m_PlayerMovement.FindAction("mousePos", throwIfNotFound: true);
             m_PlayerMovement_Crouch = m_PlayerMovement.FindAction("Crouch", throwIfNotFound: true);
             m_PlayerMovement_Slide = m_PlayerMovement.FindAction("Slide", throwIfNotFound: true);
+            m_PlayerMovement_Doge = m_PlayerMovement.FindAction("Doge", throwIfNotFound: true);
+            m_PlayerMovement_Target = m_PlayerMovement.FindAction("Target", throwIfNotFound: true);
+            m_PlayerMovement_Attack = m_PlayerMovement.FindAction("Attack", throwIfNotFound: true);
+            // MenuUI
+            m_MenuUI = asset.FindActionMap("MenuUI", throwIfNotFound: true);
+            m_MenuUI_Newaction = m_MenuUI.FindAction("New action", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -391,6 +518,9 @@ namespace LostSouls.Inputs
         private readonly InputAction m_PlayerMovement_mousePos;
         private readonly InputAction m_PlayerMovement_Crouch;
         private readonly InputAction m_PlayerMovement_Slide;
+        private readonly InputAction m_PlayerMovement_Doge;
+        private readonly InputAction m_PlayerMovement_Target;
+        private readonly InputAction m_PlayerMovement_Attack;
         public struct PlayerMovementActions
         {
             private @Inputs m_Wrapper;
@@ -402,6 +532,9 @@ namespace LostSouls.Inputs
             public InputAction @mousePos => m_Wrapper.m_PlayerMovement_mousePos;
             public InputAction @Crouch => m_Wrapper.m_PlayerMovement_Crouch;
             public InputAction @Slide => m_Wrapper.m_PlayerMovement_Slide;
+            public InputAction @Doge => m_Wrapper.m_PlayerMovement_Doge;
+            public InputAction @Target => m_Wrapper.m_PlayerMovement_Target;
+            public InputAction @Attack => m_Wrapper.m_PlayerMovement_Attack;
             public InputActionMap Get() { return m_Wrapper.m_PlayerMovement; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -432,6 +565,15 @@ namespace LostSouls.Inputs
                 @Slide.started += instance.OnSlide;
                 @Slide.performed += instance.OnSlide;
                 @Slide.canceled += instance.OnSlide;
+                @Doge.started += instance.OnDoge;
+                @Doge.performed += instance.OnDoge;
+                @Doge.canceled += instance.OnDoge;
+                @Target.started += instance.OnTarget;
+                @Target.performed += instance.OnTarget;
+                @Target.canceled += instance.OnTarget;
+                @Attack.started += instance.OnAttack;
+                @Attack.performed += instance.OnAttack;
+                @Attack.canceled += instance.OnAttack;
             }
 
             private void UnregisterCallbacks(IPlayerMovementActions instance)
@@ -457,6 +599,15 @@ namespace LostSouls.Inputs
                 @Slide.started -= instance.OnSlide;
                 @Slide.performed -= instance.OnSlide;
                 @Slide.canceled -= instance.OnSlide;
+                @Doge.started -= instance.OnDoge;
+                @Doge.performed -= instance.OnDoge;
+                @Doge.canceled -= instance.OnDoge;
+                @Target.started -= instance.OnTarget;
+                @Target.performed -= instance.OnTarget;
+                @Target.canceled -= instance.OnTarget;
+                @Attack.started -= instance.OnAttack;
+                @Attack.performed -= instance.OnAttack;
+                @Attack.canceled -= instance.OnAttack;
             }
 
             public void RemoveCallbacks(IPlayerMovementActions instance)
@@ -474,6 +625,52 @@ namespace LostSouls.Inputs
             }
         }
         public PlayerMovementActions @PlayerMovement => new PlayerMovementActions(this);
+
+        // MenuUI
+        private readonly InputActionMap m_MenuUI;
+        private List<IMenuUIActions> m_MenuUIActionsCallbackInterfaces = new List<IMenuUIActions>();
+        private readonly InputAction m_MenuUI_Newaction;
+        public struct MenuUIActions
+        {
+            private @Inputs m_Wrapper;
+            public MenuUIActions(@Inputs wrapper) { m_Wrapper = wrapper; }
+            public InputAction @Newaction => m_Wrapper.m_MenuUI_Newaction;
+            public InputActionMap Get() { return m_Wrapper.m_MenuUI; }
+            public void Enable() { Get().Enable(); }
+            public void Disable() { Get().Disable(); }
+            public bool enabled => Get().enabled;
+            public static implicit operator InputActionMap(MenuUIActions set) { return set.Get(); }
+            public void AddCallbacks(IMenuUIActions instance)
+            {
+                if (instance == null || m_Wrapper.m_MenuUIActionsCallbackInterfaces.Contains(instance)) return;
+                m_Wrapper.m_MenuUIActionsCallbackInterfaces.Add(instance);
+                @Newaction.started += instance.OnNewaction;
+                @Newaction.performed += instance.OnNewaction;
+                @Newaction.canceled += instance.OnNewaction;
+            }
+
+            private void UnregisterCallbacks(IMenuUIActions instance)
+            {
+                @Newaction.started -= instance.OnNewaction;
+                @Newaction.performed -= instance.OnNewaction;
+                @Newaction.canceled -= instance.OnNewaction;
+            }
+
+            public void RemoveCallbacks(IMenuUIActions instance)
+            {
+                if (m_Wrapper.m_MenuUIActionsCallbackInterfaces.Remove(instance))
+                    UnregisterCallbacks(instance);
+            }
+
+            public void SetCallbacks(IMenuUIActions instance)
+            {
+                foreach (var item in m_Wrapper.m_MenuUIActionsCallbackInterfaces)
+                    UnregisterCallbacks(item);
+                m_Wrapper.m_MenuUIActionsCallbackInterfaces.Clear();
+                AddCallbacks(instance);
+            }
+        }
+        public MenuUIActions @MenuUI => new MenuUIActions(this);
         private int m_MouseKeyboardSchemeIndex = -1;
         public InputControlScheme MouseKeyboardScheme
         {
@@ -501,6 +698,13 @@ namespace LostSouls.Inputs
             void OnMousePos(InputAction.CallbackContext context);
             void OnCrouch(InputAction.CallbackContext context);
             void OnSlide(InputAction.CallbackContext context);
+            void OnDoge(InputAction.CallbackContext context);
+            void OnTarget(InputAction.CallbackContext context);
+            void OnAttack(InputAction.CallbackContext context);
+        }
+        public interface IMenuUIActions
+        {
+            void OnNewaction(InputAction.CallbackContext context);
         }
     }
 }

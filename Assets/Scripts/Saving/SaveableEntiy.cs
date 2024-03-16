@@ -10,8 +10,8 @@ namespace LostSouls.Saving
     [ExecuteAlways]
     public class SaveableEntiy : MonoBehaviour
     {
-        [SerializeField] private string uniqueIdentifier = "";
-        static Dictionary<string, SaveableEntiy> gloabalLookUp = new Dictionary<string, SaveableEntiy>();
+        [SerializeField] string uniqueIdentifier = "";
+        static Dictionary<string, SaveableEntiy> globalLookUp = new Dictionary<string, SaveableEntiy>();
 
 
         public string GetUniqueIdenerifer()
@@ -21,73 +21,77 @@ namespace LostSouls.Saving
 
         public object CaptureState()
         {
+            Debug.Log("Capturing State For " + GetUniqueIdenerifer());
             Dictionary<string, object> state = new Dictionary<string, object>();
-
-            foreach(ISaveable saveable in GetComponents<ISaveable>())
+            foreach (ISaveable saveable in GetComponents<ISaveable>())
             {
                 state[saveable.GetType().ToString()] = saveable.CapturState();
             }
-
             return state;
-        }
 
+        }
 
         public void RestoreState(object state)
         {
-            Dictionary<string, object> stateRestore = (Dictionary<string, object>)state;
-
-            foreach( ISaveable saveable in GetComponents<ISaveable>())
+            Dictionary<string, object> stateDict = (Dictionary<string, object>)state;
+            foreach (ISaveable saveable in GetComponents<ISaveable>())
             {
                 string typeString = saveable.GetType().ToString();
 
-                if (stateRestore.ContainsKey(typeString))
+                if (stateDict.ContainsKey(typeString))
                 {
-                    saveable.RestoreState(stateRestore[typeString]);
+                    saveable.RestoreState(stateDict[typeString]);
                 }
             }
+
+
         }
+
 
 #if UNITY_EDITOR
         private void Update()
         {
-            if (Application.IsPlaying(gameObject)) return;
-           
-
-            if (string.IsNullOrEmpty(gameObject.scene.path)) return;
+            if (Application.IsPlaying(gameObject))
+            {
+                return;
+            }
+            if (string.IsNullOrEmpty(gameObject.scene.path)) { return; }
 
             SerializedObject serializedObject = new SerializedObject(this);
             SerializedProperty property = serializedObject.FindProperty("uniqueIdentifier");
 
-            if(string.IsNullOrEmpty(property.stringValue) || !IsUnique(property.stringValue))
+            if (string.IsNullOrEmpty(property.stringValue) || !IsUnique(property.stringValue))
             {
                 property.stringValue = System.Guid.NewGuid().ToString();
                 serializedObject.ApplyModifiedProperties();
             }
 
-            gloabalLookUp[property.stringValue] = this;
+            globalLookUp[property.stringValue] = this;
+
         }
 
         private bool IsUnique(string stringValue)
         {
-            if (!gloabalLookUp.ContainsKey(stringValue)) return true;
-            
-            if (gloabalLookUp[stringValue] == this) return true;
-
-            if(gloabalLookUp[stringValue] = null)
+            if (!globalLookUp.ContainsKey(stringValue))
             {
-                gloabalLookUp.Remove(stringValue);
+                return true;
+            }
+            if (globalLookUp[stringValue] == this) { return true; }
+
+            if (globalLookUp[stringValue] == null)
+            {
+                globalLookUp.Remove(stringValue);
                 return true;
             }
 
-            if (gloabalLookUp[stringValue].GetUniqueIdenerifer() != stringValue)
+            if (globalLookUp[stringValue].GetUniqueIdenerifer() != stringValue)
             {
-                gloabalLookUp.Remove(stringValue);
+                globalLookUp.Remove(stringValue);
                 return true;
             }
 
             return false;
         }
-
 #endif
     }
 

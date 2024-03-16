@@ -4,7 +4,7 @@ using UnityEngine;
 using Cinemachine;
 
 
-namespace LostSouls.Camera
+namespace LostSouls.Cam
 {
     public class ChangeLookAT : MonoBehaviour
     {

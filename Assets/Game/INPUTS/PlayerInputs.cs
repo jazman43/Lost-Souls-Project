@@ -35,7 +35,7 @@ namespace LostSouls.Inputs
 
         public bool Jump()
         {
-            return input.PlayerMovement.Jump.WasPressedThisFrame();
+            return input.PlayerMovement.Jump.triggered;
         }
 
         public bool Sprint()
@@ -61,6 +61,21 @@ namespace LostSouls.Inputs
         public bool Slide()
         {
             return input.PlayerMovement.Slide.IsPressed();
+        }
+
+        public bool Doge()
+        {
+            return input.PlayerMovement.Doge.triggered;
+        }
+
+        public bool Target()
+        {
+            return input.PlayerMovement.Target.IsPressed();
+        }
+
+        public bool Attack()
+        {
+            return input.PlayerMovement.Attack.IsPressed();
         }
     }
 }

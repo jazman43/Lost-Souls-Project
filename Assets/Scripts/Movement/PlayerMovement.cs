@@ -220,7 +220,7 @@ namespace LostSouls.Movement
 
             moveDirection = transform.forward * velocity.z + transform.right * velocity.x;
 
-            Debug.Log(moveDirection);
+            //Debug.Log(moveDirection);
 
             if (OnSlope() && !exitingSlope)
             {
