@@ -1420,7 +1420,7 @@
     "m_StageCapability": 3,
     "m_Value": {
         "x": 0.0,
-        "y": 0.949999988079071
+        "y": 1.0
     },
     "m_DefaultValue": {
         "x": 0.0,
@@ -1453,8 +1453,8 @@
     "m_ShaderOutputName": "OutMinMax",
     "m_StageCapability": 3,
     "m_Value": {
-        "x": 0.949999988079071,
-        "y": -0.07999999821186066
+        "x": 0.9900000095367432,
+        "y": -0.05000000074505806
     },
     "m_DefaultValue": {
         "x": 0.0,
@@ -1589,11 +1589,11 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 2,
     "m_Hidden": false,
-    "m_Value": 0.949999988079071,
+    "m_Value": 0.029999999329447748,
     "m_FloatType": 1,
     "m_RangeValues": {
-        "x": 0.07999999821186066,
-        "y": 0.949999988079071
+        "x": 0.029999999329447748,
+        "y": 0.9900000095367432
     }
 }
 

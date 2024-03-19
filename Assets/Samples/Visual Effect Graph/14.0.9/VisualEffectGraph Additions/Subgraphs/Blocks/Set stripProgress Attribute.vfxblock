@@ -148,7 +148,7 @@ MonoBehaviour:
   - {fileID: 13}
   m_OutputSlots: []
   m_Disabled: 0
-  m_ActivationSlot: {fileID: 28}
+  m_ActivationSlot: {fileID: 29}
   attribute: stripProgress
   Composition: 0
   Random: 0
@@ -246,7 +246,7 @@ MonoBehaviour:
   m_Direction: 1
   m_LinkedSlots:
   - {fileID: 13}
---- !u!114 &28
+--- !u!114 &29
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -264,7 +264,7 @@ MonoBehaviour:
   m_UIPosition: {x: 0, y: 0}
   m_UICollapsed: 1
   m_UISuperCollapsed: 0
-  m_MasterSlot: {fileID: 28}
+  m_MasterSlot: {fileID: 29}
   m_MasterData:
     m_Owner: {fileID: 12}
     m_Value:

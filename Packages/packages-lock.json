@@ -418,7 +418,7 @@
       }
     },
     "com.unity.visualscripting": {
-      "version": "1.9.1",
+      "version": "1.9.2",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -439,7 +439,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "4276a4ab57ac2b49ee9c4b8bb070e7e9a36e91f1"
+      "hash": "d024a6a32369834198a15793f05f7a1c3ef3257b"
     },
     "jp.keijiro.klak.lineargradient": {
       "version": "1.0.2",
