@@ -24,7 +24,16 @@ namespace LostSouls.combat
 
         public override void Enter()
         {
+            if(Time.timeScale == 0)
+            {
+                ReturnToLocomotion();
+            }
             Debug.Log("enterAttacking" + attack.AnimationName);
+            for(int i = 0; i < stateMachine.WeaponDamage.Length; i++)
+            {
+                stateMachine.WeaponDamage[i].SetAttack(attack.Damage);
+            }
+            
             stateMachine.Animation.CrossFadeInFixedTime(attack.AnimationName, attack.TransitionTime);
         }
 
@@ -91,7 +100,7 @@ namespace LostSouls.combat
 
         private void TryComboAttack(float normalizedTime)
         {
-            if (attack.ComboStateIndex == -1) return;
+            if (attack.ComboStateIndex == -1 || attack.ComboStateIndex >= attack.LastComboIndex) return;
 
             if (normalizedTime < attack.ComboAttackTime) return;
 

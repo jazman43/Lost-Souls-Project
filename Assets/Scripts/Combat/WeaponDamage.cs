@@ -10,7 +10,7 @@ namespace LostSouls.combat
     {
         [SerializeField] private Collider playerCollider;
 
-
+        private float damage;
         private List<Collider> alreadyCollidedWith = new List<Collider>();
 
         private void OnEnable()
@@ -33,8 +33,15 @@ namespace LostSouls.combat
 
             if(other.TryGetComponent<Health>(out Health otherHealth))
             {
-                otherHealth.DealDamage(10);
+                otherHealth.DealDamage(damage);
             }
+        }
+
+        public void SetAttack(float damage)
+        {
+            Random.Range(damage - 3f, damage + 3f);
+
+            this.damage = damage;
         }
     }
 

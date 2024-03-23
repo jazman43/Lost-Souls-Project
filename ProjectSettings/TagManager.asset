@@ -8,6 +8,10 @@ TagManager:
   - RunningWall
   - safeZone
   - camSawp
+  - ragdoll
+  - Ledge
+  - Cursor
+  - Canvas
   layers:
   - Default
   - TransparentFX
@@ -17,9 +21,9 @@ TagManager:
   - UI
   - Ground
   - Wall
-  - 
-  - 
-  - 
+  - Climbing
+  - Player
+  - Ragdoll
   - 
   - 
   - 

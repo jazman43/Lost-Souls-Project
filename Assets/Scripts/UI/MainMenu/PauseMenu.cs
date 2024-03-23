@@ -8,25 +8,23 @@ namespace LostSouls.UI.Menus
 {
     public class PauseMenu : MonoBehaviour
     {
-        private void OnEnable()
+        
+        public void OnPause()
         {
-            Debug.Log("PauseGame!");            
-
             Cursor.lockState = CursorLockMode.Confined;
             Time.timeScale = 0;
-            
+
         }
 
-
-
-        private void OnDisable()
+        public void OnUnPause()
         {
             Debug.Log("UNPauseGame!");
-            
+
             Cursor.lockState = CursorLockMode.Locked;
             Time.timeScale = 1;
-            
         }
+
+        
 
         public void Save()
         {

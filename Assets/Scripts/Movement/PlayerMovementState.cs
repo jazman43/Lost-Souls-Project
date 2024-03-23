@@ -9,22 +9,36 @@ namespace LostSouls.Movement
 {
     public class PlayerMovementState : PlayerBaseState
     {
-        
+        private bool shouldFade;
+
         private readonly int freeLookBlendTreeAnimationHash = Animator.StringToHash("FreeLookBlendTree");
         private readonly int moveAnimationHash = Animator.StringToHash("Move");
         private const float animatorDampTime = 0.1f;
 
-        public PlayerMovementState(PlayerStateMachine stateMachine) : base(stateMachine)
+        public PlayerMovementState(PlayerStateMachine stateMachine, bool shouldFade  =  true) : base(stateMachine)
         {
+            this.shouldFade = shouldFade;
         }
 
-        float time = 5f;
+       
         Vector3 velocity;
 
         public override void Enter()
         {
             Debug.Log("enter");
-            stateMachine.Animation.Play(freeLookBlendTreeAnimationHash);
+
+            stateMachine.Animation.SetFloat(moveAnimationHash, 0);
+
+            if (shouldFade)
+            {
+                stateMachine.Animation.CrossFadeInFixedTime(freeLookBlendTreeAnimationHash, 0.1f);
+            }
+            else
+            {
+                stateMachine.Animation.Play(freeLookBlendTreeAnimationHash);
+            }
+
+            
         }
 
         
@@ -37,6 +51,12 @@ namespace LostSouls.Movement
                 stateMachine.SwitchState(new PlayerAttackingState(stateMachine, 0));
                 return;
             }
+            if (stateMachine.PlayerInputs.Jump())
+            {
+                stateMachine.SwitchState(new PlayerJumpingState(stateMachine));
+                return;
+            }
+
             velocity = CalculateMovement();
 
             //Debug.Log(velocity);

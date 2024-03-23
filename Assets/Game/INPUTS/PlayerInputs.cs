@@ -77,5 +77,15 @@ namespace LostSouls.Inputs
         {
             return input.PlayerMovement.Attack.IsPressed();
         }
+
+        public bool Cancel()
+        {
+            return input.PlayerMovement.Cancel.triggered;
+        }
+
+        public bool Menu()
+        {
+            return input.PlayerMovement.Menu.triggered;
+        }
     }
 }

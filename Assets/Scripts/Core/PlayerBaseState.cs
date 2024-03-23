@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using LostSouls.combat;
+using LostSouls.Movement;
 
 
 
@@ -34,6 +36,18 @@ namespace LostSouls.core
             lookPos.y = 0f;
 
             stateMachine.transform.rotation = Quaternion.LookRotation(lookPos);
+        }
+
+        protected void ReturnToLocomotion()
+        {
+            if(stateMachine.Targeter.currentTarget != null)
+            {
+                stateMachine.SwitchState(new PlayerTargetingState(stateMachine));
+            }
+            else
+            {
+                stateMachine.SwitchState(new PlayerMovementState(stateMachine));
+            }
         }
     }
 

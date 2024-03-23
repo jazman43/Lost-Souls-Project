@@ -42,6 +42,11 @@ namespace LostSouls.Movement
             impact += force;
         }
 
+        public void Jump(float jumpForce)
+        {
+            verticalVel += jumpForce;
+        }
+
         private void GroundedCheck()
         {
             // set sphere position, with offset
@@ -56,6 +61,20 @@ namespace LostSouls.Movement
                 groundLayers,
                 QueryTriggerInteraction.Ignore);
 
+        }
+
+        public bool IsGournded()
+        {
+            return grounded;
+        }
+
+        public void Reset()
+        {
+            impact = Vector3.zero;
+
+            verticalVel = 0f;
+
+            Debug.Log("reset Forece");
         }
     }
 }

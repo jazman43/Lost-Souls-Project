@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,8 +17,10 @@ namespace LostSouls.combat
         [SerializeField] private float PlayerDissolveSpeed = 0.08f;
         [SerializeField] private string safeZoneTag;
 
-        private float health;
+        [SerializeField] private float health;
         private bool isDead;
+
+        public event Action OnDie; 
         
         [SerializeField] private Material material;
 
@@ -97,7 +100,9 @@ namespace LostSouls.combat
             if(health <= 0 || playerDissolve >= maxPlayerDissolve)
             {
                 isDead = true;
-                Destroy(gameObject);
+
+                OnDie?.Invoke();
+                //Destroy(gameObject);
             }
                 
         }
