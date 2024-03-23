@@ -2151,7 +2151,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7000095344774692804}
   - component: {fileID: 6516873518844023391}
-  - component: {fileID: 6354220865017100471}
   - component: {fileID: 6887631934067981829}
   - component: {fileID: 1734739985195745837}
   - component: {fileID: 2477071388556813074}
@@ -2214,26 +2213,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &6354220865017100471
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6643998992738211075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8198bea2f5a86f47bf0d7146411eaff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerMaxHealth: 100
-  playerDissolve: 0
-  playerDissolveValue: _Dissolve
-  maxPlayerDissolve: 0.78
-  PlayerDissolveSpeed: 0.08
-  safeZoneTag: safeZone
-  health: 0
-  material: {fileID: 2100000, guid: 730c2a3e262e23246928a3184dfe0b3d, type: 2}
 --- !u!114 &6887631934067981829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2307,7 +2286,7 @@ MonoBehaviour:
   <Animation>k__BackingField: {fileID: 3414421993702578574}
   <Targeter>k__BackingField: {fileID: 3731200580518536663}
   <ForceReceiver>k__BackingField: {fileID: 8070942238639764009}
-  <Health>k__BackingField: {fileID: 6354220865017100471}
+  <Health>k__BackingField: {fileID: 0}
   <Ragdoll>k__BackingField: {fileID: 7654446285177741274}
   <LedgeDetector>k__BackingField: {fileID: 8039932233802732303}
   <WeaponDamage>k__BackingField:
@@ -2741,7 +2720,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 730c2a3e262e23246928a3184dfe0b3d, type: 2}
+  - {fileID: -876546973899608171, guid: 126356b24c819834abc35bb0e5694c9d, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -25,7 +25,7 @@ namespace LostSouls.Saving
             Dictionary<string, object> state = new Dictionary<string, object>();
             foreach (ISaveable saveable in GetComponents<ISaveable>())
             {
-                state[saveable.GetType().ToString()] = saveable.CapturState();
+                state[saveable.GetType().ToString()] = saveable.CaptureState();
             }
             return state;
 

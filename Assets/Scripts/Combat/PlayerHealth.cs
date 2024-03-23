@@ -142,17 +142,17 @@ namespace LostSouls.combat
         {
             this.health = health;
         }
-
-        public object CapturState()
-        {
-            return health;
-        }
-
+               
         public void RestoreState(object state)
         {
             health = (float)state;
 
 
+        }
+
+        public object CaptureState()
+        {
+            return health;
         }
     }
 }
