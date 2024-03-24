@@ -3,22 +3,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using LostSouls.Saving;
+using LostSouls.skill;
 
 
 
 namespace LostSouls.combat
 {
-    public class PlayerHealth : MonoBehaviour , ISaveable
+    public class PlayerHealth : MonoBehaviour , ISaveable, ISkill
     {
-        [SerializeField] private float playerMaxHealth = 100f;
+        
         [SerializeField] private float playerDissolve;
         [SerializeField] private string playerDissolveValue;
         [SerializeField] private float maxPlayerDissolve = 0.78f;
-        [SerializeField] private float PlayerDissolveSpeed = 0.08f;
+        [SerializeField] private float playerDissolveSpeed = 0.01f;
         [SerializeField] private string safeZoneTag;
 
-        [SerializeField] private float health;
+        
         private bool isDead;
+
 
         public event Action OnDie; 
         
@@ -26,15 +28,13 @@ namespace LostSouls.combat
 
         private bool isSafe;
 
-        private void Awake()
-        {
-            
-        }
+        public string Name => "playerDissolve";
+
+        public bool isUnlocked { get; set; }
 
         private void Start()
         {
-            material.SetFloat(playerDissolveValue, 0);
-            health = playerMaxHealth;
+            material.SetFloat(playerDissolveValue, 0);            
             isDead = false;
         }
 
@@ -44,21 +44,10 @@ namespace LostSouls.combat
             {
                 ChangePlayerDissolve();
             }
-
-            CheckPlayerHealth();
             
         }
 
-        public void DealDamage(float damageDealt)
-        {
-            if (!isDead)
-            {
-                health = Mathf.Max(health - damageDealt, 0);
-            }
-
-           
-            
-        }
+        
 
         private void ChangePlayerDissolve()
         {
@@ -66,7 +55,7 @@ namespace LostSouls.combat
 
             if (!isDead)
             {
-                playerDissolve += PlayerDissolveSpeed * Time.deltaTime;
+                playerDissolve += playerDissolveSpeed * Time.deltaTime;
 
                 material.SetFloat(playerDissolveValue, playerDissolve);
             }
@@ -86,18 +75,11 @@ namespace LostSouls.combat
             
         }
 
-        private void CheckPlayerHealth()
-        {
-            if(health <= 0.0f)
-            {
-                KillPlayer();
-            }
-        }
-
+        
 
         private void KillPlayer()
         {
-            if(health <= 0 || playerDissolve >= maxPlayerDissolve)
+            if(playerDissolve >= maxPlayerDissolve)
             {
                 isDead = true;
 
@@ -127,32 +109,23 @@ namespace LostSouls.combat
                 isSafe = false;
             }
         }
-
-        public float GetPlayerHealth()
-        {
-            return health;
-        }
-
-        public float GetMaxPlayerHealth()
-        {
-            return playerMaxHealth;
-        }
-
-        public void SetPlayerHealth(float health)
-        {
-            this.health = health;
-        }
+                
                
         public void RestoreState(object state)
         {
-            health = (float)state;
-
-
+            playerDissolve = (float)state;
         }
 
         public object CaptureState()
         {
-            return health;
+            return playerDissolve;
+        }
+
+        public void ApplySkill(GameObject player)
+        {
+            if (!isUnlocked) return;
+            Debug.Log("skill player dissolve");
+            playerDissolveSpeed = 0.01f / 4f; 
         }
     }
 }

@@ -15,7 +15,7 @@ namespace LostSouls.UI
 
 
         [SerializeField] private UnityEngine.UI.Slider healthUI = null;
-        [SerializeField] private PlayerHealth health;
+        [SerializeField] private Health health;
 
         
        

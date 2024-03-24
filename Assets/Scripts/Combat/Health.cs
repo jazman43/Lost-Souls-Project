@@ -1,12 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using LostSouls.Saving;
+using LostSouls.skill;
 
 
 namespace LostSouls.combat
 {
-    public class Health : MonoBehaviour
+    public class Health : MonoBehaviour, ISaveable, ISkill
     {
         [SerializeField] private float MaxHealth = 100f;
         
@@ -14,7 +16,11 @@ namespace LostSouls.combat
         private float health;
         private bool isDead;
 
-        
+        public string Name => "Incresses Health";
+
+        public bool isUnlocked { get ; set; }
+
+        public event Action OnDie;
 
 
         private void Start()
@@ -47,10 +53,13 @@ namespace LostSouls.combat
             if (health <= 0.0f)
             {
                 Kill();
+                isDead = true;
+
+                OnDie?.Invoke();
             }
         }
 
-
+        
         private void Kill()
         {
             if (health <= 0)
@@ -59,11 +68,19 @@ namespace LostSouls.combat
                 Destroy(gameObject);
             }
 
-        }      
+        }
 
-       
+        public float GetPlayerHealth()
+        {
+            return health;
+        }
 
-        public object CapturState()
+        public float GetMaxPlayerHealth()
+        {
+            return MaxHealth;
+        }
+
+        public object CaptureState()
         {
             return health;
         }
@@ -72,7 +89,14 @@ namespace LostSouls.combat
         {
             health = (float)state;
 
+        }
 
+        public void ApplySkill(GameObject player)
+        {
+            if (!isUnlocked) return;
+            Debug.Log("unlocked new health");
+            MaxHealth += 100;
+            health += 100;
         }
     }
 }

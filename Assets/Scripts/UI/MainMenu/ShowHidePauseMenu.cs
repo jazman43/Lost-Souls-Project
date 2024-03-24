@@ -60,16 +60,12 @@ namespace LostSouls.UI.Menus
                 inputs.gameObject.GetComponent<PlayerStateMachine>().enabled = false;
             }
 
-            /*if (inputs.Menu() && isPaused && pauseMenu.gameObject.activeSelf)
-            {
-                isPaused = false;
-                UnPause();
-            }*/
+           
         }
 
         public void UnPause()
         {
-            inputs.gameObject.GetComponent<PlayerStateMachine>().enabled = false;
+            inputs.gameObject.GetComponent<PlayerStateMachine>().enabled = true;
             HUD.gameObject.SetActive(true);
             pauseMenu.gameObject.SetActive(false);
             pauseMenu.OnUnPause();
