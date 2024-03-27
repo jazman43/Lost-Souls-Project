@@ -130,7 +130,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: 0.066195905, y: -0.039220653, z: -0.0044715875}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -293,6 +293,74 @@ Transform:
   - {fileID: 870826766942351241}
   m_Father: {fileID: 753513506325562877}
   m_LocalEulerAnglesHint: {x: 63.33778, y: 17.387102, z: 27.800772}
+--- !u!1 &1220394752902218002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 927551880953156848}
+  - component: {fileID: 2000670735827593556}
+  - component: {fileID: 8361611295250794301}
+  m_Layer: 0
+  m_Name: SoulDetector
+  m_TagString: Soul
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &927551880953156848
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220394752902218002}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.725, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7000095344774692804}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &2000670735827593556
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220394752902218002}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.47
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8361611295250794301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220394752902218002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ddb686d8d0145c4a8dc659d82b9c5fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentPonits: 1
+  soulsTagName: Soul
 --- !u!1 &1283026658900118913
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,7 +489,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: -0.000000017611711, y: 0.3338117, z: 0.000000008381903}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -845,7 +913,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: -0.11174762, y: 0.15645209, z: -0.007735125}
   serializedVersion: 2
   m_SwingAxis: {x: 1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -976,7 +1044,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: -0.000000034982804, y: 0.1898197, z: 0.000000037252903}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:
@@ -1170,7 +1238,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: 0.0000047156827, y: 0.15912169, z: -0.006881641}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -1463,7 +1531,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: -0.0010216375, y: 0.24612273, z: 0.01731587}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -1720,6 +1788,54 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8660666048198936214}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4624546843399206186
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5569373795749255932}
+  - component: {fileID: 3460456553277799977}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5569373795749255932
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4624546843399206186}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.98, y: 0, z: 1.888}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7000095344774692804}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3460456553277799977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4624546843399206186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5740c76c7ddcb64a874e1e66998bdce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soulPreFab: {fileID: 4826402174113144659, guid: b6e73dd96ddbb6a49916a002e5a200e8,
+    type: 3}
+  spawnRadius: 30
+  numberOfSouls: 5
 --- !u!1 &4660540436703657226
 GameObject:
   m_ObjectHideFlags: 0
@@ -2075,7 +2191,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: 0.11103328, y: 0.15768567, z: -0.007643696}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -2162,8 +2278,8 @@ GameObject:
   - component: {fileID: 7654446285177741274}
   - component: {fileID: 8521943097846755871}
   - component: {fileID: 1966313347581893672}
-  - component: {fileID: 6165386818267736981}
-  - component: {fileID: 7323307712561185748}
+  - component: {fileID: 2932658025633340627}
+  - component: {fileID: 2505593493366274348}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2188,6 +2304,8 @@ Transform:
   - {fileID: 2947398530024982640}
   - {fileID: 2085907679468403338}
   - {fileID: 4420306698570039475}
+  - {fileID: 927551880953156848}
+  - {fileID: 5569373795749255932}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &6516873518844023391
@@ -2290,7 +2408,7 @@ MonoBehaviour:
   <Animation>k__BackingField: {fileID: 3414421993702578574}
   <Targeter>k__BackingField: {fileID: 3731200580518536663}
   <ForceReceiver>k__BackingField: {fileID: 8070942238639764009}
-  <PlayerHealth>k__BackingField: {fileID: 6165386818267736981}
+  <PlayerHealth>k__BackingField: {fileID: 0}
   <Health>k__BackingField: {fileID: 8521943097846755871}
   <Ragdoll>k__BackingField: {fileID: 7654446285177741274}
   <LedgeDetector>k__BackingField: {fileID: 8039932233802732303}
@@ -2301,7 +2419,7 @@ MonoBehaviour:
   - {fileID: 2321658691643508357}
   <walkSpeed>k__BackingField: 6
   <SprintSpeed>k__BackingField: 15
-  <RotationSmooth>k__BackingField: 20
+  <RotationSmooth>k__BackingField: 8
   <DodgeDuration>k__BackingField: 1.15
   <DodgeLength>k__BackingField: 3
   <JumpForce>k__BackingField: 8
@@ -2309,7 +2427,7 @@ MonoBehaviour:
   - <AnimationName>k__BackingField: BoxingRightPunch
     <TransitionTime>k__BackingField: 0.1
     <ComboStateIndex>k__BackingField: 1
-    <LastComboIndex>k__BackingField: 2
+    <LastComboIndex>k__BackingField: 3
     <ComboAttackTime>k__BackingField: 0.6
     <ForceTime>k__BackingField: 0.1
     <Force>k__BackingField: 5
@@ -2317,7 +2435,7 @@ MonoBehaviour:
   - <AnimationName>k__BackingField: BoxingRightKick
     <TransitionTime>k__BackingField: 0.1
     <ComboStateIndex>k__BackingField: 2
-    <LastComboIndex>k__BackingField: 2
+    <LastComboIndex>k__BackingField: 3
     <ComboAttackTime>k__BackingField: 0.5
     <ForceTime>k__BackingField: 0.15
     <Force>k__BackingField: 5
@@ -2325,7 +2443,7 @@ MonoBehaviour:
   - <AnimationName>k__BackingField: BoxingLeftUpperPunch
     <TransitionTime>k__BackingField: 0.2
     <ComboStateIndex>k__BackingField: -1
-    <LastComboIndex>k__BackingField: 2
+    <LastComboIndex>k__BackingField: 3
     <ComboAttackTime>k__BackingField: 0
     <ForceTime>k__BackingField: 0.15
     <Force>k__BackingField: 10
@@ -2369,7 +2487,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 1524531391851962687}
-  drag: 0.1
+  drag: 0.05
   grounded: 0
   groundedOffset: -0.14
   groundedRadius: 0.24
@@ -2390,8 +2508,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapons:
   - {fileID: 2211473930179457415}
-  - {fileID: 3342717265769419600}
   - {fileID: 7870393109684397324}
+  - {fileID: 3342717265769419600}
   - {fileID: 7906798375309575980}
 --- !u!95 &3414421993702578574
 Animator:
@@ -2453,7 +2571,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d889753d91a7ff49aece262c8839e1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6165386818267736981
+  skillButtons:
+  - skillName: Incresses Health
+    button: {fileID: 0}
+  - skillName: playerDissolve
+    button: {fileID: 0}
+  ponits: {fileID: 8361611295250794301}
+--- !u!114 &2932658025633340627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6643998992738211075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf5f67da6fbd915438f621d54f51fd05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  safeZoneString: safeZone
+  pauseMenu: {fileID: 0}
+  HUD: {fileID: 0}
+  testButtons: {fileID: 0}
+--- !u!114 &2505593493366274348
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2466,23 +2606,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerDissolve: 0
-  playerDissolveValue: 
+  playerDissolveValue: _Dissolve
   maxPlayerDissolve: 0.78
   playerDissolveSpeed: 0.01
-  safeZoneTag: 
-  material: {fileID: 0}
---- !u!114 &7323307712561185748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6643998992738211075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ddb686d8d0145c4a8dc659d82b9c5fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  safeZoneTag: safeZone
+  material: {fileID: 2100000, guid: 730c2a3e262e23246928a3184dfe0b3d, type: 2}
 --- !u!1 &6667589749480435055
 GameObject:
   m_ObjectHideFlags: 0
@@ -2780,7 +2908,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: 126356b24c819834abc35bb0e5694c9d, type: 3}
+  - {fileID: 2100000, guid: 730c2a3e262e23246928a3184dfe0b3d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3009,7 +3137,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: 0.000000021012966, y: 0.18982024, z: 0.000000022351742}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:
@@ -3795,7 +3923,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: -0.000000017556061, y: 0.333812, z: -0.000000011175871}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -3959,7 +4087,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: -0.066209495, y: -0.03922061, z: -0.0044717058}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -4020,7 +4148,7 @@ Transform:
   m_GameObject: {fileID: 8992117694162499129}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

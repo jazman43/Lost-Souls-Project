@@ -35,23 +35,21 @@ namespace LostSouls.skill
 
         private void Start()
         {
-            foreach (var pair in skillButtons)
-            {
-                if (skills.TryGetValue(pair.skillName, out var skill))
-                {
-                    
-                    if (skill.isUnlocked)
-                    {
-                        pair.button.interactable = false;
-                    }
-                }
-            }
+            CheckSkillButton();
+        }
+
+        private void Update()
+        {
+            CheckSkillButton();
         }
 
         public void UnlockSkill(string skillName)
         {
-            if(ponits.GetPonits() == 1)
+            Debug.Log("current souls " + ponits.GetPonits());
+            if (ponits.GetPonits() >= 1)
             {
+                
+                Debug.Log("unlock Skill " + skillName);
                 if (skills.TryGetValue(skillName, out var skill))
                 {
                     skill.isUnlocked = true;
@@ -64,6 +62,21 @@ namespace LostSouls.skill
                 //not enoght ponits to unlock
             }            
             
+        }
+
+        private void CheckSkillButton()
+        {
+            foreach (var pair in skillButtons)
+            {
+                if (skills.TryGetValue(pair.skillName, out var skill))
+                {
+
+                    if (skill.isUnlocked)
+                    {
+                        pair.button.interactable = false;
+                    }
+                }
+            }
         }
 
         public object CaptureState()
