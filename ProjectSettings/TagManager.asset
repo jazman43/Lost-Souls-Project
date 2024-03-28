@@ -6,6 +6,7 @@ TagManager:
   tags:
   - RunningWall
   - Climbing wall
+  - Saving Shield
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,9 @@ TagManager:
   - Wall
   - 
   - 
-
+  - 
+  - 
+  - 
   - 
   - 
   - 
