@@ -136,6 +136,15 @@ namespace LostSouls.Inputs
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""e58dd2c1-0ace-4c4a-ab8b-f2845a49ea32"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -433,6 +442,28 @@ namespace LostSouls.Inputs
                     ""processors"": """",
                     ""groups"": ""Controller"",
                     ""action"": ""Menu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c10ae624-4a29-4a4f-8bd4-c171c37ea9ac"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse & Keyboard"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bbc2eb2f-05d9-4bb2-8253-803d6a5b4002"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1076,6 +1107,7 @@ namespace LostSouls.Inputs
             m_PlayerMovement_Attack = m_PlayerMovement.FindAction("Attack", throwIfNotFound: true);
             m_PlayerMovement_Cancel = m_PlayerMovement.FindAction("Cancel", throwIfNotFound: true);
             m_PlayerMovement_Menu = m_PlayerMovement.FindAction("Menu", throwIfNotFound: true);
+            m_PlayerMovement_Interact = m_PlayerMovement.FindAction("Interact", throwIfNotFound: true);
             // MenuUI
             m_MenuUI = asset.FindActionMap("MenuUI", throwIfNotFound: true);
             m_MenuUI_Newaction = m_MenuUI.FindAction("New action", throwIfNotFound: true);
@@ -1164,6 +1196,7 @@ namespace LostSouls.Inputs
         private readonly InputAction m_PlayerMovement_Attack;
         private readonly InputAction m_PlayerMovement_Cancel;
         private readonly InputAction m_PlayerMovement_Menu;
+        private readonly InputAction m_PlayerMovement_Interact;
         public struct PlayerMovementActions
         {
             private @Inputs m_Wrapper;
@@ -1180,6 +1213,7 @@ namespace LostSouls.Inputs
             public InputAction @Attack => m_Wrapper.m_PlayerMovement_Attack;
             public InputAction @Cancel => m_Wrapper.m_PlayerMovement_Cancel;
             public InputAction @Menu => m_Wrapper.m_PlayerMovement_Menu;
+            public InputAction @Interact => m_Wrapper.m_PlayerMovement_Interact;
             public InputActionMap Get() { return m_Wrapper.m_PlayerMovement; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -1225,6 +1259,9 @@ namespace LostSouls.Inputs
                 @Menu.started += instance.OnMenu;
                 @Menu.performed += instance.OnMenu;
                 @Menu.canceled += instance.OnMenu;
+                @Interact.started += instance.OnInteract;
+                @Interact.performed += instance.OnInteract;
+                @Interact.canceled += instance.OnInteract;
             }
 
             private void UnregisterCallbacks(IPlayerMovementActions instance)
@@ -1265,6 +1302,9 @@ namespace LostSouls.Inputs
                 @Menu.started -= instance.OnMenu;
                 @Menu.performed -= instance.OnMenu;
                 @Menu.canceled -= instance.OnMenu;
+                @Interact.started -= instance.OnInteract;
+                @Interact.performed -= instance.OnInteract;
+                @Interact.canceled -= instance.OnInteract;
             }
 
             public void RemoveCallbacks(IPlayerMovementActions instance)
@@ -1478,6 +1518,7 @@ namespace LostSouls.Inputs
             void OnAttack(InputAction.CallbackContext context);
             void OnCancel(InputAction.CallbackContext context);
             void OnMenu(InputAction.CallbackContext context);
+            void OnInteract(InputAction.CallbackContext context);
         }
         public interface IMenuUIActions
         {
