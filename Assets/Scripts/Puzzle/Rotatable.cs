@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using LostSouls.Interact;
+using LostSouls.Interact.UI;
 using LostSouls.Inputs;
 
 namespace LostSouls.Puzzles
@@ -16,6 +17,9 @@ namespace LostSouls.Puzzles
 
         public bool HandleRaycast(Interact.Interact callingInteract)
         {
+            //spwan text
+            GetComponentInChildren<InteratUIPopup>().SpawnInteractableText();
+
             if (FindObjectOfType<PlayerInputs>().Interact())
             {
                 

@@ -27,6 +27,8 @@ namespace LostSouls.Movement
         {
             Debug.Log("enter");
 
+            Cursor.lockState = CursorLockMode.Locked;
+
             stateMachine.Animation.SetFloat(moveAnimationHash, 0);
 
             if (shouldFade)
