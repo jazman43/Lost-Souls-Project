@@ -4,8 +4,15 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - RunningWall
   - Climbing wall
+  - RunningWall
+  - safeZone
+  - camSawp
+  - ragdoll
+  - Ledge
+  - Cursor
+  - Canvas
+  - Soul
   layers:
   - Default
   - TransparentFX
@@ -14,16 +21,10 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
-
-  - ClimbingWall
-  - RunningWall
-
-  - 
-  - Target
-  - Obstruction
-
-  - 
+  - Wall
+  - Climbing
+  - Player
+  - Ragdoll
   - 
   - 
   - 

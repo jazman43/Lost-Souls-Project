@@ -1,68 +1,104 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
-public class FieldOfView : MonoBehaviour
+namespace LostSouls.AI
 {
-    public float radius;
-    [Range(0,360)]
-    public float angle;
 
-    public GameObject playerRef;
-
-    public LayerMask targetMask;
-    public LayerMask obstructionMask;
-
-    public bool canSeePlayer;
-
-    private void Start()
+    public class FieldOfView : MonoBehaviour
     {
-        playerRef = GameObject.FindGameObjectWithTag("Player");
-        StartCoroutine(FOVRoutine());
-    }
+        public float radius;
+        [Range(0, 360)]
+        public float angle;
 
-    private IEnumerator FOVRoutine()
-    {
-        WaitForSeconds wait = new WaitForSeconds(0.2f);
+        public GameObject playerRef;
 
-        while (true)
+        public LayerMask targetMask;
+        public LayerMask obstructionMask;
+
+        public bool canSeePlayer;
+
+        private void Start()
         {
-            yield return wait;
-            FieldOfViewCheck();
+            playerRef = GameObject.FindGameObjectWithTag("Player");
+            StartCoroutine(FOVRoutine());
         }
-    }
-    private void FieldOfViewCheck()
-    {
-        Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radius, targetMask);
-
-        if (rangeChecks.Length != 0)
+        private void Update()
         {
-            Transform target = rangeChecks[0].transform;
-            Vector3 directionToTarget = (target.position - transform.position).normalized;
-
-            if (Vector3.Angle(transform.forward, directionToTarget) < angle / 2)
+            if (canSeePlayer)
             {
-                float distanceToTarget = Vector3.Distance(transform.position, target.position);
+                GetComponent<NavMeshAgent>().SetDestination(playerRef.transform.position);
+            }
+        }
 
-                if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
+        private IEnumerator FOVRoutine()
+        {
+            WaitForSeconds wait = new WaitForSeconds(0.2f);
+
+            while (true)
+            {
+                yield return wait;
+                FieldOfViewCheck();
+            }
+        }
+        private void FieldOfViewCheck()
+        {
+            Animator animator = GetComponent<Animator>();
+            Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radius, targetMask);
+
+            if (rangeChecks.Length != 0)
+            {
+                Transform target = rangeChecks[0].transform;
+                Vector3 directionToTarget = (target.position - transform.position).normalized;
+
+                if (Vector3.Angle(transform.forward, directionToTarget) < angle / 2)
                 {
-                    canSeePlayer = true;
+                    float distanceToTarget = Vector3.Distance(transform.position, target.position);
+
+                    if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
+                    {
+                        canSeePlayer = true;
+                        animator.SetBool("canSeePlayer", true);
+                    }
+                    else
+                    {
+                        canSeePlayer = false;
+                        animator.SetBool("canSeePlayer", false);
+                    }
                 }
                 else
                 {
                     canSeePlayer = false;
+                    animator.SetBool("canSeePlayer", false);
                 }
             }
-            else
+            else if (canSeePlayer)
             {
                 canSeePlayer = false;
+                animator.SetBool("canSeePlayer", false);
+            }
+
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.tag == "Player") // check for collision with player
+            {
+                EnemyHealth enemyHealth = EnemyManager.CurrentEnemy.GetComponent<EnemyHealth>(); // get the EnemyHealth component from the current enemy
+
+                if (enemyHealth != null)
+                {
+                    enemyHealth.TakeDamage(1); // apply damage to the enemy
+                    Debug.Log("Player Collided with enemy. damaged enemy.", enemyHealth);
+
+                }
+                else
+                {
+                    Debug.LogError("Player Collided with enemy. damaged enemy.", EnemyManager.CurrentEnemy);
+                }
+
             }
         }
-        else if (canSeePlayer)
-        {
-            canSeePlayer = false;
-        }
-            
     }
-
 }

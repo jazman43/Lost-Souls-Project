@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/Movement/PlayerFallingState.cs.meta
+guid: 323dc56c8563ee14abecebb2f10bf247
+========
+guid: 8ecdf085c86fa4a8ea0c68b4fb41f78a
+>>>>>>>> main:Assets/Scripts/SoundManager/AudioManager.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

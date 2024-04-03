@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/Movement/ForceReceiver.cs.meta
+guid: 474f20dca453e634cb8963f886541e6b
+========
+guid: 1b9460cac9e3a4d13886429ec5cfb6b0
+>>>>>>>> main:Assets/Scripts/SoundManager/SFXManager.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
