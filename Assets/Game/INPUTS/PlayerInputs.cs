@@ -87,5 +87,10 @@ namespace LostSouls.Inputs
         {
             return input.PlayerMovement.Menu.triggered;
         }
+
+        public bool Interact()
+        {
+            return input.PlayerMovement.Interact.triggered;
+        }
     }
 }

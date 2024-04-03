@@ -25,11 +25,7 @@ namespace LostSouls.combat
             if (alreadyCollidedWith.Contains(other)) return;
 
             alreadyCollidedWith.Add(other);
-
-            if(other.TryGetComponent<PlayerHealth>(out PlayerHealth health))
-            {
-                health.DealDamage(10);
-            }
+            
 
             if(other.TryGetComponent<Health>(out Health otherHealth))
             {

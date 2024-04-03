@@ -12,6 +12,7 @@ TagManager:
   - Ledge
   - Cursor
   - Canvas
+  - Soul
   layers:
   - Default
   - TransparentFX
