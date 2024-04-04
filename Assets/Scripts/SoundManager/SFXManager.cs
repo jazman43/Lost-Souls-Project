@@ -48,6 +48,9 @@ namespace LostSouls.SoundManager
             Damage,
             Appear,
             Walk,
+            Healing,
+            SoulOrbs,
+
 
         }
 

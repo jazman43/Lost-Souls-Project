@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Climbing wall
+  - Saving Shield
   - RunningWall
   - safeZone
   - camSawp
@@ -25,6 +26,9 @@ TagManager:
   - Climbing
   - Player
   - Ragdoll
+  - 
+  - 
+  - 
   - 
   - 
   - 
