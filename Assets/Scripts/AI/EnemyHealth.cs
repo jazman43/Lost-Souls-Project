@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using LostSouls.SoundManager;
 
-namespace LostSouls.AI {
+namespace LostSouls.AI
+{
 
     public class EnemyHealth : MonoBehaviour
     {
