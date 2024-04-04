@@ -60,10 +60,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2943923492859624634, guid: 3326d1d2374a14aa0b5aa7a37140f30a,
         type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2943923492859624634, guid: 3326d1d2374a14aa0b5aa7a37140f30a,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: -876546973899608171, guid: 7be2c0d9e493c4929a58a76ba9e7c7c8,
+      objectReference: {fileID: 2100000, guid: c1c72230eafe049a3bb2756cb5d016b7, type: 2}
+    - target: {fileID: -2943923492859624634, guid: 3326d1d2374a14aa0b5aa7a37140f30a,
         type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 06b87b064d82f4165988b9aa62a0bc27, type: 2}
+    - target: {fileID: -2943923492859624634, guid: 3326d1d2374a14aa0b5aa7a37140f30a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 06b87b064d82f4165988b9aa62a0bc27, type: 2}
     - target: {fileID: 919132149155446097, guid: 3326d1d2374a14aa0b5aa7a37140f30a,
         type: 3}
       propertyPath: m_Name
@@ -101,7 +115,11 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3326d1d2374a14aa0b5aa7a37140f30a,
         type: 3}
       insertIndex: -1
+<<<<<<< HEAD
+      addedObject: {fileID: 342821899522684990}
+=======
       addedObject: {fileID: 9155991400573373943}
+>>>>>>> main
   m_SourcePrefab: {fileID: 100100000, guid: 3326d1d2374a14aa0b5aa7a37140f30a, type: 3}
 --- !u!1 &5769126675134051588 stripped
 GameObject:
@@ -195,14 +213,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 5
   angle: 100
-  playerRef: {fileID: 0}
+  playerRef: {fileID: 258896267754704163, guid: e0deb57fb159d461a9bd814488cd45b4,
+    type: 3}
   targetMask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 1
   obstructionMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 128
   canSeePlayer: 0
+  _renderer: {fileID: 342821899522684990}
 --- !u!114 &4596390518552129215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,15 +236,57 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: 10
+<<<<<<< HEAD
+--- !u!23 &342821899522684990
+MeshRenderer:
+=======
 --- !u!114 &9155991400573373943
 MonoBehaviour:
+>>>>>>> main
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5769126675134051588}
   m_Enabled: 1
+<<<<<<< HEAD
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 06b87b064d82f4165988b9aa62a0bc27, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+=======
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13226eb5970499a478f1df8975fa8751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+>>>>>>> main
