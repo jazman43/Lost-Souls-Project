@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using DG.Tweening;
+//using DG.Tweening;
 using UnityEngine.AI;
 
 namespace LostSouls.AI
@@ -31,7 +31,7 @@ namespace LostSouls.AI
         //Copy model materials
         private Material _material;
 
-        private Sequence _seq;
+        //private Sequence _seq;
 
 
         private void Start()
@@ -117,7 +117,7 @@ namespace LostSouls.AI
             {
                 animator.SetTrigger("Attack");
                 animator.SetInteger("AttacKIndex", Random.Range(0, 2));
-                HitFadeBlink(Color.white);
+                //HitFadeBlink(Color.white);
                 
                 EnemyHealth enemyHealth = EnemyManager.CurrentEnemy.GetComponent<EnemyHealth>(); // get the EnemyHealth component from the current enemy
 
@@ -135,6 +135,7 @@ namespace LostSouls.AI
             }
         }
 
+        /*
         private void HitFadeBlink(Color color)
         {
             _seq?.Kill();
@@ -143,5 +144,6 @@ namespace LostSouls.AI
             _seq.Append(DOTween.To(() => color, c => _material.SetColor(PROPERTY_ADDITIVE_COLOR, c), Color.black, 0.1f));
             _seq.Play();
         }
+        */
     }
 }
