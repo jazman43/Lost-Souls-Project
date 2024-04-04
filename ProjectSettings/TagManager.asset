@@ -4,9 +4,16 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - RunningWall
   - Climbing wall
   - Saving Shield
+  - RunningWall
+  - safeZone
+  - camSawp
+  - ragdoll
+  - Ledge
+  - Cursor
+  - Canvas
+  - Soul
   layers:
   - Default
   - TransparentFX
@@ -16,6 +23,9 @@ TagManager:
   - UI
   - Ground
   - Wall
+  - Climbing
+  - Player
+  - Ragdoll
   - 
   - 
   - 

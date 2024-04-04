@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/Movement/LedgeDetector.cs.meta
+guid: 1434d82108ca0654981315d74fea2a4c
+========
+guid: 2304e3239a6314ab38df6636679ae6fa
+>>>>>>>> main:Assets/Scripts/SoundManager/BGMManager.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
