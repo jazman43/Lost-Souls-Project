@@ -427,6 +427,13 @@
       },
       "url": "https://packages.unity.com"
     },
+    "jp.co.cyberagent.air-sticker": {
+      "version": "https://github.com/CyberAgentGameEntertainment/AirSticker.git?path=/Assets/AirSticker",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "dc418ec3b563691b5f5ef4fd97698e9806ac4f26"
+    },
     "jp.co.cyberagent.nova": {
       "version": "https://github.com/CyberAgentGameEntertainment/NovaShader.git?path=/Assets/Nova",
       "depth": 0,
