@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
-public class AudioManager : MonoBehaviour
+
+namespace LostSouls.SoundManager
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public class AudioManager : MonoBehaviour
+    {        
+        void Start()
+        {
+            BGMManager.Instance.PlayBGM(BGMSoundData.BGM.MainMenu);
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+
+        private void Update()
+        {
+            BGMManager.Instance.GetAudioMixer().GetFloat("masterVolume", )
+        }
     }
 }

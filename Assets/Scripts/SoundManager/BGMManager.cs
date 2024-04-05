@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 namespace LostSouls.SoundManager
 {
@@ -8,7 +9,7 @@ namespace LostSouls.SoundManager
     public class BGMManager : MonoBehaviour
     {
         [SerializeField] AudioSource bgmAudioSource;
-
+        [SerializeField] private AudioMixer audioMixer;
         [SerializeField] List<BGMSoundData> bgmSoundDatas;
 
         public float masterVolume = 1;
@@ -31,12 +32,18 @@ namespace LostSouls.SoundManager
 
         public void PlayBGM(BGMSoundData.BGM bgm)
         {
+            Debug.Log("Play BGM" + bgmAudioSource.clip);
             BGMSoundData data = bgmSoundDatas.Find(data => data.bgm == bgm);
             bgmAudioSource.clip = data.audioClip;
-            bgmAudioSource.volume = data.volume * bgmMasterVolume * masterVolume;
+            //this was setting the volume so low you couldnt hear it 
+            //bgmAudioSource.volume = data.volume * bgmMasterVolume * masterVolume;
             bgmAudioSource.Play();
         }
 
+        public AudioMixer GetAudioMixer()
+        {
+            return audioMixer;
+        }
     }
 
     [System.Serializable]
@@ -57,4 +64,6 @@ namespace LostSouls.SoundManager
         [Range(0, 1)]
         public float volume = 1;
     }
+
+    
 }

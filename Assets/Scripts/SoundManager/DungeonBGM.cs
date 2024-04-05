@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using LostSouls.SoundManager;
 
-namespace LostSouls.DungeonBGM
+
+namespace LostSouls.SoundManager
 {
 
     public class DungeonBGM : MonoBehaviour

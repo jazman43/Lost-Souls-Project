@@ -49,7 +49,7 @@ namespace LostSouls.Interact
             float[] distances = new float[hits.Length];
             for (int i = 0; i < hits.Length; i++)
             {
-                Debug.Log("dis" + i);
+                //Debug.Log("dis" + i);
                 distances[i] = hits[i].distance;
             }
             Array.Sort(distances, hits);
