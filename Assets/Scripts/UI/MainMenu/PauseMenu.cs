@@ -31,5 +31,15 @@ namespace LostSouls.UI.Menus
             MenuManager menuManager = FindObjectOfType<MenuManager>();
             menuManager.SaveGameState();
         }
+
+        public void OnExit()
+        {
+           
+            Debug.Log("unPause Load menu");
+            Time.timeScale = 1;
+            
+            MenuManager menuManager = FindObjectOfType<MenuManager>();
+            menuManager.LoadMenu();
+        }
     }
 }

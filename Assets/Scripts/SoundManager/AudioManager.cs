@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
-
+using UnityEngine.SceneManagement;
 
 namespace LostSouls.SoundManager
 {
@@ -10,13 +10,25 @@ namespace LostSouls.SoundManager
     {        
         void Start()
         {
-            BGMManager.Instance.PlayBGM(BGMSoundData.BGM.MainMenu);
+            CheckIfCanPlay();
         }
 
 
-        private void Update()
+
+
+        private void CheckIfCanPlay()
         {
-            BGMManager.Instance.GetAudioMixer().GetFloat("masterVolume", )
+            //check if we are in main menu or main game
+            if(SceneManager.GetSceneByBuildIndex(0) == SceneManager.GetActiveScene())
+            {
+                //main menu
+                BGMManager.Instance.PlayBGM(BGMSoundData.BGM.MainMenu);
+            }
+            else
+            {
+                BGMManager.Instance.PlayBGM(BGMSoundData.BGM.game_loop);
+            }
         }
+        //TO DO set up different BGM's to start and stop in correct places 
     }
 }

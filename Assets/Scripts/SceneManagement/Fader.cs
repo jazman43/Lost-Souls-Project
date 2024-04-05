@@ -49,6 +49,8 @@ namespace LostSouls.SceneManagement
             while (!Mathf.Approximately(canvas.alpha, target))
             {
                 canvas.alpha = Mathf.MoveTowards(canvas.alpha, target, Time.unscaledDeltaTime / time);
+                //Debug.Log(canvas.alpha + "Alpha value") ;
+                
                 yield return null;
             }
         }
