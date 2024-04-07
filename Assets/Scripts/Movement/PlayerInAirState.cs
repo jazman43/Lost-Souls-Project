@@ -31,7 +31,8 @@ namespace LostSouls.Movement
             Move(momentum, daltaTime);
 
             stateMachine.LedgeDetector.OnLedgeDetect += HandleLedgeDetect;
-            
+            stateMachine.WallDetector.OnWallDetect += HandleWallDetect;
+
             stateMachine.SwitchState(new PlayerFallingState(stateMachine));
             
 
@@ -44,11 +45,17 @@ namespace LostSouls.Movement
         public override void Exit()
         {
             stateMachine.LedgeDetector.OnLedgeDetect -= HandleLedgeDetect;
+            stateMachine.WallDetector.OnWallDetect -= HandleWallDetect;
         }
 
         private void HandleLedgeDetect( Vector3 ledgeForward)
         {
             stateMachine.SwitchState(new PlayerHangingState(stateMachine, ledgeForward));
+        }
+
+        private void HandleWallDetect(Vector3 wallForward)
+        {
+            stateMachine.SwitchState(new PlayerWallClimbState(stateMachine, wallForward));
         }
     }
 }

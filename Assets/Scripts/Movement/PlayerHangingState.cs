@@ -8,7 +8,7 @@ namespace LostSouls.Movement
 {
     public class PlayerHangingState : PlayerBaseState
     {
-        Vector3 closestPoint;
+        //Vector3 closestPoint;
         Vector3 ledgeForward;
 
         private readonly int hangingIdleHash = Animator.StringToHash("Hanging Idle");
@@ -33,14 +33,15 @@ namespace LostSouls.Movement
             {
                 // move character left and right
 
-                Vector3 movement = new Vector3();
-                movement.y = 0;
-                movement.z = 0;
-                movement.x = stateMachine.PlayerInputs.Movement().x;
+                Vector2 movement = stateMachine.PlayerInputs.Movement();
 
-                stateMachine.transform.rotation = Quaternion.LookRotation(ledgeForward, Vector3.up);
+                Vector3 wallRight = Vector3.Cross(Vector3.up, ledgeForward).normalized;
+                
 
-                stateMachine.CharacterController.Move(movement * daltaTime);
+                Vector3 movementRalativeToWall = ( wallRight * movement.x) * daltaTime;
+
+
+                stateMachine.CharacterController.Move(movementRalativeToWall);
             }
 
 
@@ -55,6 +56,12 @@ namespace LostSouls.Movement
                 stateMachine.ForceReceiver.Reset();
 
                 stateMachine.SwitchState(new PlayerFallingState(stateMachine));
+            }else if (stateMachine.PlayerInputs.Jump())
+            {
+                stateMachine.ForceReceiver.Reset();
+                stateMachine.ForceReceiver.AddForce(Vector3.back);
+                stateMachine.SwitchState(new PlayerJumpingState(stateMachine));
+                
             }
 
            

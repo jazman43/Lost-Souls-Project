@@ -585,6 +585,72 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8947680318144129316}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1712492071099474984
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 194952460569892920}
+  - component: {fileID: 7521910789890073794}
+  - component: {fileID: 6888614497898613}
+  m_Layer: 7
+  m_Name: wallDetector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &194952460569892920
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712492071099474984}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.034, z: 0.213}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7000095344774692804}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7521910789890073794
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712492071099474984}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.48, y: 1, z: 0.19}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6888614497898613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712492071099474984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c86ff83e59884fe4f9f605b046750ac8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1949132726158426792
 GameObject:
   m_ObjectHideFlags: 0
@@ -1918,7 +1984,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2113258789080816991
 Transform:
   m_ObjectHideFlags: 0
@@ -1980,7 +2046,7 @@ VFXRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4941958794913122491}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -2419,6 +2485,7 @@ Transform:
   - {fileID: 927551880953156848}
   - {fileID: 5569373795749255932}
   - {fileID: 2113258789080816991}
+  - {fileID: 194952460569892920}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &6516873518844023391
@@ -2521,10 +2588,11 @@ MonoBehaviour:
   <Animation>k__BackingField: {fileID: 3414421993702578574}
   <Targeter>k__BackingField: {fileID: 3731200580518536663}
   <ForceReceiver>k__BackingField: {fileID: 8070942238639764009}
-  <PlayerHealth>k__BackingField: {fileID: 0}
+  <PlayerHealth>k__BackingField: {fileID: 2505593493366274348}
   <Health>k__BackingField: {fileID: 8521943097846755871}
   <Ragdoll>k__BackingField: {fileID: 7654446285177741274}
   <LedgeDetector>k__BackingField: {fileID: 8039932233802732303}
+  <WallDetector>k__BackingField: {fileID: 6888614497898613}
   <WeaponDamage>k__BackingField:
   - {fileID: 7881286660345003696}
   - {fileID: 1558860598694846749}
@@ -2691,8 +2759,6 @@ MonoBehaviour:
     button: {fileID: 0}
   ponits: {fileID: 8361611295250794301}
   skillVFX: {fileID: 4941958794913122491}
-  skillVFXTimer: 1
-  vFXTimer: Infinity
 --- !u!114 &2932658025633340627
 MonoBehaviour:
   m_ObjectHideFlags: 0
