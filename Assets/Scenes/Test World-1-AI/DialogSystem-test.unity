@@ -412,7 +412,8 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks: []
+  selectedBlocks:
+  - {fileID: 965503704}
   selectedCommands: []
   variables: []
   description: 
@@ -603,7 +604,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1095838357}
   m_sendNavigationEvents: 1
   m_DragThreshold: 5
 --- !u!4 &1095838361
@@ -637,28 +638,19 @@ MonoBehaviour:
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
   m_XRTrackingOrigin: {fileID: 0}
-  m_ActionsAsset: {fileID: -944628639613478452, guid: 359ba0a97f5b29d45ae2eb325ed29878,
+  m_ActionsAsset: {fileID: -944628639613478452, guid: 7dead05c54ca85b4681351aafd8bd03a,
     type: 3}
-  m_PointAction: {fileID: -1474719537414471329, guid: 359ba0a97f5b29d45ae2eb325ed29878,
+  m_PointAction: {fileID: 0}
+  m_MoveAction: {fileID: 4053732215274948253, guid: 7dead05c54ca85b4681351aafd8bd03a,
     type: 3}
-  m_MoveAction: {fileID: -546813873298854776, guid: 359ba0a97f5b29d45ae2eb325ed29878,
-    type: 3}
-  m_SubmitAction: {fileID: 2651926262421329893, guid: 359ba0a97f5b29d45ae2eb325ed29878,
-    type: 3}
-  m_CancelAction: {fileID: 1435148831566999045, guid: 359ba0a97f5b29d45ae2eb325ed29878,
-    type: 3}
-  m_LeftClickAction: {fileID: -1877373895185971547, guid: 359ba0a97f5b29d45ae2eb325ed29878,
-    type: 3}
-  m_MiddleClickAction: {fileID: -6268842279274217002, guid: 359ba0a97f5b29d45ae2eb325ed29878,
-    type: 3}
-  m_RightClickAction: {fileID: -4129348076456482935, guid: 359ba0a97f5b29d45ae2eb325ed29878,
-    type: 3}
-  m_ScrollWheelAction: {fileID: 7529241030132591908, guid: 359ba0a97f5b29d45ae2eb325ed29878,
-    type: 3}
-  m_TrackedDevicePositionAction: {fileID: -4780313105591956254, guid: 359ba0a97f5b29d45ae2eb325ed29878,
-    type: 3}
-  m_TrackedDeviceOrientationAction: {fileID: -6182866550166438814, guid: 359ba0a97f5b29d45ae2eb325ed29878,
-    type: 3}
+  m_SubmitAction: {fileID: 0}
+  m_CancelAction: {fileID: 0}
+  m_LeftClickAction: {fileID: 0}
+  m_MiddleClickAction: {fileID: 0}
+  m_RightClickAction: {fileID: 0}
+  m_ScrollWheelAction: {fileID: 0}
+  m_TrackedDevicePositionAction: {fileID: 0}
+  m_TrackedDeviceOrientationAction: {fileID: 0}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
