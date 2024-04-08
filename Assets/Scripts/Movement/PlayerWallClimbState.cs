@@ -10,6 +10,8 @@ namespace LostSouls.Movement
     {
         private Vector3 wallForward;
 
+       
+
         private readonly int climbBlendTreeAnimationHash = Animator.StringToHash("ClimbingBlendTree");
         private readonly int climbForwardAnimationHash = Animator.StringToHash("ClimbForward");
         private readonly int climbRightAnimationHash = Animator.StringToHash("ClimbRight");
@@ -22,6 +24,7 @@ namespace LostSouls.Movement
 
         public override void Enter()
         {
+           
             Debug.Log("enter wall climb state");
             //rotate player in correct direction
             stateMachine.transform.rotation = Quaternion.LookRotation(wallForward, Vector3.up);
@@ -30,21 +33,12 @@ namespace LostSouls.Movement
 
         public override void Tick(float daltaTime)
         {
-            //move player up and down on the Y left and right on the X.
-            Vector2 movement = stateMachine.PlayerInputs.Movement();
-
-            Vector3 wallRight = Vector3.Cross(Vector3.up, wallForward).normalized;
-            Vector3 wallUp = Vector3.Cross(wallForward, wallRight).normalized;
-
             
+            Movement(daltaTime);
 
-            Vector3 movementRalativeToWall = (wallUp * movement.y + wallRight * movement.x) * daltaTime;
+            stateMachine.WallDetector.OnWallLeave += HandleLeaveWall;
 
 
-            stateMachine.CharacterController.Move(movementRalativeToWall);
-            //Debug.Log("enter wall climb state" + wallUp);
-
-            //leave wall
             if (stateMachine.PlayerInputs.Cancel())
             {
                 stateMachine.CharacterController.Move(Vector3.zero);
@@ -55,23 +49,27 @@ namespace LostSouls.Movement
             }
             else if (stateMachine.PlayerInputs.Jump())
             {
-                //stateMachine.ForceReceiver.Reset();
-                Vector3 pushDir = -wallForward;
-
-                stateMachine.ForceReceiver.AddForce(pushDir * 6);
-                Debug.Log(pushDir * 6);
-                stateMachine.SwitchState(new PlayerJumpingState(stateMachine));
+                stateMachine.ForceReceiver.Reset();
+                Vector3 pushDir = (-wallForward + Vector3.up) * 200;
+                Move(pushDir, daltaTime);
+                
             }
 
             UpdateAnimator(daltaTime);
         }
 
+       
+
         public override void Exit()
         {
-            
+            stateMachine.WallDetector.OnWallLeave -= HandleLeaveWall;
         }
 
-
+        private void HandleLeaveWall()
+        {            
+            stateMachine.ForceReceiver.Reset();
+            ReturnToLocomotion();            
+        }
 
         private void UpdateAnimator(float daltaTime)
         {
@@ -96,6 +94,20 @@ namespace LostSouls.Movement
                 float value = stateMachine.PlayerInputs.Movement().x > 0 ? 1f : -1f;
                 stateMachine.Animation.SetFloat(climbRightAnimationHash, value, 0.1f, daltaTime);
             }
+        }
+
+        private void Movement(float daltaTime)
+        {
+            Vector2 movement = stateMachine.PlayerInputs.Movement();
+
+            Vector3 wallRight = Vector3.Cross(Vector3.up, wallForward).normalized;
+            Vector3 wallUp = Vector3.Cross(wallForward, wallRight).normalized;
+
+
+            Vector3 movementRalativeToWall = (wallUp * movement.y + wallRight * movement.x) * daltaTime;
+
+
+            stateMachine.CharacterController.Move(movementRalativeToWall);
         }
     }
 }
