@@ -113,9 +113,9 @@ namespace LostSouls.UI.Menus
             GetComponent<SavingSystem>().Load(GetCurrentSave());
         }
 
-        public void Delete()
+        public void Delete(string save)
         {
-            GetComponent<SavingSystem>().Delete(GetCurrentSave());
+            GetComponent<SavingSystem>().Delete(save);
         }
 
         public IEnumerable<string> ListSaves()
