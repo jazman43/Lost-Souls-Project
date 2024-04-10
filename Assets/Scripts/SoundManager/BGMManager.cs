@@ -48,7 +48,7 @@ namespace LostSouls.SoundManager
             Dungeon,
             MainMenu,
             GameOver,
-            Restart,
+            Battle,
             game_loop,
         }
 
