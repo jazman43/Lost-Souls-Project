@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7376018273149115887}
   - component: {fileID: 992686845650840396}
   - component: {fileID: 4172951673776162567}
-  - component: {fileID: 352963823939764843}
   - component: {fileID: 2650123190249366959}
   m_Layer: 0
   m_Name: FlowchartPuzzle
@@ -100,36 +99,9 @@ MonoBehaviour:
   description: Enter to puzzle mode
   eventHandler: {fileID: 2650123190249366959}
   commandList:
-  - {fileID: 352963823939764843}
+  - {fileID: 0}
   - {fileID: 0}
   suppressAllAutoSelections: 0
---- !u!114 &352963823939764843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4436737938668765763}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 2
-  indentLevel: 0
-  storyText: Welcome to Lost SoulZ The Labyrinth world!
-  description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
 --- !u!114 &2650123190249366959
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2713,12 +2713,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1539605069 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7747315128904380275, guid: 7b646cb236e5e1846beecc82a209e0cc,
-    type: 3}
-  m_PrefabInstance: {fileID: 1669373027}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1669373027
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2870,12 +2864,12 @@ PrefabInstance:
     - target: {fileID: 4309041201406333125, guid: 7b646cb236e5e1846beecc82a209e0cc,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000003493577
+      value: -0.000000004993771
       objectReference: {fileID: 0}
     - target: {fileID: 4309041201406333125, guid: 7b646cb236e5e1846beecc82a209e0cc,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -5.7917676e-10
+      value: 8.278839e-10
       objectReference: {fileID: 0}
     - target: {fileID: 4967494244682720678, guid: 7b646cb236e5e1846beecc82a209e0cc,
         type: 3}
@@ -3371,7 +3365,7 @@ PrefabInstance:
         type: 3}
       propertyPath: variables.Array.data[0]
       value: 
-      objectReference: {fileID: 1761485523}
+      objectReference: {fileID: 1761485543}
     - target: {fileID: 992686845650840396, guid: 69be91231f8f1404997fe94b29cbf97e,
         type: 3}
       propertyPath: selectedBlocks.Array.size
@@ -3380,18 +3374,18 @@ PrefabInstance:
     - target: {fileID: 992686845650840396, guid: 69be91231f8f1404997fe94b29cbf97e,
         type: 3}
       propertyPath: selectedCommands.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 992686845650840396, guid: 69be91231f8f1404997fe94b29cbf97e,
         type: 3}
       propertyPath: selectedBlocks.Array.data[0]
       value: 
-      objectReference: {fileID: 1761485527}
+      objectReference: {fileID: 1761485531}
     - target: {fileID: 992686845650840396, guid: 69be91231f8f1404997fe94b29cbf97e,
         type: 3}
       propertyPath: selectedCommands.Array.data[0]
       value: 
-      objectReference: {fileID: 1761485537}
+      objectReference: {fileID: 1761485541}
     - target: {fileID: 4172951673776162567, guid: 69be91231f8f1404997fe94b29cbf97e,
         type: 3}
       propertyPath: blockName
@@ -3488,15 +3482,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 1335304891298577681, guid: 69be91231f8f1404997fe94b29cbf97e, type: 3}
+    - {fileID: 0}
     - {fileID: 352963823939764843, guid: 69be91231f8f1404997fe94b29cbf97e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4436737938668765763, guid: 69be91231f8f1404997fe94b29cbf97e,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1761485523}
     - targetCorrespondingSourceObject: {fileID: 4436737938668765763, guid: 69be91231f8f1404997fe94b29cbf97e,
         type: 3}
       insertIndex: -1
@@ -3532,15 +3522,23 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4436737938668765763, guid: 69be91231f8f1404997fe94b29cbf97e,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1761485535}
-    - targetCorrespondingSourceObject: {fileID: 4436737938668765763, guid: 69be91231f8f1404997fe94b29cbf97e,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1761485536}
     - targetCorrespondingSourceObject: {fileID: 4436737938668765763, guid: 69be91231f8f1404997fe94b29cbf97e,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1761485537}
+    - targetCorrespondingSourceObject: {fileID: 4436737938668765763, guid: 69be91231f8f1404997fe94b29cbf97e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1761485541}
+    - targetCorrespondingSourceObject: {fileID: 4436737938668765763, guid: 69be91231f8f1404997fe94b29cbf97e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1761485542}
+    - targetCorrespondingSourceObject: {fileID: 4436737938668765763, guid: 69be91231f8f1404997fe94b29cbf97e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1761485543}
   m_SourcePrefab: {fileID: 100100000, guid: 69be91231f8f1404997fe94b29cbf97e, type: 3}
 --- !u!114 &1761485502 stripped
 MonoBehaviour:
@@ -3554,21 +3552,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1761485523
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 358812980}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d02d9822eec54c98afe95bb497211b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scope: 0
-  key: PuzzleZone
-  value: 0
 --- !u!114 &1761485524
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3695,7 +3678,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 95.92268
-    y: -369.9047
+    y: -370.93222
     width: 135.28433
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -3722,7 +3705,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 104.7551
-    y: -477.48187
+    y: -479.53693
     width: 118.84397
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -3732,7 +3715,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 1761485535}
+  - {fileID: 1761485541}
   suppressAllAutoSelections: 0
 --- !u!114 &1761485534
 MonoBehaviour:
@@ -3749,18 +3732,18 @@ MonoBehaviour:
   itemId: 15
   indentLevel: 0
   description: UnLock Player
-  targetObject: {fileID: 1539605069}
-  targetComponentAssemblyName: LostSouls.Interact.Interact, Assembly-CSharp, Version=0.0.0.0,
+  targetObject: {fileID: 358812980}
+  targetComponentAssemblyName: LostSouls.Dialog.DialogPuzzle, Assembly-CSharp, Version=0.0.0.0,
     Culture=neutral, PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: Interact
-  targetMethod: 
-  targetMethodText: 
+  targetComponentText: DialogPuzzle
+  targetMethod: SetMovementLock
+  targetMethodText: 'SetMovementLock (Boolean): Void'
   methodParameters:
   - objValue:
-      typeAssemblyname: UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      typeFullname: UnityEngine.Vector3
+      typeAssemblyname: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Boolean
       intValue: 0
       boolValue: 0
       floatValue: 0
@@ -3776,35 +3759,7 @@ MonoBehaviour:
     variableKey: 
   saveReturnValue: 0
   returnValueVariableKey: 
-  returnValueType: UnityEngine.CollisionFlags
-  showInherited: 0
-  callMode: 0
---- !u!114 &1761485535
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 358812980}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 16
-  indentLevel: 0
-  description: Lock Player
-  targetObject: {fileID: 1539605069}
-  targetComponentAssemblyName: LostSouls.core.PlayerStateMachine, Assembly-CSharp,
-    Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: PlayerStateMachine
-  targetMethod: CaptureState
-  targetMethodText: 'CaptureState (): Object'
-  methodParameters: []
-  saveReturnValue: 0
-  returnValueVariableKey: 
-  returnValueType: System.Object
+  returnValueType: System.Void
   showInherited: 0
   callMode: 0
 --- !u!114 &1761485536
@@ -3849,6 +3804,78 @@ MonoBehaviour:
     stringVal: 
   startIndex: 0
   callMode: 2
+--- !u!114 &1761485541
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358812980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 19
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 358812980}
+  targetComponentAssemblyName: LostSouls.Dialog.DialogPuzzle, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: DialogPuzzle
+  targetMethod: SetMovementLock
+  targetMethodText: 'SetMovementLock (Boolean): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Boolean
+      intValue: 0
+      boolValue: 1
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1761485542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358812980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20eb5354515974a28805b2c78802be2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1761485543
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358812980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d02d9822eec54c98afe95bb497211b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 0
+  key: Locked
+  value: 0
 --- !u!1001 &1808428982
 PrefabInstance:
   m_ObjectHideFlags: 0
