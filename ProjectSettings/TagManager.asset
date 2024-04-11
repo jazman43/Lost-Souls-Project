@@ -17,6 +17,7 @@ TagManager:
   - Laser
   - Enemy
   - deleteButton
+  - Portal
   layers:
   - Default
   - TransparentFX
