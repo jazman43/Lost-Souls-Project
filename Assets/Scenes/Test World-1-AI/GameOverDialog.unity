@@ -156,7 +156,7 @@ MonoBehaviour:
   nameColor: {r: 0.799596, g: 0.31910825, b: 0.9528302, a: 1}
   soundEffect: {fileID: 0}
   portraits:
-  - {fileID: 21300000, guid: 05ccd53483a554ca9b31f685fa76154a, type: 3}
+  - {fileID: 21300000, guid: c8369b0cdf40e4a11ab635fcacaa859a, type: 3}
   portraitsFace: 0
   setSayDialog: {fileID: 0}
   description: 
@@ -175,6 +175,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &254977032 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 927074132809296412, guid: e2d2947ccf599498d9a450c0d686290d,
+    type: 3}
+  m_PrefabInstance: {fileID: 2472805522677338615}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &310201933
 GameObject:
   m_ObjectHideFlags: 1
@@ -204,8 +216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 927074132809296412, guid: e2d2947ccf599498d9a450c0d686290d,
-    type: 3}
+  selectedFlowchart: {fileID: 254977032}
 --- !u!4 &310201935
 Transform:
   m_ObjectHideFlags: 1
@@ -572,7 +583,7 @@ MonoBehaviour:
   nameColor: {r: 0.9622642, g: 0.5492168, b: 0.76739913, a: 1}
   soundEffect: {fileID: 0}
   portraits:
-  - {fileID: 21300000, guid: ed14cc18e1e37449eb670f2613314102, type: 3}
+  - {fileID: 21300000, guid: 8dbc9f4a917be48d799b58c378de6043, type: 3}
   portraitsFace: 0
   setSayDialog: {fileID: 0}
   description: 
@@ -624,7 +635,7 @@ MonoBehaviour:
   nameColor: {r: 1, g: 1, b: 1, a: 1}
   soundEffect: {fileID: 0}
   portraits:
-  - {fileID: 21300000, guid: 3c64e30cbefbe4e768ef68d85c85061e, type: 3}
+  - {fileID: 21300000, guid: dfd0cf75ff4884db3b4e736752e61927, type: 3}
   portraitsFace: 0
   setSayDialog: {fileID: 398341599}
   description: 
@@ -887,9 +898,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 888248152481174290, guid: e2d2947ccf599498d9a450c0d686290d,
         type: 3}
+      propertyPath: portrait
+      value: 
+      objectReference: {fileID: 21300000, guid: dfd0cf75ff4884db3b4e736752e61927,
+        type: 3}
+    - target: {fileID: 888248152481174290, guid: e2d2947ccf599498d9a450c0d686290d,
+        type: 3}
       propertyPath: character
       value: 
       objectReference: {fileID: 1304102069}
+    - target: {fileID: 900075642434453324, guid: e2d2947ccf599498d9a450c0d686290d,
+        type: 3}
+      propertyPath: portrait
+      value: 
+      objectReference: {fileID: 21300000, guid: c8369b0cdf40e4a11ab635fcacaa859a,
+        type: 3}
     - target: {fileID: 900075642434453324, guid: e2d2947ccf599498d9a450c0d686290d,
         type: 3}
       propertyPath: character
@@ -902,6 +925,12 @@ PrefabInstance:
       objectReference: {fileID: 1870721663}
     - target: {fileID: 2533654578297827676, guid: e2d2947ccf599498d9a450c0d686290d,
         type: 3}
+      propertyPath: portrait
+      value: 
+      objectReference: {fileID: 21300000, guid: c8369b0cdf40e4a11ab635fcacaa859a,
+        type: 3}
+    - target: {fileID: 2533654578297827676, guid: e2d2947ccf599498d9a450c0d686290d,
+        type: 3}
       propertyPath: character
       value: 
       objectReference: {fileID: 188152517}
@@ -910,6 +939,12 @@ PrefabInstance:
       propertyPath: targetView
       value: 
       objectReference: {fileID: 1870721663}
+    - target: {fileID: 3540958704950613787, guid: e2d2947ccf599498d9a450c0d686290d,
+        type: 3}
+      propertyPath: portrait
+      value: 
+      objectReference: {fileID: 21300000, guid: c8369b0cdf40e4a11ab635fcacaa859a,
+        type: 3}
     - target: {fileID: 3540958704950613787, guid: e2d2947ccf599498d9a450c0d686290d,
         type: 3}
       propertyPath: character
@@ -922,9 +957,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6414754416290798471, guid: e2d2947ccf599498d9a450c0d686290d,
         type: 3}
+      propertyPath: portrait
+      value: 
+      objectReference: {fileID: 21300000, guid: dfd0cf75ff4884db3b4e736752e61927,
+        type: 3}
+    - target: {fileID: 6414754416290798471, guid: e2d2947ccf599498d9a450c0d686290d,
+        type: 3}
       propertyPath: character
       value: 
       objectReference: {fileID: 1304102069}
+    - target: {fileID: 9180371875514352291, guid: e2d2947ccf599498d9a450c0d686290d,
+        type: 3}
+      propertyPath: portrait
+      value: 
+      objectReference: {fileID: 21300000, guid: dfd0cf75ff4884db3b4e736752e61927,
+        type: 3}
     - target: {fileID: 9180371875514352291, guid: e2d2947ccf599498d9a450c0d686290d,
         type: 3}
       propertyPath: character

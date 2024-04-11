@@ -85,9 +85,8 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 4766237058560552941}
-  selectedCommands:
-  - {fileID: 992755113316833826}
+  - {fileID: 4632782579772971285}
+  selectedCommands: []
   variables: []
   description: Flowchart  for Opening Dialog system
   stepPause: 0
