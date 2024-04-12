@@ -17,7 +17,7 @@ namespace LostSouls.UI.Menus
         [SerializeField] private Button testButtons;
 
         bool canPause;
-        bool isPaused;
+        //bool isPaused;
 
         private void Awake()
         {
@@ -31,9 +31,7 @@ namespace LostSouls.UI.Menus
             if (other.CompareTag(safeZoneString))
             {
                 canPause = true;
-                Debug.Log("Can pause");
-                
-                
+                Debug.Log("Can pause");                
             }
         }
 
@@ -46,14 +44,12 @@ namespace LostSouls.UI.Menus
         }
 
         private void Update()
-        {
-
-            
+        {            
 
             if (inputs.Menu() && canPause)
             {
                 Debug.Log(inputs.Menu());
-                isPaused = true;
+                //isPaused = true;
                 HUD.gameObject.SetActive(false);
                 pauseMenu.gameObject.SetActive(true);
                 pauseMenu.OnPause();

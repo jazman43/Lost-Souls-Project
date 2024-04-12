@@ -29,6 +29,7 @@ namespace LostSouls.SoundManager
             }
         }
 
+        //call where you want it to play
         public void PlaySFX(SFXSoundData.SFX sfx)
         {
             SFXSoundData data = sfxSoundDatas.Find(data => data.sfx == sfx);

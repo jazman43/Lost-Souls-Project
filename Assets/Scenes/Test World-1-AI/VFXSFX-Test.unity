@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028326, g: 0.22571333, b: 0.30692202, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -199,7 +199,10 @@ VisualEffect:
   m_ResourceVersion: 1
   m_PropertySheet:
     m_Float:
-      m_Array: []
+      m_Array:
+      - m_Value: 39.93
+        m_Name: Duration
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
@@ -5294,19 +5297,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 623796406}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b9460cac9e3a4d13886429ec5cfb6b0, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a9bfd0e0e5afca43b6ac5a24050aafa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sfxAudioSource: {fileID: 0}
-  sfxSoundDatas:
-  - sfx: 4
-    audioClip: {fileID: 8300000, guid: 98d583c1a5fd144eb889007bf17c3124, type: 3}
-    volume: 0
-  - sfx: 5
-    audioClip: {fileID: 8300000, guid: d4a62118ea5dc4d3dbfc36ec124148d7, type: 3}
-    volume: 0
+  bgmAudioSource: {fileID: 2123332717}
+  bgmSoundDatas:
+  - bgm: 5
+    audioClip: {fileID: 8300000, guid: 7412152830a3a40b395c46269794bc78, type: 3}
+    volume: 1
+  - bgm: 2
+    audioClip: {fileID: 8300000, guid: 996868b1a882a46cf89382d00c735ed5, type: 3}
+    volume: 1
+  - bgm: 1
+    audioClip: {fileID: 8300000, guid: 9df2dc7c006474646a2f81a301c0a08e, type: 3}
+    volume: 1
+  - bgm: 3
+    audioClip: {fileID: 8300000, guid: e2cd8403fc9c44429a0cfae49b369591, type: 3}
+    volume: 1
   masterVolume: 1
-  sfxMasterVolume: 1
+  bgmMasterVolume: 1
 --- !u!4 &623796408
 Transform:
   m_ObjectHideFlags: 0

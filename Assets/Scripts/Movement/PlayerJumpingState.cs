@@ -25,6 +25,7 @@ namespace LostSouls.Movement
             stateMachine.Animation.CrossFadeInFixedTime(JumpHash, 0.1f);
 
             stateMachine.LedgeDetector.OnLedgeDetect += HandleLedgeDetect;
+            stateMachine.WallDetector.OnWallDetect += HandleWallDetect;
         }
 
         
@@ -45,11 +46,17 @@ namespace LostSouls.Movement
         public override void Exit()
         {
             stateMachine.LedgeDetector.OnLedgeDetect -= HandleLedgeDetect;
+            stateMachine.WallDetector.OnWallDetect -= HandleWallDetect;
         }
 
         private void HandleLedgeDetect(Vector3 ledgeForward)
         {
             stateMachine.SwitchState(new PlayerHangingState(stateMachine, ledgeForward));
+        }
+
+        private void HandleWallDetect(Vector3 wallForward)
+        {
+            stateMachine.SwitchState(new PlayerWallClimbState(stateMachine, wallForward));
         }
     }
 

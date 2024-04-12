@@ -30,8 +30,8 @@ namespace LostSouls.Movement
             Move(momentum, daltaTime);
 
             stateMachine.LedgeDetector.OnLedgeDetect += HandleLedgeDetect;
+            stateMachine.WallDetector.OnWallDetect += HandleWallDetect;
 
-            Debug.Log(stateMachine.ForceReceiver.IsGournded() + " landing");
             if (stateMachine.ForceReceiver.IsGournded())
             {
                 
@@ -46,6 +46,12 @@ namespace LostSouls.Movement
         public override void Exit()
         {
             stateMachine.LedgeDetector.OnLedgeDetect -= HandleLedgeDetect;
+            stateMachine.WallDetector.OnWallDetect -= HandleWallDetect;
+        }
+
+        private void HandleWallDetect(Vector3 wallForward)
+        {
+            stateMachine.SwitchState(new PlayerWallClimbState(stateMachine, wallForward));
         }
 
         private void HandleLedgeDetect(Vector3 ledgeForward)

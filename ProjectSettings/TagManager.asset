@@ -14,6 +14,10 @@ TagManager:
   - Cursor
   - Canvas
   - Soul
+  - Laser
+  - Enemy
+  - deleteButton
+  - Portal
   layers:
   - Default
   - TransparentFX
@@ -26,9 +30,6 @@ TagManager:
   - Climbing
   - Player
   - Ragdoll
-  - 
-  - 
-  - 
   - 
   - 
   - 

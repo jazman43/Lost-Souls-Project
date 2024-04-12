@@ -45,6 +45,7 @@ namespace LostSouls.UI.Menus
 
         public void LoadMenu()
         {
+            
             StartCoroutine(LoadMenuScene());
         }
 
@@ -83,11 +84,21 @@ namespace LostSouls.UI.Menus
         private IEnumerator LoadMenuScene()
         {
             Fader fader = FindObjectOfType<Fader>();
-
+            
             yield return fader.FadeOut(fadeOutTime);
-            yield return SceneManager.LoadSceneAsync(menuLevelBuildIndex);
-            Cursor.lockState = CursorLockMode.Confined;
+            Debug.Log("Load Menu Scene" );
+            
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(menuLevelBuildIndex);
+
+            while (!asyncLoad.isDone)
+            {
+                Debug.Log("UnLoad Menu Scene");
+                yield return null;
+            }
+            //BUG nothing after this point is called 
+            Debug.Log("UnLoad Menu Scene");
             yield return fader.FadeIn(fadeInTime);
+            Cursor.lockState = CursorLockMode.Confined;
         }
 
 
@@ -102,9 +113,9 @@ namespace LostSouls.UI.Menus
             GetComponent<SavingSystem>().Load(GetCurrentSave());
         }
 
-        public void Delete()
+        public void Delete(string save)
         {
-            GetComponent<SavingSystem>().Delete(GetCurrentSave());
+            GetComponent<SavingSystem>().Delete(save);
         }
 
         public IEnumerable<string> ListSaves()
