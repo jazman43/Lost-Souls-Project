@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 
 namespace LostSouls.SoundManager
+
 {
 
     public class BGMManager : MonoBehaviour
@@ -65,4 +66,5 @@ namespace LostSouls.SoundManager
     }
 
     
+
 }

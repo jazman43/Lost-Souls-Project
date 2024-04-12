@@ -98,18 +98,6 @@ namespace LostSouls.AI
 
         }
 
-        private void Awake()
-        {
-            if (_renderer == null)
-            {
-                Debug.LogError("Renderer component is missing on the object.");
-            }
-            else
-            {
-                _renderer = GetComponent<Renderer>();
-                _material = _renderer.material;  //Access material to keep auto-generated materials
-            }
-        }
 
         private void OnTriggerEnter(Collider other)
         {
@@ -136,6 +124,19 @@ namespace LostSouls.AI
         }
 
         /*
+        
+        private void Awake()
+        {
+            if (_renderer == null)
+            {
+                Debug.LogError("Renderer component is missing on the object.");
+            }
+            else
+            {
+                _renderer = GetComponent<Renderer>();
+                _material = _renderer.material;  //Access material to keep auto-generated materials
+            }
+        }
         private void HitFadeBlink(Color color)
         {
             _seq?.Kill();
