@@ -5,9 +5,7 @@ using UnityEngine.UI;
 using LostSouls.combat;
 using LostSouls.Saving;
 using System.Linq;
-
-
-
+using UnityEngine.VFX;
 
 namespace LostSouls.skill
 {
@@ -23,6 +21,9 @@ namespace LostSouls.skill
         private Dictionary<string, ISkill> skills = new Dictionary<string, ISkill>();
 
         [SerializeField] private SoulCollictor ponits;
+        [SerializeField] private GameObject skillVFX;
+        
+
 
         private void Awake()
         {
@@ -36,11 +37,14 @@ namespace LostSouls.skill
         private void Start()
         {
             CheckSkillButton();
+            
         }
 
         private void Update()
         {
             CheckSkillButton();
+
+            
         }
 
         public void UnlockSkill(string skillName)
@@ -53,6 +57,8 @@ namespace LostSouls.skill
                 if (skills.TryGetValue(skillName, out var skill))
                 {
                     skill.isUnlocked = true;
+                    //apply skill VFX                    
+                    skillVFX.GetComponent<VisualEffect>().Play();
                     skill.ApplySkill(gameObject);
                     ponits.SetPonits(ponits.GetPonits() - 1);
                 }
