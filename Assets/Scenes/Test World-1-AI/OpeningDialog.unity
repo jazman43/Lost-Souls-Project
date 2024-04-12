@@ -844,7 +844,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 --- !u!114 &1745559480
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -872,7 +872,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &1745559481
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -899,7 +899,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &1745559482
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1340,7 +1340,7 @@ PrefabInstance:
     - target: {fileID: 5066003649392310513, guid: 0a06db051daaa48df9ab619a04ab2e40,
         type: 3}
       propertyPath: selectedBlocks.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5066003649392310513, guid: 0a06db051daaa48df9ab619a04ab2e40,
         type: 3}
