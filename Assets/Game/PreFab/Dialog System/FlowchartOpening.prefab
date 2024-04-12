@@ -1,5 +1,162 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1043548034796298122
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7627852582133896013}
+  - component: {fileID: 3487513084255633509}
+  m_Layer: 0
+  m_Name: Player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7627852582133896013
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043548034796298122}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5530383639861014555}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3487513084255633509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043548034796298122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: Player
+  nameColor: {r: 0.9716981, g: 0, b: 0.51416755, a: 1}
+  soundEffect: {fileID: 0}
+  portraits:
+  - {fileID: 21300000, guid: dfd0cf75ff4884db3b4e736752e61927, type: 3}
+  portraitsFace: 0
+  setSayDialog: {fileID: 0}
+  description: 
+--- !u!1 &2118734128531869932
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7048622795705786337}
+  - component: {fileID: 4758069354016326275}
+  m_Layer: 0
+  m_Name: PlayerMInd
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7048622795705786337
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118734128531869932}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5530383639861014555}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4758069354016326275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118734128531869932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: Player's mind
+  nameColor: {r: 0.9622642, g: 0.5492168, b: 0.76739913, a: 1}
+  soundEffect: {fileID: 0}
+  portraits:
+  - {fileID: 21300000, guid: 8dbc9f4a917be48d799b58c378de6043, type: 3}
+  portraitsFace: 0
+  setSayDialog: {fileID: 0}
+  description: 
+--- !u!1 &4231348346001033510
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6405055791120400652}
+  - component: {fileID: 11581807945847181}
+  m_Layer: 0
+  m_Name: Gatekeeper
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6405055791120400652
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4231348346001033510}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5530383639861014555}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &11581807945847181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4231348346001033510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: Gatekeeper
+  nameColor: {r: 0.799596, g: 0.31910825, b: 0.9528302, a: 1}
+  soundEffect: {fileID: 0}
+  portraits:
+  - {fileID: 21300000, guid: 95866a38f1e074466969a8f14c0f0dc0, type: 3}
+  - {fileID: 21300000, guid: c8369b0cdf40e4a11ab635fcacaa859a, type: 3}
+  portraitsFace: 0
+  setSayDialog: {fileID: 0}
+  description: 
 --- !u!1 &8500226533342319513
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,7 +168,6 @@ GameObject:
   - component: {fileID: 5530383639861014555}
   - component: {fileID: 5066003649392310513}
   - component: {fileID: 4766237058560552941}
-  - component: {fileID: 1210907074293590153}
   - component: {fileID: 7571541050023001136}
   - component: {fileID: 4632782579772971285}
   - component: {fileID: 88158526170793629}
@@ -38,6 +194,9 @@ GameObject:
   - component: {fileID: 1112936086769556562}
   - component: {fileID: 3128229365007788899}
   - component: {fileID: 992755113316833826}
+  - component: {fileID: 6751029089642426607}
+  - component: {fileID: 6033233620158236775}
+  - component: {fileID: 5070573388470418381}
   m_Layer: 0
   m_Name: FlowchartOpening
   m_TagString: Untagged
@@ -57,7 +216,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6405055791120400652}
+  - {fileID: 7627852582133896013}
+  - {fileID: 7048622795705786337}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5066003649392310513
@@ -84,8 +246,7 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks:
-  - {fileID: 4632782579772971285}
+  selectedBlocks: []
   selectedCommands: []
   variables: []
   description: Flowchart  for Opening Dialog system
@@ -128,43 +289,17 @@ MonoBehaviour:
   - {fileID: 7571541050023001136}
   - {fileID: 6323667676618559855}
   - {fileID: 4471375491775449766}
-  - {fileID: 1210907074293590153}
+  - {fileID: 6751029089642426607}
   - {fileID: 532078724230852368}
   - {fileID: 337654006037450830}
   - {fileID: 1961351966727670112}
   - {fileID: 1750607765451056167}
   - {fileID: 2320100668048345323}
+  - {fileID: 5070573388470418381}
   - {fileID: 8327580643893660143}
   - {fileID: 992755113316833826}
+  - {fileID: 6033233620158236775}
   suppressAllAutoSelections: 0
---- !u!114 &1210907074293590153
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8500226533342319513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 1
-  indentLevel: 0
-  storyText: It's the entrance to Shadowfell Labyrinth. You look unfamiliar. Where
-    do you come from?
-  description: 
-  character: {fileID: 0}
-  portrait: {fileID: 21300000, guid: 05ccd53483a554ca9b31f685fa76154a, type: 3}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
 --- !u!114 &7571541050023001136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,8 +318,8 @@ MonoBehaviour:
     the hell am I? {w=3} {c}{hpunch=10,0.5} Oh....There is someone over there...
     {/color}'
   description: 
-  character: {fileID: 0}
-  portrait: {fileID: 21300000, guid: ed14cc18e1e37449eb670f2613314102, type: 3}
+  character: {fileID: 4758069354016326275}
+  portrait: {fileID: 21300000, guid: 8dbc9f4a917be48d799b58c378de6043, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -296,8 +431,8 @@ MonoBehaviour:
   indentLevel: 0
   storyText: I am going to Umbrawood Village.
   description: Going to town
-  character: {fileID: 0}
-  portrait: {fileID: 21300000, guid: 3c64e30cbefbe4e768ef68d85c85061e, type: 3}
+  character: {fileID: 3487513084255633509}
+  portrait: {fileID: 21300000, guid: dfd0cf75ff4884db3b4e736752e61927, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -323,8 +458,8 @@ MonoBehaviour:
   indentLevel: 0
   storyText: I am going to Shadowfell Labyrinth.
   description: Going Adventure
-  character: {fileID: 0}
-  portrait: {fileID: 21300000, guid: 3c64e30cbefbe4e768ef68d85c85061e, type: 3}
+  character: {fileID: 3487513084255633509}
+  portrait: {fileID: 21300000, guid: dfd0cf75ff4884db3b4e736752e61927, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -348,10 +483,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 9
   indentLevel: 0
-  storyText: Once you get in here, youcan't come back.
+  storyText: Once you get in here, you can't come back.
   description: 
-  character: {fileID: 0}
-  portrait: {fileID: 21300000, guid: 05ccd53483a554ca9b31f685fa76154a, type: 3}
+  character: {fileID: 11581807945847181}
+  portrait: {fileID: 21300000, guid: c8369b0cdf40e4a11ab635fcacaa859a, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -377,8 +512,8 @@ MonoBehaviour:
   indentLevel: 0
   storyText: Whare are you going in this Village?
   description: 
-  character: {fileID: 0}
-  portrait: {fileID: 21300000, guid: 05ccd53483a554ca9b31f685fa76154a, type: 3}
+  character: {fileID: 11581807945847181}
+  portrait: {fileID: 21300000, guid: c8369b0cdf40e4a11ab635fcacaa859a, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -402,8 +537,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 11
   indentLevel: 0
-  text: Save
-  description: Saving
+  text: 'Bar
+
+'
+  description: bar
   targetBlock: {fileID: 2982494092055760760}
   hideIfVisited: 0
   interactable:
@@ -429,12 +566,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: -213.95554
     y: -385.63364
-    width: 117.68902
+    width: 68.95293
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
   itemId: 12
-  blockName: Saving area
+  blockName: Bar
   description: 
   eventHandler: {fileID: 0}
   commandList: []
@@ -542,8 +679,8 @@ MonoBehaviour:
   indentLevel: 0
   storyText: You are right. Wow....How did you get that?
   description: 
-  character: {fileID: 0}
-  portrait: {fileID: 21300000, guid: 3c64e30cbefbe4e768ef68d85c85061e, type: 3}
+  character: {fileID: 3487513084255633509}
+  portrait: {fileID: 21300000, guid: dfd0cf75ff4884db3b4e736752e61927, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -569,8 +706,8 @@ MonoBehaviour:
   indentLevel: 0
   storyText: Hello...where is here?
   description: 
-  character: {fileID: 0}
-  portrait: {fileID: 21300000, guid: 3c64e30cbefbe4e768ef68d85c85061e, type: 3}
+  character: {fileID: 3487513084255633509}
+  portrait: {fileID: 21300000, guid: dfd0cf75ff4884db3b4e736752e61927, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -596,8 +733,8 @@ MonoBehaviour:
   indentLevel: 0
   storyText: ah.....Guess where I come from?
   description: 
-  character: {fileID: 0}
-  portrait: {fileID: 21300000, guid: 3c64e30cbefbe4e768ef68d85c85061e, type: 3}
+  character: {fileID: 3487513084255633509}
+  portrait: {fileID: 21300000, guid: dfd0cf75ff4884db3b4e736752e61927, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -623,8 +760,8 @@ MonoBehaviour:
   indentLevel: 0
   storyText: 'You are from Mystic Sitadel Kingdom, are''t you? '
   description: 
-  character: {fileID: 0}
-  portrait: {fileID: 21300000, guid: 05ccd53483a554ca9b31f685fa76154a, type: 3}
+  character: {fileID: 11581807945847181}
+  portrait: {fileID: 21300000, guid: c8369b0cdf40e4a11ab635fcacaa859a, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -650,8 +787,8 @@ MonoBehaviour:
   indentLevel: 0
   storyText: '{color=grey}I don''t know who I am. but It is better to say "Yes".{/color}'
   description: 
-  character: {fileID: 0}
-  portrait: {fileID: 21300000, guid: ed14cc18e1e37449eb670f2613314102, type: 3}
+  character: {fileID: 4758069354016326275}
+  portrait: {fileID: 21300000, guid: 8dbc9f4a917be48d799b58c378de6043, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -676,11 +813,10 @@ MonoBehaviour:
   itemId: 22
   indentLevel: 0
   storyText: Actually, I have the ability to see the colors of people's aura. Your
-    color is purple, so I can tell where you're from. By the way, where are you going
-    now?
+    color is purple, so I can tell where you're from.
   description: 
-  character: {fileID: 0}
-  portrait: {fileID: 21300000, guid: 05ccd53483a554ca9b31f685fa76154a, type: 3}
+  character: {fileID: 11581807945847181}
+  portrait: {fileID: 21300000, guid: c8369b0cdf40e4a11ab635fcacaa859a, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -764,8 +900,8 @@ MonoBehaviour:
   storyText: Nevertheless, I have to go there. It's essential to moving forward in
     my life.
   description: 
-  character: {fileID: 0}
-  portrait: {fileID: 21300000, guid: 3c64e30cbefbe4e768ef68d85c85061e, type: 3}
+  character: {fileID: 3487513084255633509}
+  portrait: {fileID: 21300000, guid: dfd0cf75ff4884db3b4e736752e61927, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -791,8 +927,8 @@ MonoBehaviour:
   indentLevel: 0
   storyText: Good luck....
   description: 
-  character: {fileID: 0}
-  portrait: {fileID: 21300000, guid: 05ccd53483a554ca9b31f685fa76154a, type: 3}
+  character: {fileID: 11581807945847181}
+  portrait: {fileID: 21300000, guid: c8369b0cdf40e4a11ab635fcacaa859a, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -827,3 +963,85 @@ MonoBehaviour:
   hideThisOption:
     booleanRef: {fileID: 0}
     booleanVal: 0
+--- !u!114 &6751029089642426607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8500226533342319513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 29
+  indentLevel: 0
+  storyText: Hi, It's an entrance to Shadowfell Labirinth. You look unfamiliar. Whare
+    do you come from?
+  description: 
+  character: {fileID: 11581807945847181}
+  portrait: {fileID: 21300000, guid: c8369b0cdf40e4a11ab635fcacaa859a, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &6033233620158236775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8500226533342319513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 30
+  indentLevel: 0
+  storyText: 
+  description: 
+  character: {fileID: 11581807945847181}
+  portrait: {fileID: 21300000, guid: c8369b0cdf40e4a11ab635fcacaa859a, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &5070573388470418381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8500226533342319513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 31
+  indentLevel: 0
+  storyText: By the way, where are you going now?
+  description: 
+  character: {fileID: 11581807945847181}
+  portrait: {fileID: 21300000, guid: c8369b0cdf40e4a11ab635fcacaa859a, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
