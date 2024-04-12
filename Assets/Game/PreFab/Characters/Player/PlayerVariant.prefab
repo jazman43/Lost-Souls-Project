@@ -13,6 +13,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerVariant
       objectReference: {fileID: 0}
+    - target: {fileID: 6704386654299825567, guid: f3a6f5c306b3d4b43b0cb31452add9c6,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7000095344774692804, guid: f3a6f5c306b3d4b43b0cb31452add9c6,
         type: 3}
       propertyPath: m_LocalPosition.x

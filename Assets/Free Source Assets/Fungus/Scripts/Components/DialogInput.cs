@@ -4,6 +4,7 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem; //add it
 
 namespace Fungus
 {
@@ -39,7 +40,7 @@ namespace Fungus
         [Tooltip("Ignore input if a Menu dialog is currently active")]
         [SerializeField] protected bool ignoreMenuClicks = true;
 
-        [SerializeField] InputActionReference inputAction;
+        [SerializeField] InputActionReference inputAction; //add it
 
         protected bool dialogClickedFlag;
 
@@ -87,15 +88,27 @@ namespace Fungus
                 currentStandaloneInputModule = EventSystem.current.GetComponent<StandaloneInputModule>();
             }
 
-            if (writer != null)
-            {
-                if (inputAction.action.IsPressed())
-                {
-                    SetNextLineFlag();
-                }
+
+         if (writer != null)
+              {
+                /*
+                  if (Input.GetButtonDown(currentStandaloneInputModule.submitButton) ||
+                      (cancelEnabled && Input.GetButton(currentStandaloneInputModule.cancelButton)))
+                  {
+                      SetNextLineFlag();
+                  }
+                */
+                  if (inputAction.action.IsPressed()) //changed from previous if statement
+                  {
+                   SetNextLineFlag();
+                  }
+                
             }
-          
-           switch (clickMode)
+           
+
+            
+
+            switch (clickMode)
            {
                 case ClickMode.Disabled:
                 break;
