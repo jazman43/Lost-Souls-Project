@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using LostSouls.Saving;
 
 
 namespace LostSouls.skill
 {
-    public class SoulCollictor : MonoBehaviour
+    public class SoulCollictor : MonoBehaviour , ISaveable
     {
         [SerializeField]private int currentPonits = 0;
         [SerializeField] private string soulsTagName = "Soul";
@@ -29,8 +29,7 @@ namespace LostSouls.skill
         }
 
         private void Update()
-        {
-            
+        {            
             Debug.Log(currentPonits);
         }
 
@@ -42,6 +41,16 @@ namespace LostSouls.skill
         public void SetPonits(int ponits)
         {
             this.currentPonits = ponits;
+        }
+
+        public object CaptureState()
+        {
+            return currentPonits;
+        }
+
+        public void RestoreState(object state)
+        {
+            currentPonits = (int)state;
         }
     }
 }

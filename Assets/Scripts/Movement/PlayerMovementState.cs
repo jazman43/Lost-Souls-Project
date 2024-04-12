@@ -62,15 +62,25 @@ namespace LostSouls.Movement
             velocity = CalculateMovement();
 
             //Debug.Log(velocity);
-            Move(velocity * stateMachine.walkSpeed, daltaTime);
+            if (stateMachine.PlayerInputs.Sprint())
+            {
+                Move(velocity * stateMachine.SprintSpeed, daltaTime);
+                
+            }
+            else
+            {
+                Move(velocity * stateMachine.walkSpeed, daltaTime);
+                //stateMachine.Animation.SetFloat(moveAnimationHash, 1, animatorDampTime, daltaTime);
+            }
+            
 
             if (stateMachine.PlayerInputs.Movement() == Vector2.zero)
             {
                 stateMachine.Animation.SetFloat(moveAnimationHash, 0, animatorDampTime, daltaTime);
                 return;
             }
+            stateMachine.Animation.SetFloat(moveAnimationHash, 1.8f, animatorDampTime, daltaTime);
 
-            stateMachine.Animation.SetFloat(moveAnimationHash, 1, animatorDampTime, daltaTime);
             FaceMovementDirection(daltaTime);
         }
 

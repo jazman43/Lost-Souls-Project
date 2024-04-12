@@ -1,18 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
-public class AudioManager : MonoBehaviour
+namespace LostSouls.SoundManager
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public class AudioManager : MonoBehaviour
+    {        
+        void Start()
+        {
+            CheckIfCanPlay();
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+
+
+
+        private void CheckIfCanPlay()
+        {
+            //check if we are in main menu or main game
+            if(SceneManager.GetSceneByBuildIndex(0) == SceneManager.GetActiveScene())
+            {
+                //main menu
+                BGMManager.Instance.PlayBGM(BGMSoundData.BGM.MainMenu);
+            }
+            else
+            {
+                BGMManager.Instance.PlayBGM(BGMSoundData.BGM.game_loop);
+            }
+        }
+        //TO DO set up different BGM's to start and stop in correct places 
     }
 }

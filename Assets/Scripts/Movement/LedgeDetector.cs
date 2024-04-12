@@ -11,7 +11,7 @@ namespace LostSouls.Movement
     {
         public event Action<Vector3> OnLedgeDetect;
 
-        private bool isHitLedge;
+        //private bool isHitLedge;
 
        
 
