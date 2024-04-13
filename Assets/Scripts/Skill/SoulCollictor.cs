@@ -8,7 +8,7 @@ namespace LostSouls.skill
 {
     public class SoulCollictor : MonoBehaviour , ISaveable
     {
-        [SerializeField]private int currentPonits = 0;
+        [SerializeField]private float currentPonits = 0;
         [SerializeField] private string soulsTagName = "Soul";
         private SoulSpawner soulSpawner;
 
@@ -29,28 +29,31 @@ namespace LostSouls.skill
         }
 
         private void Update()
-        {            
-            Debug.Log(currentPonits);
+        {
+           
         }
 
-        public int GetPonits()
+        public float GetPonits()
         {
             return currentPonits;
-        }
-
-        public void SetPonits(int ponits)
-        {
-            this.currentPonits = ponits;
         }
 
         public object CaptureState()
         {
+            Debug.Log(currentPonits + "points Saved");
             return currentPonits;
         }
 
+        public void SetPonits(float ponits)
+        {
+            this.currentPonits = ponits;
+        }
+
+        
+
         public void RestoreState(object state)
         {
-            currentPonits = (int)state;
+            currentPonits = (float)state;
         }
     }
 }
