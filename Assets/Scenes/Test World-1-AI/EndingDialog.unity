@@ -169,19 +169,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 22488896, guid: 129e3ec0b9df74770975222be1ac452b, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -341.7203
+      value: -878.622
       objectReference: {fileID: 0}
     - target: {fileID: 22488896, guid: 129e3ec0b9df74770975222be1ac452b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -77.3911
+      value: -436.559
       objectReference: {fileID: 0}
     - target: {fileID: 22488896, guid: 129e3ec0b9df74770975222be1ac452b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 32.527466
+      value: 359.10803
       objectReference: {fileID: 0}
     - target: {fileID: 22488896, guid: 129e3ec0b9df74770975222be1ac452b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 92.108246
+      value: 218.27885
       objectReference: {fileID: 0}
     - target: {fileID: 22488902, guid: 129e3ec0b9df74770975222be1ac452b, type: 3}
       propertyPath: m_Pivot.x
@@ -500,57 +500,6 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
---- !u!1 &1643460569
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1643460571}
-  - component: {fileID: 1643460570}
-  m_Layer: 0
-  m_Name: Narrator
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1643460570
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1643460569}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameText: Narrator
-  nameColor: {r: 0.7839627, g: 0, b: 1, a: 1}
-  soundEffect: {fileID: 0}
-  portraits: []
-  portraitsFace: 0
-  setSayDialog: {fileID: 1790721511}
-  description: 
---- !u!4 &1643460571
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1643460569}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1790721511 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 11488894, guid: 129e3ec0b9df74770975222be1ac452b,
@@ -839,9 +788,51 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1225923094508117138, guid: 21fc793c34d40429fb263c1c182b55b9,
+        type: 3}
+      propertyPath: storyText
+      value: '{color=Cyan} {b}Game Producer{/b}{/color}{size=60} Jared Evans{/size}{w=5}{c}
+
+        {color=Cyan}
+        {b}Game Lead design {/b}{/color}{size=60} Jared Evans{/size}
+
+        {color=Cyan}
+        {b}Conceptualization {/b}{/color} {size=60} Naomi Murachi{/size}
+
+        {color=Cyan}
+        {b}Lead Environment Design{/b} {/color}{size=60} Jared Evans{/size}
+
+        {color=Cyan}
+        {b}Level Design {/b}{/color}{size=60}  Donnie Corry{/size}
+
+        {color=Cyan}
+        {b}Visual Effects {/b} {/color}{size=60} Naomi Murachi{/size}
+
+        {w=5}{c}
+
+        {color=Cyan}
+        {b}Sound Design {/b} {/color}{size=60} Naomi Murachi{/size}
+
+        {color=Cyan}
+        {b}Lead Gameplay Program {/b}{/color} {size=60}  Jared Evans{/size}
+
+        {color=Cyan}
+        {b}AI Program {/b} {/color} {size=60} Naomi Murachi{/size}
+
+        {w=5}{c}
+
+        {color=Cyan}
+        {b}Narrative Design {/b} {/color}{size=60} Naomi Murachi{/size}
+
+        {color=Cyan}
+        {b}Dialog system Design {/b}{/color} {size=60} Naomi Murachi{/size}
+
+        {color=Cyan}
+        {b}Testing and Debugging{/b} {/color}{size=60} Jared Evans{/size}'
+      objectReference: {fileID: 0}
     - target: {fileID: 1541443912560807573, guid: 21fc793c34d40429fb263c1c182b55b9,
         type: 3}
-      propertyPath: selectedBlocks.Array.size
+      propertyPath: selectedCommands.Array.size
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2990061725428140639, guid: 21fc793c34d40429fb263c1c182b55b9,
@@ -899,21 +890,16 @@ PrefabInstance:
       propertyPath: targetView
       value: 
       objectReference: {fileID: 1989361640}
-    - target: {fileID: 3706314064069159866, guid: 21fc793c34d40429fb263c1c182b55b9,
-        type: 3}
-      propertyPath: character
-      value: 
-      objectReference: {fileID: 1643460570}
     - target: {fileID: 3902208085340279736, guid: 21fc793c34d40429fb263c1c182b55b9,
         type: 3}
       propertyPath: m_Name
       value: FlowchartEnding
       objectReference: {fileID: 0}
-    - target: {fileID: 6499647282839782496, guid: 21fc793c34d40429fb263c1c182b55b9,
+    - target: {fileID: 5214717624138234238, guid: 21fc793c34d40429fb263c1c182b55b9,
         type: 3}
-      propertyPath: character
+      propertyPath: setSayDialog
       value: 
-      objectReference: {fileID: 1643460570}
+      objectReference: {fileID: 1790721511}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -929,6 +915,5 @@ SceneRoots:
   - {fileID: 310201935}
   - {fileID: 6961693214484447067}
   - {fileID: 908095716}
-  - {fileID: 1643460571}
   - {fileID: 1793867146}
   - {fileID: 1989361641}
