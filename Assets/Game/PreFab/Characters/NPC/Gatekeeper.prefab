@@ -116,6 +116,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gatekeeper
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 0597a3203750c41baa68e7c208e6e7fa,
+        type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: fd8c0bf0d312d4887a4cd9fb06887020, type: 3}
+    - target: {fileID: 5866666021909216657, guid: 0597a3203750c41baa68e7c208e6e7fa,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: aca37cbc58d3345a39fdf38d41c0b66d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
