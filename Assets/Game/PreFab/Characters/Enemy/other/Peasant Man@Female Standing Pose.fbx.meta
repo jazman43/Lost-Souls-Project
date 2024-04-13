@@ -3,11 +3,16 @@ guid: c20ad690d6ac644c2b5cc3e0fadf1b94
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Peasant_Man_02
+    second: {fileID: 2100000, guid: 8f7716eead56d4b63a67ed5b82ecbf23, type: 2}
   materials:
-    materialImportMode: 2
+    materialImportMode: 1
     materialName: 0
-    materialSearch: 1
+    materialSearch: 0
     materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
