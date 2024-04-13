@@ -21,3 +21,5 @@ https://assetstore.unity.com/packages/3d/environments/fantasy/fantasy-forest-env
 
 
 https://assetstore.unity.com/packages/2d/textures-materials/sky/skybox-series-free-103633
+
+https://assetstore.unity.com/packages/3d/props/pbr-lion-statue-3-variants-168377

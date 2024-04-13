@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 1170719013728486455}
   - component: {fileID: 1638241416145634472}
   - component: {fileID: 2248661003751067259}
-  - component: {fileID: 3138759524126971957}
   - component: {fileID: 9165202745628370461}
   - component: {fileID: 2893582669317914843}
   - component: {fileID: 2996485807384744214}
@@ -84,7 +83,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 1638241416145634472}
   selectedCommands:
-  - {fileID: 3138759524126971957}
+  - {fileID: 835937009659741034}
   variables: []
   description: Flowchart  for Opening Dialog system
   stepPause: 0
@@ -147,8 +146,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 14.231476
-    y: -490.38928
+    x: -13.768524
+    y: -483.38928
     width: 118
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -159,7 +158,6 @@ MonoBehaviour:
   eventHandler: {fileID: 5858058338661596940}
   commandList:
   - {fileID: 2248661003751067259}
-  - {fileID: 3138759524126971957}
   - {fileID: 9165202745628370461}
   - {fileID: 2893582669317914843}
   - {fileID: 2996485807384744214}
@@ -196,51 +194,6 @@ MonoBehaviour:
     stringVal: 
   startIndex: 0
   callMode: 2
---- !u!114 &3138759524126971957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8500226533342319513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 38
-  indentLevel: 0
-  description: 
-  targetObject: {fileID: 8500226533342319513}
-  targetComponentAssemblyName: LostSouls.Dialog.SaveDialog, Assembly-CSharp, Version=0.0.0.0,
-    Culture=neutral, PublicKeyToken=null
-  targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: SaveDialog
-  targetMethod: IsAlreadySaid
-  targetMethodText: 'IsAlreadySaid (Boolean): Boolean'
-  methodParameters:
-  - objValue:
-      typeAssemblyname: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      typeFullname: System.Boolean
-      intValue: 0
-      boolValue: 1
-      floatValue: 0
-      stringValue: 
-      colorValue: {r: 0, g: 0, b: 0, a: 0}
-      gameObjectValue: {fileID: 0}
-      materialValue: {fileID: 0}
-      objectValue: {fileID: 0}
-      spriteValue: {fileID: 0}
-      textureValue: {fileID: 0}
-      vector2Value: {x: 0, y: 0}
-      vector3Value: {x: 0, y: 0, z: 0}
-    variableKey: 
-  saveReturnValue: 0
-  returnValueVariableKey: 
-  returnValueType: System.Boolean
-  showInherited: 0
-  callMode: 0
 --- !u!114 &9165202745628370461
 MonoBehaviour:
   m_ObjectHideFlags: 0
