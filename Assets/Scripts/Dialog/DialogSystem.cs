@@ -5,11 +5,8 @@ using Cinemachine;
 
 namespace LostSouls.Dialog
 {
-<<<<<<<< HEAD:Assets/Scripts/Dialog/DialogPlayerLock.cs
-    public class DialogPlayerLock : MonoBehaviour
-========
+ 
     public class DialogSystem: MonoBehaviour
->>>>>>>> AIEnemy:Assets/Scripts/Dialog/DialogSystem.cs
     {
 
         private PlayerStateMachine playerStateMachine;
