@@ -18,6 +18,7 @@ TagManager:
   - Enemy
   - deleteButton
   - Portal
+  - Dialog
   layers:
   - Default
   - TransparentFX
