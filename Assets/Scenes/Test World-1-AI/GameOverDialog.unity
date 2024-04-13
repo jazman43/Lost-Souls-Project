@@ -740,6 +740,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 927074132809296412, guid: e2d2947ccf599498d9a450c0d686290d,
+        type: 3}
+      propertyPath: selectedBlocks.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2192980802942090377, guid: e2d2947ccf599498d9a450c0d686290d,
         type: 3}
       propertyPath: targetView

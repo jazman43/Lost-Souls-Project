@@ -169,19 +169,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 22488896, guid: 129e3ec0b9df74770975222be1ac452b, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -341.7203
+      value: -878.622
       objectReference: {fileID: 0}
     - target: {fileID: 22488896, guid: 129e3ec0b9df74770975222be1ac452b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -77.3911
+      value: -436.559
       objectReference: {fileID: 0}
     - target: {fileID: 22488896, guid: 129e3ec0b9df74770975222be1ac452b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 32.527466
+      value: 359.10803
       objectReference: {fileID: 0}
     - target: {fileID: 22488896, guid: 129e3ec0b9df74770975222be1ac452b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 92.108246
+      value: 218.27885
       objectReference: {fileID: 0}
     - target: {fileID: 22488902, guid: 129e3ec0b9df74770975222be1ac452b, type: 3}
       propertyPath: m_Pivot.x
@@ -788,6 +788,53 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1225923094508117138, guid: 21fc793c34d40429fb263c1c182b55b9,
+        type: 3}
+      propertyPath: storyText
+      value: '{color=Cyan} {b}Game Producer{/b}{/color}{size=60} Jared Evans{/size}{w=5}{c}
+
+        {color=Cyan}
+        {b}Game Lead design {/b}{/color}{size=60} Jared Evans{/size}
+
+        {color=Cyan}
+        {b}Conceptualization {/b}{/color} {size=60} Naomi Murachi{/size}
+
+        {color=Cyan}
+        {b}Lead Environment Design{/b} {/color}{size=60} Jared Evans{/size}
+
+        {color=Cyan}
+        {b}Level Design {/b}{/color}{size=60}  Donnie Corry{/size}
+
+        {color=Cyan}
+        {b}Visual Effects {/b} {/color}{size=60} Naomi Murachi{/size}
+
+        {w=5}{c}
+
+        {color=Cyan}
+        {b}Sound Design {/b} {/color}{size=60} Naomi Murachi{/size}
+
+        {color=Cyan}
+        {b}Lead Gameplay Program {/b}{/color} {size=60}  Jared Evans{/size}
+
+        {color=Cyan}
+        {b}AI Program {/b} {/color} {size=60} Naomi Murachi{/size}
+
+        {w=5}{c}
+
+        {color=Cyan}
+        {b}Narrative Design {/b} {/color}{size=60} Naomi Murachi{/size}
+
+        {color=Cyan}
+        {b}Dialog system Design {/b}{/color} {size=60} Naomi Murachi{/size}
+
+        {color=Cyan}
+        {b}Testing and Debugging{/b} {/color}{size=60} Jared Evans{/size}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1541443912560807573, guid: 21fc793c34d40429fb263c1c182b55b9,
+        type: 3}
+      propertyPath: selectedCommands.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2990061725428140639, guid: 21fc793c34d40429fb263c1c182b55b9,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -739,8 +739,13 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6726795391911066721, guid: b19e34cb67ba94048ba7e79977c42861,
         type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6726795391911066721, guid: b19e34cb67ba94048ba7e79977c42861,
+        type: 3}
       propertyPath: m_Volume
-      value: 0.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6726795391911066721, guid: b19e34cb67ba94048ba7e79977c42861,
         type: 3}
@@ -748,6 +753,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2178240444618976855, guid: 310611bd0783e47599ca7d48ee7bbea5,
         type: 2}
+    - target: {fileID: 6726795391911066721, guid: b19e34cb67ba94048ba7e79977c42861,
+        type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7905975333753198626, guid: b19e34cb67ba94048ba7e79977c42861,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -827,6 +837,7 @@ GameObject:
   - component: {fileID: 1564110064}
   - component: {fileID: 1564110068}
   - component: {fileID: 1564110069}
+  - component: {fileID: 1564110070}
   m_Layer: 0
   m_Name: Dungeon
   m_TagString: Untagged
@@ -1054,6 +1065,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1564110070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564110063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56d87acce7f7aa448af5dc660d060852, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2010142099
 GameObject:
   m_ObjectHideFlags: 0
