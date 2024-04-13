@@ -82,6 +82,7 @@ namespace LostSouls.combat
 
         public object CaptureState()
         {
+            Debug.Log(health + " save health");
             return health;
         }
 

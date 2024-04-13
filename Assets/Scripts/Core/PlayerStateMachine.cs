@@ -58,6 +58,7 @@ namespace LostSouls.core
 
         public object CaptureState()
         {
+            Debug.Log("saving player position");
             return new SerializableVector3(transform.position);
         }
 

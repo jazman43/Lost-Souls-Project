@@ -48,10 +48,12 @@ namespace LostSouls.skill
         {
             Vector2 spawnCircle = Random.insideUnitCircle * spawnRadius;
             Vector3 randomPosition = transform.position + new Vector3(spawnCircle.x
-            , transform.position.y + 0.75f
+            , transform.position.y
             , spawnCircle.y
-            ); ;
-            Debug.Log("add Soul");
+            );
+
+            randomPosition.y = transform.position.y + 0.75f;
+            Debug.Log("add Soul" + randomPosition + " " + transform.position);
             GameObject spawnedSoul = Instantiate(soulPreFab, randomPosition, Quaternion.identity);
             spawnedSouls.Add(spawnedSoul);
         }

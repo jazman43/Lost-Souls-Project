@@ -101,7 +101,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3326d1d2374a14aa0b5aa7a37140f30a,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3321431067856899587}
+      addedObject: {fileID: 4691885382100232314}
   m_SourcePrefab: {fileID: 100100000, guid: 3326d1d2374a14aa0b5aa7a37140f30a, type: 3}
 --- !u!137 &861439712478989075 stripped
 SkinnedMeshRenderer:
@@ -210,7 +210,7 @@ MonoBehaviour:
     m_Bits: 128
   canSeePlayer: 0
   _renderer: {fileID: 861439712478989075}
---- !u!114 &3321431067856899587
+--- !u!114 &4691885382100232314
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -219,7 +219,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5769126675134051588}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80195a4ca8e934b9196c750ff355b729, type: 3}
+  m_Script: {fileID: 11500000, guid: 1460ad34af80be8438549fcc0a62aab2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealth: 10
+  MaxHealth: 100

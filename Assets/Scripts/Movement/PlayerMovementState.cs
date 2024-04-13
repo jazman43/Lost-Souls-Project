@@ -80,7 +80,7 @@ namespace LostSouls.Movement
                 return;
             }
             stateMachine.Animation.SetFloat(moveAnimationHash, 1.8f, animatorDampTime, daltaTime);
-
+            //sfx walking
             FaceMovementDirection(daltaTime);
         }
 

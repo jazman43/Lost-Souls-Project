@@ -4,13 +4,16 @@ using UnityEngine;
 using LostSouls.Interact;
 using LostSouls.Interact.UI;
 using LostSouls.Inputs;
+using LostSouls.Saving;
+
 
 namespace LostSouls.Puzzles
 {
-    public class Rotatable : MonoBehaviour, IRaycastAble
+    public class Rotatable : MonoBehaviour, IRaycastAble , ISaveable
     {
         private float currentRotationAngle = 0f;
         private bool isRotating;
+        private bool isSovled;
         [SerializeField] private float speed = 5f;
         public int puzzleNumber;
         [SerializeField] private float puzzleAnswer;//must be set to "0, 90, -180, -90"
@@ -66,17 +69,31 @@ namespace LostSouls.Puzzles
 
         public bool PuzzleAnswerCheck()
         {
+            
+
             Quaternion correctRotation = Quaternion.Euler(0, puzzleAnswer, 0);
             
             if (Quaternion.Angle(transform.rotation, correctRotation) < 1f)
             {
                 Debug.Log("puzzle answered");
+                isSovled = true;
                 return true;
             }
             else
             {
+                isSovled = false;
                 return false;
             }
+        }
+
+        public object CaptureState()
+        {
+            return isSovled;
+        }
+
+        public void RestoreState(object state)
+        {
+            isSovled = (bool)state;
         }
     }
 
