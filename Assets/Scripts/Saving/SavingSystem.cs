@@ -25,6 +25,7 @@ namespace LostSouls.Saving
 
             yield return SceneManager.LoadSceneAsync(sceneIndex);
             RestoreState(state);
+            //Debug.Log("loading state" + state);
         }
 
         public void Save(string saveFile)

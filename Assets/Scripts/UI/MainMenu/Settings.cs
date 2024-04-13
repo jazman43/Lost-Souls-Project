@@ -36,9 +36,9 @@ namespace LostSouls.UI.Menus
         }
 
         private void Update()
-        {
-            
-            audioMixer.SetFloat(masterVolume, masterVolumeValue);            
+        {            
+            audioMixer.SetFloat(masterVolume, masterVolumeValue);
+            Debug.Log("volume update " + masterVolumeValue);
         }
 
         public void SaveSettings()
@@ -54,6 +54,8 @@ namespace LostSouls.UI.Menus
             masterVolumeSlider.value = PlayerPrefs.GetFloat("masterVolume");
             masterVolumeValue = PlayerPrefs.GetFloat("masterVolume");
 
+            Debug.Log("Volume" + masterVolumeValue);
+
             qulityIndex = PlayerPrefs.GetInt("Quality");
             qulityDropdown.value = PlayerPrefs.GetInt("Quality");
             resolutionIndex = PlayerPrefs.GetInt("Res");
@@ -61,6 +63,7 @@ namespace LostSouls.UI.Menus
 
             SetQuality(qulityIndex);
             SetResolution(resolutionIndex);
+            SetVolume(masterVolumeValue);
             Debug.Log("loaded Settings" + qulityIndex);
             
         }
