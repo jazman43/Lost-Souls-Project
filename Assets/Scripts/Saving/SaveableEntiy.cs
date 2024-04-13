@@ -40,6 +40,7 @@ namespace LostSouls.Saving
 
                 if (stateDict.ContainsKey(typeString))
                 {
+                    Debug.Log("loading... state " + stateDict[typeString]);
                     saveable.RestoreState(stateDict[typeString]);
                 }
             }

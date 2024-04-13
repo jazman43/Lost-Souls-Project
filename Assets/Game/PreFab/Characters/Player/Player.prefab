@@ -304,6 +304,7 @@ GameObject:
   - component: {fileID: 927551880953156848}
   - component: {fileID: 2000670735827593556}
   - component: {fileID: 8361611295250794301}
+  - component: {fileID: 4965721442385443303}
   m_Layer: 0
   m_Name: SoulDetector
   m_TagString: Soul
@@ -361,6 +362,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentPonits: 1
   soulsTagName: Soul
+--- !u!114 &4965721442385443303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220394752902218002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bd027f0e6e82ca4ca840b5a0c3ace7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uniqueIdentifier: PlayerPointsSave
 --- !u!1 &1283026658900118913
 GameObject:
   m_ObjectHideFlags: 0
