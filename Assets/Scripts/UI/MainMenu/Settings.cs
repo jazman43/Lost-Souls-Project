@@ -38,7 +38,7 @@ namespace LostSouls.UI.Menus
         private void Update()
         {            
             audioMixer.SetFloat(masterVolume, masterVolumeValue);
-            Debug.Log("volume update " + masterVolumeValue);
+            //Debug.Log("volume update " + masterVolumeValue);
         }
 
         public void SaveSettings()
@@ -99,7 +99,7 @@ namespace LostSouls.UI.Menus
 
         public void SetResolution(int resolutionIndex)
         {
-            Debug.Log(resolutionIndex + "RES");
+            //Debug.Log(resolutionIndex + "RES");
             this.resolutionIndex = resolutionIndex;
             Resolution resolution = resolutions[resolutionIndex];
             Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
@@ -108,7 +108,7 @@ namespace LostSouls.UI.Menus
 
         public void SetQuality(int graphicsIndex)
         {
-            Debug.Log("Quality" + graphicsIndex);
+            //Debug.Log("Quality" + graphicsIndex);
             this.qulityIndex = graphicsIndex;
             QualitySettings.SetQualityLevel(graphicsIndex);
         }

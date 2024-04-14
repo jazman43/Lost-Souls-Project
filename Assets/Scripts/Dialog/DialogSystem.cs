@@ -1,3 +1,6 @@
+using System;
+using System.Linq;
+using System.Collections.Generic;
 using UnityEngine;
 using Fungus;
 using LostSouls.core;
@@ -11,19 +14,20 @@ namespace LostSouls.Dialog
     public class DialogSystem: MonoBehaviour, ISaveable
     {
 
+        [SerializeField] private GameObject sayDialog;
         private PlayerStateMachine playerStateMachine;
         private CinemachineBrain cinemachineBrain;
-        private bool isFirstDialogShown = false; 
-        private void Start()
+        private bool isFirstDialogShown = true;
+
+        private void Awake()
         {
             playerStateMachine = FindObjectOfType<PlayerStateMachine>();  // Get Player's StateMachine
             cinemachineBrain = FindObjectOfType<CinemachineBrain>(); //Get Cinemachine
-            if (!isFirstDialogShown)
-            {
-                isFirstDialogShown = true; //Flag for activated dialog
-                SetIsAlreadySaid();
-            }
-                                                                   
+        }
+
+        private void Start()
+        {
+            SetIsAlreadySaid(isFirstDialogShown);
         }
 
         public void SetMovementLock(bool locked) // Lock or Unlock PlayerMovement
@@ -38,23 +42,32 @@ namespace LostSouls.Dialog
                 Debug.LogError("Can not find PlayerStateMachine");
             }
         }
-        public void SetIsAlreadySaid() // No more opening dialog when its alreay actiivated
+        public void SetIsAlreadySaid(bool isAlreadySaid) // No more opening dialog when its alreay activated
         {
-            GameObject[] dialogs = GameObject.FindGameObjectsWithTag("Dialog");
-            foreach (GameObject dialog in dialogs)
-                {
-                    dialog.SetActive(false);
-                }
+            
+            isFirstDialogShown = isAlreadySaid;
+            
+            Debug.Log("Dialog is off:  " + isFirstDialogShown);
+
+            if (isFirstDialogShown)
+            {
+                this.gameObject.GetComponent<Flowchart>().SendFungusMessage("Start");
             }
+            
+                        
+        }
 
         public object CaptureState()
         {
-            throw new System.NotImplementedException();
+            Debug.Log("dialog " + isFirstDialogShown);
+            return isFirstDialogShown;
         }
 
         public void RestoreState(object state)
         {
-            throw new System.NotImplementedException();
+            
+            isFirstDialogShown = (bool)state;
+            Debug.Log("dialog Loading " + isFirstDialogShown);
         }
     }
 }

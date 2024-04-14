@@ -5,14 +5,17 @@ using LostSouls.Saving;
 
 
 
+
 namespace LostSouls.Puzzles
 {
     public class PuzzleManager : MonoBehaviour , ISaveable
     {
         private Dictionary<int, List<Rotatable>> rotatablePuzzles = new Dictionary<int, List<Rotatable>>();
 
-        private int isSolved;
-        
+        private int puzzleIDNum;
+        private bool isSolved;
+
+        private Rotatable rotatable1;
 
         private void Awake()
         {
@@ -21,6 +24,7 @@ namespace LostSouls.Puzzles
 
         public void RegisterRotatablePuzzlePiece(Rotatable rotatable)
         {
+            rotatable1 = rotatable;
             if (!rotatablePuzzles.ContainsKey(rotatable.puzzleNumber))
             {
                 rotatablePuzzles[rotatable.puzzleNumber] = new List<Rotatable>();
@@ -32,28 +36,37 @@ namespace LostSouls.Puzzles
         //call me on door to open
         public bool IsRotatablePuzzleSolved(int puzzleId)
         {
-            Debug.Log(isSolved + " is solved Manager");
+            Debug.Log(puzzleIDNum + " is solved Manager");
             if (rotatablePuzzles.ContainsKey(puzzleId))
             {
-                if(isSolved == 1)
-                {
-                    return true;
-                }
-                Debug.Log($"puzzle {puzzleId}");
+                Debug.Log("is open " + isSolved + " " + puzzleId);
+                
+                
+                Debug.Log("puzzle " + puzzleId);
                 foreach (Rotatable piece in rotatablePuzzles[puzzleId])
                 {
+                    if (piece.PuzzleAnswerCheck() && isSolved)
+                    { 
+                        return true; 
+                    }
                     if (!piece.PuzzleAnswerCheck())
                     {
-                        isSolved = 0;
+                        isSolved = false;
                         return false; //puzzle not solved
                     }
                 }
-                Debug.Log($"puzzle {puzzleId} sovled");
-                isSolved = 1;
-                return false;
+                Debug.Log("puzzle " + puzzleId + " sovled");
+                puzzleIDNum = puzzleId;
+                isSolved = true;
+                return true;
             }
-            isSolved = 0;
+            isSolved = false;
             return false;
+        }
+
+        public int getPuzzleId()
+        {
+            return puzzleIDNum;
         }
 
         public void InitialzeRotatablePuzzles()
@@ -64,18 +77,14 @@ namespace LostSouls.Puzzles
             }
         }
 
-        public void RestoreState(object state)
-        {
-            Debug.Log("Loading Restore State" + state);
-            isSolved = (int)state;            
-        }
-
         public object CaptureState()
         {
-            Debug.Log(isSolved + " is solved saved");
             return isSolved;
         }
 
-        
+        public void RestoreState(object state)
+        {
+            isSolved = (bool)state;
+        }
     }
 }
