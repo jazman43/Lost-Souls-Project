@@ -32,7 +32,7 @@ namespace LostSouls.AI
             {
                 material.SetFloat(enemyDissolveValue, 0);
                 Debug.Log(gameObject.name + " has been destroyed.");
-                Destroy(gameObject, 0.2f);　// destroy after 2 sec
+                Destroy(gameObject, 1f);　// destroy after 1 sec
             }
         }
     }

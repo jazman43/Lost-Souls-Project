@@ -2,11 +2,13 @@ using UnityEngine;
 using Fungus;
 using LostSouls.core;
 using Cinemachine;
+using LostSouls.Saving;
+
 
 namespace LostSouls.Dialog
 {
  
-    public class DialogSystem: MonoBehaviour
+    public class DialogSystem: MonoBehaviour, ISaveable
     {
 
         private PlayerStateMachine playerStateMachine;
@@ -44,5 +46,15 @@ namespace LostSouls.Dialog
                     dialog.SetActive(false);
                 }
             }
+
+        public object CaptureState()
+        {
+            throw new System.NotImplementedException();
         }
+
+        public void RestoreState(object state)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
 }
