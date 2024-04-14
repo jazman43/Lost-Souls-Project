@@ -230,8 +230,7 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks:
-  - {fileID: 5629742013684118740}
+  selectedBlocks: []
   selectedCommands: []
   variables: []
   description: Flow chart for Game Over Dialog system

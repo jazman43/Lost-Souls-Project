@@ -118,8 +118,7 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 1075064261611726576}
-  selectedCommands:
-  - {fileID: 1225923094508117138}
+  selectedCommands: []
   variables:
   - {fileID: 4673666837331959443}
   description: Flowchart for Ending Dialog system
@@ -222,7 +221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 15
   indentLevel: 0
-  storyText: "{s=30}{wp=0.5}You felt like You were reborn in a new world. \nYou have
+  storyText: "{s=30}{wp=0.5}You felt like you were reborn in a new world. \nYou have
     decided to carve out your future in this new world.{/wp}{s}"
   description: 
   character: {fileID: 5214717624138234238}
@@ -304,43 +303,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 20
   indentLevel: 0
-  storyText: '{color=purple} {b}Game Producer{/b}{/color}{size=60} Jared Evans{/size}{w=5}{c}
+  storyText: '{color=Cyan} {b}Game Producer{/b}{/color}{size=60} Jared Evans{/size}{w=5}{c}
 
-    {color=purple}
+    {color=Cyan}
     {b}Game Lead design {/b}{/color}{size=60} Jared Evans{/size}
 
-    {color=purple}
+    {color=Cyan}
     {b}Conceptualization {/b}{/color} {size=60} Naomi Murachi{/size}
 
-    {color=purple}
+    {color=Cyan}
     {b}Lead Environment Design{/b} {/color}{size=60} Jared Evans{/size}
 
-    {color=purple}
+    {color=Cyan}
     {b}Level Design {/b}{/color}{size=60}  Donnie Corry{/size}
 
-    {color=purple}
+    {color=Cyan}
     {b}Visual Effects {/b} {/color}{size=60} Naomi Murachi{/size}
 
     {w=5}{c}
 
-    {color=purple}
+    {color=Cyan}
     {b}Sound Design {/b} {/color}{size=60} Naomi Murachi{/size}
 
-    {color=purple}
+    {color=Cyan}
     {b}Lead Gameplay Program {/b}{/color} {size=60}  Jared Evans{/size}
 
-    {color=purple}
+    {color=Cyan}
     {b}AI Program {/b} {/color} {size=60} Naomi Murachi{/size}
 
     {w=5}{c}
 
-    {color=purple}
+    {color=Cyan}
     {b}Narrative Design {/b} {/color}{size=60} Naomi Murachi{/size}
 
-    {color=purple}
+    {color=Cyan}
     {b}Dialog system Design {/b}{/color} {size=60} Naomi Murachi{/size}
 
-    {color=purple}
+    {color=Cyan}
     {b}Testing and Debugging{/b} {/color}{size=60} Jared Evans{/size}'
   description: End credit
   character: {fileID: 5214717624138234238}

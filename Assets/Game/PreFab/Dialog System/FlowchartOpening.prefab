@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5066003649392310513}
   - component: {fileID: 3230758661712532294}
   - component: {fileID: 6806234772936858262}
-  - component: {fileID: 1170719013728486455}
   - component: {fileID: 1638241416145634472}
   - component: {fileID: 2248661003751067259}
   - component: {fileID: 9165202745628370461}
@@ -81,9 +80,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 1638241416145634472}
+  - {fileID: 5255328523334300502}
   selectedCommands:
-  - {fileID: 835937009659741034}
+  - {fileID: 154468260641918791}
   variables: []
   description: Flowchart  for Opening Dialog system
   stepPause: 0
@@ -120,18 +119,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uniqueIdentifier: 
---- !u!114 &1170719013728486455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8500226533342319513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de5dbaf9a6703554cb2d4015907be821, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1638241416145634472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -621,16 +608,34 @@ MonoBehaviour:
   itemId: 54
   indentLevel: 0
   description: 
-  targetObject: {fileID: 0}
-  targetComponentAssemblyName: 
-  targetComponentFullname: 
-  targetComponentText: 
-  targetMethod: 
-  targetMethodText: 
-  methodParameters: []
+  targetObject: {fileID: 8500226533342319513}
+  targetComponentAssemblyName: LostSouls.Dialog.DialogSystem, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: DialogSystem
+  targetMethod: SetMovementLock
+  targetMethodText: 'SetMovementLock (Boolean): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Boolean
+      intValue: 0
+      boolValue: 1
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
   saveReturnValue: 0
   returnValueVariableKey: 
-  returnValueType: 
+  returnValueType: System.Void
   showInherited: 0
   callMode: 0
 --- !u!114 &3538394017357052138
@@ -675,15 +680,33 @@ MonoBehaviour:
   itemId: 56
   indentLevel: 0
   description: 
-  targetObject: {fileID: 0}
-  targetComponentAssemblyName: 
-  targetComponentFullname: 
-  targetComponentText: 
-  targetMethod: 
-  targetMethodText: 
-  methodParameters: []
+  targetObject: {fileID: 8500226533342319513}
+  targetComponentAssemblyName: LostSouls.Dialog.DialogSystem, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: DialogSystem
+  targetMethod: SetMovementLock
+  targetMethodText: 'SetMovementLock (Boolean): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Boolean
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
   saveReturnValue: 0
   returnValueVariableKey: 
-  returnValueType: 
+  returnValueType: System.Void
   showInherited: 0
   callMode: 0
