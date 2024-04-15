@@ -205,7 +205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 5
   angle: 140
-  playerRef: {fileID: 258896267754704163, guid: e0deb57fb159d461a9bd814488cd45b4,
+  playerRef: {fileID: 6643998992738211075, guid: f3a6f5c306b3d4b43b0cb31452add9c6,
     type: 3}
   targetMask:
     serializedVersion: 2
@@ -242,7 +242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHealth: 10
   enemyDissolve: 0
-  enemyDissolveValue: 
+  enemyDissolveValue: 1
   enemyDissolveSpeed: 0.01
   material: {fileID: -876546973899608171, guid: f4871325349674e67b14632730e56620,
     type: 3}
