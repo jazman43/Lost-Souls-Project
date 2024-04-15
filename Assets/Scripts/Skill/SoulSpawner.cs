@@ -53,7 +53,7 @@ namespace LostSouls.skill
             );
 
             randomPosition.y = transform.position.y + 0.75f;
-            Debug.Log("add Soul" + randomPosition + " " + transform.position);
+            //Debug.Log("add Soul" + randomPosition + " " + transform.position);
             GameObject spawnedSoul = Instantiate(soulPreFab, randomPosition, Quaternion.identity);
             spawnedSouls.Add(spawnedSoul);
         }

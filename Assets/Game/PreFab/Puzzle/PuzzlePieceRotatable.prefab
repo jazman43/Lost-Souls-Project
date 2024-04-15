@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4331298031670164213}
   - component: {fileID: 5374138092605930465}
   - component: {fileID: 5599731031002066213}
+  - component: {fileID: 7838848909825433538}
   m_Layer: 0
   m_Name: PuzzlePieceRotatable
   m_TagString: Untagged
@@ -123,6 +124,19 @@ MonoBehaviour:
   speed: 5
   puzzleNumber: 1
   puzzleAnswer: 0
+--- !u!114 &7838848909825433538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3895847964495402990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bd027f0e6e82ca4ca840b5a0c3ace7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uniqueIdentifier: 
 --- !u!1001 &3895108367509117371
 PrefabInstance:
   m_ObjectHideFlags: 0

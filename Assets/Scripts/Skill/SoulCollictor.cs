@@ -40,7 +40,7 @@ namespace LostSouls.skill
 
         public object CaptureState()
         {
-            Debug.Log(currentPonits + "points Saved");
+            //Debug.Log(currentPonits + "points Saved");
             return currentPonits;
         }
 

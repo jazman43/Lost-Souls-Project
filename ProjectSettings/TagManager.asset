@@ -19,6 +19,7 @@ TagManager:
   - deleteButton
   - Portal
   - Dialog
+  - Ending
   layers:
   - Default
   - TransparentFX

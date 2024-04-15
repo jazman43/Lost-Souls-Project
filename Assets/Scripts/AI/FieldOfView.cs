@@ -1,3 +1,4 @@
+using LostSouls.combat;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -32,11 +33,15 @@ namespace LostSouls.AI
         private Material _material;
 
         //private Sequence _seq;
-
+        private void Awake()
+        {
+            animator = GetComponent<Animator>();
+            playerRef = GameObject.FindGameObjectWithTag("Player");
+        }
 
         private void Start()
         {
-            playerRef = GameObject.FindGameObjectWithTag("Player");
+            
             StartCoroutine(FOVRoutine());
         }
         private void Update()
@@ -45,12 +50,14 @@ namespace LostSouls.AI
             {
                 GetComponent<NavMeshAgent>().SetDestination(playerRef.transform.position);
             }
+
+             animator.SetFloat("Blend",  GetComponent<NavMeshAgent>().velocity.magnitude);
         }
 
         private IEnumerator FOVRoutine()
         {
             WaitForSeconds wait = new WaitForSeconds(0.2f);
-            animator = GetComponent<Animator>();
+            
 
             while (true)
             {
@@ -63,37 +70,38 @@ namespace LostSouls.AI
         {
            
             Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radius, targetMask);
-
+            
             if (rangeChecks.Length != 0)
             {
+                Debug.Log("enemy to player");
                 Transform target = rangeChecks[0].transform;
                 Vector3 directionToTarget = (target.position - transform.position).normalized;
-
+                
                 if (Vector3.Angle(transform.forward, directionToTarget) < angle / 2)
                 {
                     float distanceToTarget = Vector3.Distance(transform.position, target.position);
-
+                    
                     if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
                     {
                         canSeePlayer = true;
-                        animator.SetBool("canSeePlayer", true);
+                        //animator.SetBool("canSeePlayer", true);
                     }
                     else
                     {
                         canSeePlayer = false;
-                        animator.SetBool("canSeePlayer", false);
+                        //animator.SetBool("canSeePlayer", false);
                     }
                 }
                 else
                 {
                     canSeePlayer = false;
-                    animator.SetBool("canSeePlayer", false);
+                    //animator.SetBool("canSeePlayer", false);
                 }
             }
             else if (canSeePlayer)
             {
                 canSeePlayer = false;
-                animator.SetBool("canSeePlayer", false);
+                ///animator.SetBool("canSeePlayer", false);
             }
 
         }
@@ -107,11 +115,11 @@ namespace LostSouls.AI
                 animator.SetInteger("AttacKIndex", Random.Range(0, 2));
                 //HitFadeBlink(Color.white);
                 
-                EnemyHealth enemyHealth = EnemyManager.CurrentEnemy.GetComponent<EnemyHealth>(); // get the EnemyHealth component from the current enemy
+                Health enemyHealth = other.gameObject.GetComponent<Health>(); // get the EnemyHealth component from the current enemy
 
                 if (enemyHealth != null)
                 {
-                    enemyHealth.TakeDamage(1); // apply damage to the enemy
+                    enemyHealth.DealDamage(5); // apply damage to the enemy
                     Debug.Log("Player Collided with enemy. damaged enemy.", enemyHealth);
 
                 }

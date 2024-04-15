@@ -23,27 +23,63 @@ namespace LostSouls.Puzzles
 
         private void Update()
         {
-            IsSolved();
+            IsSolvedOne();
+            IsSolvedTwo();
         }
 
-        private void IsSolved()
+        private void IsSolvedOne()
         {
-            Debug.Log(isSovled + " is sovled" );
-            if (puzzleManager.IsRotatablePuzzleSolved(puzzleID) || isSovled)
+            //Debug.Log(isSovled + " is sovled" );
+            if (puzzleManager.IsRotatablePuzzleSolved(1) || isSovled)
             {
-                isSovled = true;
-                switch (howDoorOpen)
+                
+                
+                if(puzzleID == 1 || isSovled)
                 {
-                    case 0:
-                        OpenDoorDropDown();
-                        break;
-                    case 1:
-                        OpenDoorUp();
-                        break;
-                    case 2:
-                        //door open normal
-                        break;
+                    isSovled = true;
+                    Debug.Log("opendoor" + puzzleID);
+                    switch (howDoorOpen)
+                    {
+                        case 0:
+                            OpenDoorDropDown();
+                            break;
+                        case 1:
+                            OpenDoorUp();
+                            break;
+                        case 2:
+                            //door open normal
+                            break;
+                    }
+                }            
+                                
+            }
+        }
+
+        private void IsSolvedTwo()
+        {
+            //Debug.Log(isSovled + " is sovled" );
+            if (puzzleManager.IsRotatablePuzzleSolved(2) || isSovled)
+            {
+
+
+                if (puzzleID == 2 || isSovled)
+                {
+                    isSovled = true;
+                    Debug.Log("opendoor" + puzzleID);
+                    switch (howDoorOpen)
+                    {
+                        case 0:
+                            OpenDoorDropDown();
+                            break;
+                        case 1:
+                            OpenDoorUp();
+                            break;
+                        case 2:
+                            //door open normal
+                            break;
+                    }
                 }
+
             }
         }
 

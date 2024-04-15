@@ -49,11 +49,11 @@ namespace LostSouls.skill
 
         public void UnlockSkill(string skillName)
         {
-            Debug.Log("current souls " + ponits.GetPonits());
+            //Debug.Log("current souls " + ponits.GetPonits());
             if (ponits.GetPonits() >= 1)
             {
                 
-                Debug.Log("unlock Skill " + skillName);
+                //Debug.Log("unlock Skill " + skillName);
                 if (skills.TryGetValue(skillName, out var skill))
                 {
                     skill.isUnlocked = true;
