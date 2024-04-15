@@ -216,10 +216,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 5
   angle: 140
-  playerRef: {fileID: 0}
+  playerRef: {fileID: 6643998992738211075, guid: f3a6f5c306b3d4b43b0cb31452add9c6,
+    type: 3}
   targetMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 1
   obstructionMask:
     serializedVersion: 2
     m_Bits: 128
@@ -252,7 +253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHealth: 10
   enemyDissolve: 0
-  enemyDissolveValue: 
+  enemyDissolveValue: 1
   enemyDissolveSpeed: 0.01
   material: {fileID: -876546973899608171, guid: f4871325349674e67b14632730e56620,
     type: 3}
