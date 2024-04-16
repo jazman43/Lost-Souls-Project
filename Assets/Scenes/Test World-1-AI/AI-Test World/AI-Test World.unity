@@ -1347,8 +1347,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7087038940963176054, guid: 86b4836d62a8144988831c0000c8a1f6,
         type: 3}
+      propertyPath: sfxMasterVolume
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7087038940963176054, guid: 86b4836d62a8144988831c0000c8a1f6,
+        type: 3}
       propertyPath: sfxSoundDatas.Array.size
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7087038940963176054, guid: 86b4836d62a8144988831c0000c8a1f6,
+        type: 3}
+      propertyPath: sfxSoundDatas.Array.data[0].volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7087038940963176054, guid: 86b4836d62a8144988831c0000c8a1f6,
+        type: 3}
+      propertyPath: sfxSoundDatas.Array.data[1].volume
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8732203683574160307, guid: 86b4836d62a8144988831c0000c8a1f6,
         type: 3}
