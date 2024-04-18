@@ -26,7 +26,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3326d1d2374a14aa0b5aa7a37140f30a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2170.6216
+      value: -2171.87
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3326d1d2374a14aa0b5aa7a37140f30a,
         type: 3}
@@ -238,7 +238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 5
   angle: 100
-  playerRef: {fileID: 5769126675134051588}
+  playerRef: {fileID: 0}
   targetMask:
     serializedVersion: 2
     m_Bits: 1

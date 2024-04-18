@@ -390,6 +390,11 @@ PrefabInstance:
       propertyPath: selectedCommands.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5066003649392310513, guid: 0a06db051daaa48df9ab619a04ab2e40,
+        type: 3}
+      propertyPath: selectedBlocks.Array.data[0]
+      value: 
+      objectReference: {fileID: 2268454286433083009}
     - target: {fileID: 5530383639861014555, guid: 0a06db051daaa48df9ab619a04ab2e40,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -470,6 +475,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a06db051daaa48df9ab619a04ab2e40, type: 3}
+--- !u!114 &2268454286433083009 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1638241416145634472, guid: 0a06db051daaa48df9ab619a04ab2e40,
+    type: 3}
+  m_PrefabInstance: {fileID: 704559101056637481}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &5005969077688330802 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5530383639861014555, guid: 0a06db051daaa48df9ab619a04ab2e40,

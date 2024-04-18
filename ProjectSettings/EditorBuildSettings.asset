@@ -12,10 +12,19 @@ EditorBuildSettings:
     path: Assets/Scenes/don/intro 1.unity
     guid: 82d0667239d8e6749b8524c1df17fc1c
   - enabled: 1
+    path: Assets/Scenes/Dialog/2DOpeningDialog.unity
+    guid: ecf6b0687e62140909e5000f2ca1cc1c
+  - enabled: 1
+    path: Assets/Scenes/don/climb1.unity
+    guid: 42f66985c902f46cc9e48e9a9826038e
+  - enabled: 1
+    path: Assets/Scenes/Dialog/PuzzleDialog.unity
+    guid: a5a55f4e6687d4a0b897ae5c10f230bd
+  - enabled: 1
     path: Assets/Scenes/don/lvl2.unity
     guid: 6eafcdc7cc698054189fc481808296e0
   - enabled: 1
-    path: Assets/Scenes/Test World-1-AI/EndingDialog.unity
+    path: Assets/Scenes/Dialog/EndingDialog.unity
     guid: ef8d47a82f0054319aa19a35de1048ce
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 05b04138d07f94657b066427ed7fd7e4,

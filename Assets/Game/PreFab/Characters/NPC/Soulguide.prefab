@@ -61,10 +61,43 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9d0c9a75ac259481b84ddcda90ca0c30,
         type: 3}
       propertyPath: m_Name
-      value: Demon T Wiezzorek@Female Standing Pose 1
+      value: Soulguide
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9d0c9a75ac259481b84ddcda90ca0c30,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5730047835528448880}
   m_SourcePrefab: {fileID: 100100000, guid: 9d0c9a75ac259481b84ddcda90ca0c30, type: 3}
+--- !u!1 &5192413833423481594 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9d0c9a75ac259481b84ddcda90ca0c30,
+    type: 3}
+  m_PrefabInstance: {fileID: 4957971772730955691}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &5730047835528448880
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5192413833423481594}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.59007156
+  m_Height: 2.6853235
+  m_Direction: 1
+  m_Center: {x: -0.09007156, y: 1.0766972, z: 0}

@@ -34,7 +34,7 @@ GameObject:
   - component: {fileID: 3538394017357052138}
   - component: {fileID: 3111711707440459546}
   m_Layer: 0
-  m_Name: FlowchartOpening
+  m_Name: Flowchartlock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

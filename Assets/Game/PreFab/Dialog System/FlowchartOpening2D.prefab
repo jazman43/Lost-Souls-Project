@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3230758661712532294}
   - component: {fileID: 6806234772936858262}
   - component: {fileID: 1638241416145634472}
-  - component: {fileID: 2248661003751067259}
   - component: {fileID: 9165202745628370461}
   - component: {fileID: 2893582669317914843}
   - component: {fileID: 2996485807384744214}
@@ -28,13 +27,10 @@ GameObject:
   - component: {fileID: 5307193662393564229}
   - component: {fileID: 692282516719350964}
   - component: {fileID: 835937009659741034}
-  - component: {fileID: 5858058338661596940}
-  - component: {fileID: 5255328523334300502}
-  - component: {fileID: 154468260641918791}
-  - component: {fileID: 3538394017357052138}
-  - component: {fileID: 3111711707440459546}
+  - component: {fileID: 4588083147304005516}
+  - component: {fileID: 979225968438030764}
   m_Layer: 0
-  m_Name: FlowchartOpening
+  m_Name: FlowchartOpening2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52,7 +48,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 3130519418340085085}
+  - {fileID: 7636917003329077050}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5066003649392310513
@@ -118,7 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd027f0e6e82ca4ca840b5a0c3ace7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uniqueIdentifier: 
+  uniqueIdentifier: 99048433-0ab2-480e-95d3-f3b776bc487d
 --- !u!114 &1638241416145634472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,19 +131,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -13.768524
-    y: -483.38928
-    width: 118
+    x: -24.768524
+    y: -593.3893
+    width: 124
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
   itemId: 0
-  blockName: Start (Copy)
-  description: 
-  eventHandler: {fileID: 5858058338661596940}
+  blockName: StartOpening
+  description: Opening
+  eventHandler: {fileID: 979225968438030764}
   commandList:
-  - {fileID: 2248661003751067259}
   - {fileID: 9165202745628370461}
+  - {fileID: 4588083147304005516}
   - {fileID: 2893582669317914843}
   - {fileID: 2996485807384744214}
   - {fileID: 6051330137244650254}
@@ -160,27 +158,6 @@ MonoBehaviour:
   - {fileID: 692282516719350964}
   - {fileID: 835937009659741034}
   suppressAllAutoSelections: 0
---- !u!114 &2248661003751067259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8500226533342319513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 37
-  indentLevel: 0
-  targetFlowchart: {fileID: 5066003649392310513}
-  targetBlock: {fileID: 5255328523334300502}
-  startLabel:
-    stringRef: {fileID: 0}
-    stringVal: 
-  startIndex: 0
-  callMode: 2
 --- !u!114 &9165202745628370461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,10 +172,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 39
   indentLevel: 0
-  musicClip: {fileID: 8300000, guid: c670571c5e46e45119b965cb452031f8, type: 3}
+  musicClip: {fileID: 8300000, guid: fe678006dc1d44d0d899c5bd91131359, type: 3}
   atTime: 0
   loop: 1
-  fadeDuration: 1
+  fadeDuration: 5
 --- !u!114 &2893582669317914843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,7 +194,7 @@ MonoBehaviour:
     the hell am I? {w=3} {c}{hpunch=10,0.5} Oh....There is someone over there...
     {/color}'
   description: 
-  character: {fileID: 0}
+  character: {fileID: 6073190232988268598}
   portrait: {fileID: 21300000, guid: 8dbc9f4a917be48d799b58c378de6043, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -245,7 +222,7 @@ MonoBehaviour:
   storyText: Hi, It's an entrance to Shadowfell Labirinth. You look unfamiliar. Whare
     do you come from?
   description: 
-  character: {fileID: 0}
+  character: {fileID: 1301029000077237791}
   portrait: {fileID: 21300000, guid: c8369b0cdf40e4a11ab635fcacaa859a, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -272,7 +249,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: ah.....Guess where I come from?
   description: 
-  character: {fileID: 0}
+  character: {fileID: 6073190232988268598}
   portrait: {fileID: 21300000, guid: dfd0cf75ff4884db3b4e736752e61927, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -299,7 +276,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: 'You are from Mystic Sitadel Kingdom, are''t you? '
   description: 
-  character: {fileID: 0}
+  character: {fileID: 1301029000077237791}
   portrait: {fileID: 21300000, guid: c8369b0cdf40e4a11ab635fcacaa859a, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -324,10 +301,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 44
   indentLevel: 0
-  storyText: '{color=grey}I don''t know who I am. but It is better to say "Yes".{/color}'
+  storyText: '{color=grey}...I don''t know who I am. but It is better to say "Yes".{/color}'
   description: 
-  character: {fileID: 0}
-  portrait: {fileID: 21300000, guid: 8dbc9f4a917be48d799b58c378de6043, type: 3}
+  character: {fileID: 6073190232988268598}
+  portrait: {fileID: 21300000, guid: dfd0cf75ff4884db3b4e736752e61927, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -353,8 +330,8 @@ MonoBehaviour:
   indentLevel: 0
   storyText: You are right. Wow....How did you get that?
   description: 
-  character: {fileID: 0}
-  portrait: {fileID: 21300000, guid: dfd0cf75ff4884db3b4e736752e61927, type: 3}
+  character: {fileID: 6073190232988268598}
+  portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -381,7 +358,7 @@ MonoBehaviour:
   storyText: Actually, I have the ability to see the colors of people's aura. Your
     color is purple, so I can tell where you're from.
   description: 
-  character: {fileID: 0}
+  character: {fileID: 1301029000077237791}
   portrait: {fileID: 21300000, guid: c8369b0cdf40e4a11ab635fcacaa859a, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -408,7 +385,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: By the way, where are you going now?
   description: 
-  character: {fileID: 0}
+  character: {fileID: 1301029000077237791}
   portrait: {fileID: 21300000, guid: c8369b0cdf40e4a11ab635fcacaa859a, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -437,7 +414,7 @@ MonoBehaviour:
 
 '
   description: 
-  character: {fileID: 0}
+  character: {fileID: 6073190232988268598}
   portrait: {fileID: 21300000, guid: dfd0cf75ff4884db3b4e736752e61927, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -464,7 +441,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: Once you get in here, youcan't come back.
   description: 
-  character: {fileID: 0}
+  character: {fileID: 1301029000077237791}
   portrait: {fileID: 21300000, guid: c8369b0cdf40e4a11ab635fcacaa859a, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -492,7 +469,7 @@ MonoBehaviour:
   storyText: Nevertheless, I have to go there. It's essential to moving forward in
     my life.
   description: 
-  character: {fileID: 0}
+  character: {fileID: 6073190232988268598}
   portrait: {fileID: 21300000, guid: dfd0cf75ff4884db3b4e736752e61927, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -519,7 +496,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: Good luck....
   description: 
-  character: {fileID: 0}
+  character: {fileID: 1301029000077237791}
   portrait: {fileID: 21300000, guid: c8369b0cdf40e4a11ab635fcacaa859a, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -545,13 +522,34 @@ MonoBehaviour:
   itemId: 52
   indentLevel: 0
   targetFlowchart: {fileID: 5066003649392310513}
-  targetBlock: {fileID: 3538394017357052138}
+  targetBlock: {fileID: 0}
   startLabel:
     stringRef: {fileID: 0}
     stringVal: 
   startIndex: 0
   callMode: 2
---- !u!114 &5858058338661596940
+--- !u!114 &4588083147304005516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8500226533342319513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45c952ea1ad444e479b570fa242679c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 53
+  indentLevel: 0
+  duration: 5
+  targetView: {fileID: 0}
+  waitUntilFinished: 1
+  targetCamera: {fileID: 0}
+  orthoSizeTweenType: 4
+  posTweenType: 4
+  rotTweenType: 4
+--- !u!114 &979225968438030764
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -566,147 +564,175 @@ MonoBehaviour:
   parentBlock: {fileID: 1638241416145634472}
   suppressBlockAutoSelect: 0
   waitForFrames: 1
---- !u!114 &5255328523334300502
-MonoBehaviour:
+--- !u!1001 &2729091584132177374
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5530383639861014555}
+    m_Modifications:
+    - target: {fileID: 1057915476097323139, guid: ea212c11312dd421d9b532dc616ce15e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1057915476097323139, guid: ea212c11312dd421d9b532dc616ce15e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1057915476097323139, guid: ea212c11312dd421d9b532dc616ce15e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 7.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 1057915476097323139, guid: ea212c11312dd421d9b532dc616ce15e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1057915476097323139, guid: ea212c11312dd421d9b532dc616ce15e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1057915476097323139, guid: ea212c11312dd421d9b532dc616ce15e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1057915476097323139, guid: ea212c11312dd421d9b532dc616ce15e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1057915476097323139, guid: ea212c11312dd421d9b532dc616ce15e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1057915476097323139, guid: ea212c11312dd421d9b532dc616ce15e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1057915476097323139, guid: ea212c11312dd421d9b532dc616ce15e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7743409704402107882, guid: ea212c11312dd421d9b532dc616ce15e,
+        type: 3}
+      propertyPath: m_Name
+      value: playerSprites
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ea212c11312dd421d9b532dc616ce15e, type: 3}
+--- !u!4 &3130519418340085085 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1057915476097323139, guid: ea212c11312dd421d9b532dc616ce15e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2729091584132177374}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8500226533342319513}
+--- !u!114 &6073190232988268598 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8185257142217336296, guid: ea212c11312dd421d9b532dc616ce15e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2729091584132177374}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodeRect:
-    serializedVersion: 2
-    x: 4.8285522
-    y: -376.66806
-    width: 119
-    height: 40
-  tint: {r: 1, g: 1, b: 1, a: 1}
-  useCustomTint: 0
-  itemId: 28
-  blockName: Lock (Copy)
-  description: 
-  eventHandler: {fileID: 0}
-  commandList:
-  - {fileID: 154468260641918791}
-  suppressAllAutoSelections: 0
---- !u!114 &154468260641918791
-MonoBehaviour:
+--- !u!1001 &3669674162141822718
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5530383639861014555}
+    m_Modifications:
+    - target: {fileID: 4654611292648000859, guid: 032964d62d17f47a99b2938663633dd3,
+        type: 3}
+      propertyPath: m_Name
+      value: GatekeeperSprites
+      objectReference: {fileID: 0}
+    - target: {fileID: 6563586030915912132, guid: 032964d62d17f47a99b2938663633dd3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6563586030915912132, guid: 032964d62d17f47a99b2938663633dd3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6563586030915912132, guid: 032964d62d17f47a99b2938663633dd3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6563586030915912132, guid: 032964d62d17f47a99b2938663633dd3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6563586030915912132, guid: 032964d62d17f47a99b2938663633dd3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6563586030915912132, guid: 032964d62d17f47a99b2938663633dd3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6563586030915912132, guid: 032964d62d17f47a99b2938663633dd3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6563586030915912132, guid: 032964d62d17f47a99b2938663633dd3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6563586030915912132, guid: 032964d62d17f47a99b2938663633dd3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6563586030915912132, guid: 032964d62d17f47a99b2938663633dd3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 032964d62d17f47a99b2938663633dd3, type: 3}
+--- !u!114 &1301029000077237791 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2369847568226164961, guid: 032964d62d17f47a99b2938663633dd3,
+    type: 3}
+  m_PrefabInstance: {fileID: 3669674162141822718}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8500226533342319513}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 54
-  indentLevel: 0
-  description: 
-  targetObject: {fileID: 8500226533342319513}
-  targetComponentAssemblyName: LostSouls.Dialog.DialogSystem, Assembly-CSharp, Version=0.0.0.0,
-    Culture=neutral, PublicKeyToken=null
-  targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: DialogSystem
-  targetMethod: SetMovementLock
-  targetMethodText: 'SetMovementLock (Boolean): Void'
-  methodParameters:
-  - objValue:
-      typeAssemblyname: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      typeFullname: System.Boolean
-      intValue: 0
-      boolValue: 1
-      floatValue: 0
-      stringValue: 
-      colorValue: {r: 0, g: 0, b: 0, a: 0}
-      gameObjectValue: {fileID: 0}
-      materialValue: {fileID: 0}
-      objectValue: {fileID: 0}
-      spriteValue: {fileID: 0}
-      textureValue: {fileID: 0}
-      vector2Value: {x: 0, y: 0}
-      vector3Value: {x: 0, y: 0, z: 0}
-    variableKey: 
-  saveReturnValue: 0
-  returnValueVariableKey: 
-  returnValueType: System.Void
-  showInherited: 0
-  callMode: 0
---- !u!114 &3538394017357052138
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+--- !u!4 &7636917003329077050 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6563586030915912132, guid: 032964d62d17f47a99b2938663633dd3,
+    type: 3}
+  m_PrefabInstance: {fileID: 3669674162141822718}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8500226533342319513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeRect:
-    serializedVersion: 2
-    x: 168.54242
-    y: -496.34338
-    width: 131
-    height: 40
-  tint: {r: 1, g: 1, b: 1, a: 1}
-  useCustomTint: 0
-  itemId: 29
-  blockName: Unlock (Copy)
-  description: 
-  eventHandler: {fileID: 0}
-  commandList:
-  - {fileID: 3111711707440459546}
-  suppressAllAutoSelections: 0
---- !u!114 &3111711707440459546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8500226533342319513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 56
-  indentLevel: 0
-  description: 
-  targetObject: {fileID: 8500226533342319513}
-  targetComponentAssemblyName: LostSouls.Dialog.DialogSystem, Assembly-CSharp, Version=0.0.0.0,
-    Culture=neutral, PublicKeyToken=null
-  targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: DialogSystem
-  targetMethod: SetMovementLock
-  targetMethodText: 'SetMovementLock (Boolean): Void'
-  methodParameters:
-  - objValue:
-      typeAssemblyname: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      typeFullname: System.Boolean
-      intValue: 0
-      boolValue: 0
-      floatValue: 0
-      stringValue: 
-      colorValue: {r: 0, g: 0, b: 0, a: 0}
-      gameObjectValue: {fileID: 0}
-      materialValue: {fileID: 0}
-      objectValue: {fileID: 0}
-      spriteValue: {fileID: 0}
-      textureValue: {fileID: 0}
-      vector2Value: {x: 0, y: 0}
-      vector3Value: {x: 0, y: 0, z: 0}
-    variableKey: 
-  saveReturnValue: 0
-  returnValueVariableKey: 
-  returnValueType: System.Void
-  showInherited: 0
-  callMode: 0
