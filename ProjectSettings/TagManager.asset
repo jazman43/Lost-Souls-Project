@@ -21,6 +21,7 @@ TagManager:
   - Dialog
   - Ending
   - SavingShild
+  - player1
   layers:
   - Default
   - TransparentFX

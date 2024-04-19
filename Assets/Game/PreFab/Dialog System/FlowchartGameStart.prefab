@@ -83,7 +83,7 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 5261862769484530634}
+  - {fileID: 185893751549371156}
   selectedCommands: []
   variables:
   - {fileID: 8971970616203624964}
@@ -115,7 +115,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 104.7551
-    y: -480.987
+    y: -479.53693
     width: 118.878876
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -256,6 +256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20eb5354515974a28805b2c78802be2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sayDialog: {fileID: 0}
 --- !u!114 &8971970616203624964
 MonoBehaviour:
   m_ObjectHideFlags: 0

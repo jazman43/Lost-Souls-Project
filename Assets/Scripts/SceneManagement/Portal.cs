@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using LostSouls.UI.Menus;
+using Fungus;
 
 
 namespace LostSouls.SceneManagement
@@ -38,6 +39,11 @@ namespace LostSouls.SceneManagement
 
         public void OnUIClick()
         {
+            if (!gameObject.activeInHierarchy)
+            {
+                gameObject.SetActive(true);
+            }
+
             Debug.Log("Start Game");
             StartCoroutine(Transition());
         }

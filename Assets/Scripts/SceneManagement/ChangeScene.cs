@@ -17,8 +17,4 @@ public class ChangeScene : MonoBehaviour
 
     }
 
-    private void OnDialogFinished()
-    {
-        SceneManager.LoadScene("lvl2");
-    }
 }

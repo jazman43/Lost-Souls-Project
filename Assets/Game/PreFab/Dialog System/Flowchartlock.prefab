@@ -68,19 +68,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 355.36304, y: 707.0287}
+  scrollPos: {x: 854.4081, y: 818.18365}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
-  zoom: 1
+  zoom: 0.48100308
   scrollViewRect:
     serializedVersion: 2
     x: -343
     y: -340
     width: 1114
     height: 859
-  selectedBlocks:
-  - {fileID: 1638241416145634472}
+  selectedBlocks: []
   selectedCommands: []
   variables: []
   description: Flowchart  for Opening Dialog system
@@ -135,7 +134,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -13.768524
     y: -483.38928
-    width: 118
+    width: 120.685616
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -582,7 +581,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 4.8285522
     y: -376.66806
-    width: 119
+    width: 121.72511
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -654,7 +653,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 168.54242
     y: -496.34338
-    width: 131
+    width: 134.19904
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0

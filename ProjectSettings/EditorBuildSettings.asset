@@ -23,9 +23,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/don/lvl2.unity
     guid: 6eafcdc7cc698054189fc481808296e0
-  - enabled: 1
-    path: Assets/Scenes/Dialog/EndingDialog.unity
-    guid: ef8d47a82f0054319aa19a35de1048ce
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 05b04138d07f94657b066427ed7fd7e4,
       type: 2}
