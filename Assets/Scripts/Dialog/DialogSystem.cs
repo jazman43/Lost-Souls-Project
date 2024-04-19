@@ -32,16 +32,25 @@ namespace LostSouls.Dialog
 
         public void SetMovementLock(bool locked) // Lock or Unlock PlayerMovement
         {
-            if (playerStateMachine != null && cinemachineBrain != null)
+            if (playerStateMachine != null)
             {
                 playerStateMachine.enabled = !locked;
-                cinemachineBrain.enabled = !locked;
+
+                if (cinemachineBrain != null)
+                {
+                    cinemachineBrain.enabled = !locked;
+                } else
+                {
+                    Debug.LogWarning("Can not find cinemachine");
+                }
+                
             }
             else
             {
                 Debug.LogError("Can not find PlayerStateMachine");
             }
         }
+
         public void SetIsAlreadySaid(bool isAlreadySaid) // No more opening dialog when its alreay activated
         {
             

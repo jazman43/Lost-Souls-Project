@@ -398,12 +398,12 @@ PrefabInstance:
     - target: {fileID: 5066003649392310513, guid: 0a06db051daaa48df9ab619a04ab2e40,
         type: 3}
       propertyPath: scrollPos.x
-      value: 363.39575
+      value: 204.55217
       objectReference: {fileID: 0}
     - target: {fileID: 5066003649392310513, guid: 0a06db051daaa48df9ab619a04ab2e40,
         type: 3}
       propertyPath: scrollPos.y
-      value: 644.86487
+      value: 657.3453
       objectReference: {fileID: 0}
     - target: {fileID: 5066003649392310513, guid: 0a06db051daaa48df9ab619a04ab2e40,
         type: 3}
@@ -419,7 +419,7 @@ PrefabInstance:
         type: 3}
       propertyPath: selectedBlocks.Array.data[0]
       value: 
-      objectReference: {fileID: 4695483881123375487}
+      objectReference: {fileID: 2268454286433083009}
     - target: {fileID: 5255328523334300502, guid: 0a06db051daaa48df9ab619a04ab2e40,
         type: 3}
       propertyPath: nodeRect.width
@@ -505,9 +505,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a06db051daaa48df9ab619a04ab2e40, type: 3}
---- !u!114 &4695483881123375487 stripped
+--- !u!114 &2268454286433083009 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5255328523334300502, guid: 0a06db051daaa48df9ab619a04ab2e40,
+  m_CorrespondingSourceObject: {fileID: 1638241416145634472, guid: 0a06db051daaa48df9ab619a04ab2e40,
     type: 3}
   m_PrefabInstance: {fileID: 704559101056637481}
   m_PrefabAsset: {fileID: 0}
