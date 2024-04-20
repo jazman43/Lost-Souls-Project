@@ -17,12 +17,15 @@ namespace LostSouls.Dialog
         [SerializeField] private GameObject sayDialog;
         private PlayerStateMachine playerStateMachine;
         private CinemachineBrain cinemachineBrain;
+        private CinemachineVirtualCamera virtualCamera;
         private bool isFirstDialogShown = true;
+
 
         private void Awake()
         {
             playerStateMachine = FindObjectOfType<PlayerStateMachine>();  // Get Player's StateMachine
             cinemachineBrain = FindObjectOfType<CinemachineBrain>(); //Get Cinemachine
+            virtualCamera = FindObjectOfType<CinemachineVirtualCamera>(); //Get VirtualCamera
         }
 
         private void Start()
@@ -39,6 +42,14 @@ namespace LostSouls.Dialog
                 if (cinemachineBrain != null)
                 {
                     cinemachineBrain.enabled = !locked;
+                    if (virtualCamera !=null)
+                    {
+                        virtualCamera.enabled = !locked;
+                    }
+                    else
+                    {
+                        Debug.LogWarning("Can not find virtual Camera");
+                    }
                 } else
                 {
                     Debug.LogWarning("Can not find cinemachine");

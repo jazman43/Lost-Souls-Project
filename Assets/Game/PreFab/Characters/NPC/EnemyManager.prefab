@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8918273894471061809}
-  - component: {fileID: 870125317750341715}
   m_Layer: 0
   m_Name: EnemyPlace
   m_TagString: Untagged
@@ -32,18 +31,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 9089667451302686927}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &870125317750341715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1402831620792014787}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56d87acce7f7aa448af5dc660d060852, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4300060203743119119
 GameObject:
   m_ObjectHideFlags: 0

@@ -768,7 +768,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 960398367}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.010919697, y: 0.24226893, z: -0.0027269188, w: 0.97014385}
+  m_LocalRotation: {x: 0.010919722, y: 0.24226898, z: -0.0027269255, w: 0.97014385}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1602,7 +1602,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1494524673}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.010919697, y: 0.24226893, z: -0.0027269188, w: 0.97014385}
+  m_LocalRotation: {x: 0.010919722, y: 0.24226898, z: -0.0027269255, w: 0.97014385}
   m_LocalPosition: {x: -145.45, y: 9.76, z: -226.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3672,7 +3672,7 @@ MonoBehaviour:
   audioMixer: {fileID: 24100000, guid: 310611bd0783e47599ca7d48ee7bbea5, type: 2}
   bgmSoundDatas:
   - bgm: 5
-    audioClip: {fileID: 8300000, guid: 7412152830a3a40b395c46269794bc78, type: 3}
+    audioClip: {fileID: 8300000, guid: a785857f685734d2eb54bf35f38f931f, type: 3}
     volume: 1
   masterVolume: 1
   bgmMasterVolume: 1
