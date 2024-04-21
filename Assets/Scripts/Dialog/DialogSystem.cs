@@ -42,7 +42,7 @@ namespace LostSouls.Dialog
                 if (cinemachineBrain != null)
                 {
                     cinemachineBrain.enabled = !locked;
-                    if (virtualCamera !=null)
+                   if (virtualCamera !=null)
                     {
                         virtualCamera.enabled = !locked;
                     }
